@@ -267,21 +267,31 @@ function initModals() {
         `📱 *WhatsApp:* ${phone}\n` +
         `📝 *Resumo / Necessidade:* ${description || 'Não informado'}`;
 
-      const waUrl = `https://wa.me/5594999099386?text=${encodeURIComponent(msg)}`;
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const waUrl = isMobile
+        ? `whatsapp://send?phone=5594999099386&text=${encodeURIComponent(msg)}`
+        : `https://web.whatsapp.com/send?phone=5594999099386&text=${encodeURIComponent(msg)}`;
+
+      const waFallbackUrl = `https://api.whatsapp.com/send?phone=5594999099386&text=${encodeURIComponent(msg)}`;
 
       const waLinkBtn = document.getElementById('budget-wa-link');
       if (waLinkBtn) {
-        waLinkBtn.href = waUrl;
+        waLinkBtn.href = waFallbackUrl;
+      }
+
+      budgetForm.classList.add('hidden');
+      budgetFormSuccess.classList.remove('hidden');
+      if (window.confetti) {
+        window.confetti({ particleCount: 90, spread: 80, origin: { y: 0.6 } });
       }
 
       setTimeout(() => {
-        budgetForm.classList.add('hidden');
-        budgetFormSuccess.classList.remove('hidden');
-        if (window.confetti) {
-          window.confetti({ particleCount: 90, spread: 80, origin: { y: 0.6 } });
+        if (isMobile) {
+          window.location.href = waUrl;
+        } else {
+          window.open(waUrl, '_blank');
         }
-        window.open(waUrl, '_blank');
-      }, 1000);
+      }, 300);
     });
   }
 }
