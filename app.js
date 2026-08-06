@@ -241,6 +241,14 @@ function initModals() {
 
   const budgetForm = document.getElementById('budget-form');
   const budgetFormSuccess = document.getElementById('budget-form-success');
+  const budgetPhone = document.getElementById('budget-phone');
+
+  if (budgetPhone) {
+    budgetPhone.addEventListener('input', (e) => {
+      let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+      e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+    });
+  }
 
   if (budgetForm) {
     budgetForm.addEventListener('submit', (e) => {
