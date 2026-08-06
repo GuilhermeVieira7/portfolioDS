@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duo Studio | Engenharia Digital & Websites de Alta Conversão</title>
+  <meta name="description"
+    content="Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão para empresas que buscam autoridade e vendas no digital.">
+  <meta name="keywords"
+    content="agencia digital, desenvolvimento web, ui ux design, landing pages alta conversao, seo tecnico, redesign estrategico, duostudio, parauapebas">
+  <meta name="author" content="Duo Studio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://duostudio.com.br/">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://duostudio.com.br/">
+  <meta property="og:title" content="Duo Studio | Engenharia Digital & Websites de Alta Conversão">
+  <meta property="og:description"
+    content="Sites modernos, ultrarrápidos e estratégicos projetados para acelerar vendas e posicionar sua empresa como líder de mercado.">
+  <meta property="og:image" content="assets/projects/angatu.png">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Duo Studio">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Duo Studio | Engenharia Digital & Websites de Alta Conversão">
+  <meta name="twitter:description"
+    content="Projetamos sites e ecossistemas digitais sob medida com foco em autoridade e retenção de clientes.">
+  <meta name="twitter:image" content="assets/projects/apex-fintech.png">
+
+  <!-- Structured Data JSON-LD (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://duostudio.com.br/#organization",
+        "name": "Duo Studio",
+        "url": "https://duostudio.com.br",
+        "logo": "https://duostudio.com.br/assets/projects/apex-fintech.png",
+        "email": "somosduostudiobr@gmail.com",
+        "telephone": "+55-94-99281-1658",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Parauapebas",
+          "addressRegion": "PA",
+          "addressCountry": "BR"
+        },
+        "sameAs": [
+          "https://instagram.com/somosduostudio"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://duostudio.com.br/#website",
+        "url": "https://duostudio.com.br",
+        "name": "Duo Studio Digital Agency",
+        "publisher": {
+          "@id": "https://duostudio.com.br/#organization"
+        },
+        "inLanguage": "pt-BR"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-icon.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0B0B0B',
+            cardDark: '#121217',
+            cardBorder: 'rgba(255, 255, 255, 0.08)',
+            indigoBrand: '#4F46E5',
+            violetBrand: '#7C3AED',
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['Sora', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-[#0B0B0B] text-gray-100 antialiased selection:bg-violet-600 selection:text-white overflow-x-hidden">
+
+  <!-- Background Ambient Glow & Grid Pattern -->
+  <div class="fixed inset-0 grid-bg-pattern pointer-events-none opacity-40 z-0"></div>
+  <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-hero-glow pointer-events-none z-0"></div>
+
+  <!-- ==========================================
+       HEADER / NAVBAR
+  =========================================== -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+
+      <!-- Brand Logo -->
+      <a href="#"
+        class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-violet-500 rounded-lg p-1">
+        <img src="assets/logo-horizontal.png" alt="Duo Studio Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#sobre" class="hover:text-white transition-colors py-1">Posicionamento</a>
+        <a href="#servicos" class="hover:text-white transition-colors py-1">Soluções</a>
+        <a href="#portfolio" class="hover:text-white transition-colors py-1">Casos Reais</a>
+        <a href="#processo" class="hover:text-white transition-colors py-1">Engenharia</a>
+        <a href="#faq" class="hover:text-white transition-colors py-1">Dúvidas</a>
+      </nav>
+
+      <!-- Desktop Call-to-Action Button -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="#contato"
+          class="open-budget-modal btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white tracking-wide shadow-lg shadow-violet-600/20 hover:shadow-violet-600/40 transition-all flex items-center gap-2">
+          <span>Agendar reunião estratégica</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 focus:outline-none"
+        aria-label="Abrir Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Nav Menu Drawer -->
+    <div id="mobile-menu"
+      class="hidden md:hidden px-4 pt-4 pb-6 bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-white/10 mt-3 transition-all duration-300">
+      <div class="flex flex-col gap-4 text-base font-medium">
+        <a href="#sobre"
+          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Posicionamento</a>
+        <a href="#servicos"
+          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Soluções</a>
+        <a href="#portfolio" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Casos
+          Reais</a>
+        <a href="#processo"
+          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Engenharia</a>
+        <a href="#faq" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Dúvidas</a>
+        <button
+          class="open-budget-modal btn-gradient w-full py-3 rounded-xl text-sm font-semibold text-white mt-2 flex items-center justify-center gap-2">
+          <span>Agendar reunião estratégica</span>
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       1. HERO SECTION
+  =========================================== -->
+  <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-4xl mx-auto reveal active">
+        <!-- Strategic Tech Badge -->
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-tech text-xs font-semibold tracking-wide mb-8 shadow-inner shadow-violet-500/10">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
+          </span>
+          <span>Engenharia de Software & Arquitetura UX de Alta Velocidade</span>
+        </div>
+
+        <!-- Headline focused on Business Transformation -->
+        <h1
+          class="font-heading font-extrabold text-4xl sm:text-6xl md:text-7xl tracking-tight leading-[1.1] mb-8 text-white">
+          Construímos sites que <br class="hidden sm:inline" />
+          <span class="text-gradient-brand">aceleram vendas e geram valor.</span>
+        </h1>
+
+        <!-- Subtitle focused on ROI and Authority -->
+        <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+          Desenvolvimento web sob medida, performance extrema e estratégia de conversão para empresas que se recusam a
+          parecer genéricas no mercado.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <button
+            class="open-budget-modal w-full sm:w-auto btn-gradient px-8 py-4 rounded-full text-sm font-semibold text-white shadow-xl shadow-violet-600/25 flex items-center justify-center gap-3">
+            <span>Solicitar proposta comercial</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+
+          <a href="#portfolio"
+            class="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center justify-center gap-2">
+            <span>Ver projetos reais</span>
+            <i data-lucide="eye" class="w-4 h-4 text-violet-400"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase / Modern Browser Interactive Spec -->
+      <div class="relative max-w-5xl mx-auto mt-6 reveal">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] rounded-2xl blur-xl opacity-30 animate-pulse-glow">
+        </div>
+
+        <div
+          class="relative glass-card rounded-2xl p-2 sm:p-4 border border-white/10 shadow-2xl overflow-hidden bg-[#121217]/90">
+          <div class="flex items-center justify-between pb-3 px-3 border-b border-white/10 text-xs text-gray-500">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/70 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/70 inline-block"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/70 inline-block"></span>
+            </div>
+            <div
+              class="hidden sm:flex items-center gap-2 bg-white/5 px-4 py-1 rounded-full text-gray-400 font-mono text-[11px] border border-white/5">
+              <i data-lucide="lock" class="w-3 h-3 text-emerald-400"></i>
+              <span>duostudio.com.br</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 font-medium">Core Web
+                Vitals Pass</span>
+            </div>
+          </div>
+
+          <div
+            class="relative min-h-[300px] sm:min-h-[460px] w-full rounded-xl bg-[#0B0B0B] p-4 sm:p-8 flex flex-col justify-between overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-violet-900/20"></div>
+
+            <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+
+              <!-- Metric Card 1: Velocity -->
+              <div class="glass-panel p-5 rounded-xl border border-white/10 backdrop-blur-md animate-float-slow">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Velocidade Crítica</span>
+                  <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                </div>
+                <div class="text-2xl font-bold font-heading text-white mb-1">&lt; 0.8s LCP</div>
+                <p class="text-xs text-gray-400">Carregamento imediato sem travamentos ou desistência de visitantes.</p>
+                <div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
+                  <div class="bg-gradient-to-r from-indigo-500 to-violet-500 h-full w-[98%]"></div>
+                </div>
+              </div>
+
+              <!-- Center Spec Widget -->
+              <div
+                class="md:col-span-2 relative glass-panel p-6 rounded-xl border border-white/10 flex flex-col justify-between min-h-[220px] bg-gradient-to-br from-[#161622] to-[#0F0F16]">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-violet-600/20 flex items-center justify-center text-violet-400">
+                      <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h4 class="text-sm font-semibold text-white">Arquitetura de Conversão</h4>
+                      <p class="text-xs text-gray-400">Engenharia de Software de Alto Nível</p>
+                    </div>
+                  </div>
+                  <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full">Garantia
+                    Técnica</span>
+                </div>
+
+                <div class="w-full grid grid-cols-2 gap-4 text-xs pt-2">
+                  <div class="bg-white/5 p-3 rounded-lg border border-white/5">
+                    <span class="text-gray-400 block text-[11px]">Metodologia</span>
+                    <span class="text-white font-semibold">Clean Code & Next.js</span>
+                  </div>
+                  <div class="bg-white/5 p-3 rounded-lg border border-white/5">
+                    <span class="text-gray-400 block text-[11px]">Segurança</span>
+                    <span class="text-white font-semibold">SSL & Proteção CDN</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Badges -->
+            <div
+              class="relative z-10 mt-6 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-400">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Projetos 100% Autorais</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Foco em Captação de Leads</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+                <span>Otimização para Dispositivos Móveis</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       2. POSICIONAMENTO E VALOR (SOBRE NÓS)
+  =========================================== -->
+  <section id="sobre" class="py-24 relative z-10 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+        <div class="lg:col-span-7 reveal">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
+            <span>Posicionamento de Negócio</span>
+          </div>
+
+          <h2
+            class="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight mb-6 leading-tight">
+            Por que empresas sérias escolhem a <span class="text-gradient-brand">Duo Studio?</span>
+          </h2>
+
+          <p class="text-gray-300 text-lg leading-relaxed mb-6 font-normal">
+            A maioria dos sites corporativos sofre do mesmo problema: são templates lentos, genéricos e incapazes de
+            transformar um visitante em uma oportunidade real de venda.
+          </p>
+
+          <p class="text-gray-400 text-base leading-relaxed mb-8">
+            Na Duo Studio, tratamos seu site como um ativo estratégico de vendas. Unimos psicologia de consumo, design
+            de interface de classe mundial e código extremamente rápido para garantir que sua empresa domine a atenção
+            do cliente e supere a concorrência.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-6 pt-2">
+            <a href="#servicos"
+              class="btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg shadow-violet-600/20">
+              <span>Conhecer nossas soluções</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side Pillar Cards (No fake metrics) -->
+        <div class="lg:col-span-5 grid grid-cols-1 gap-4 reveal">
+
+          <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0">
+              <i data-lucide="target" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-semibold text-white text-base mb-1">Copywriting & Foco em Conversão</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">Mensagens estratégicas desenhadas para responder às
+                objeções do seu cliente e motivá-lo a entrar em contato.</p>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center shrink-0">
+              <i data-lucide="code" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-semibold text-white text-base mb-1">Engenharia Sob Medida</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">Sem construtores pesados. Construímos a estrutura com
+                tecnologias modernas para garantir rapidez e segurança.</p>
+            </div>
+          </div>
+
+          <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-4">
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="search-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="font-heading font-semibold text-white text-base mb-1">SEO & Preparação para Buscas</h4>
+              <p class="text-xs text-gray-400 leading-relaxed">Estruturação completa de dados e metadados para que sua
+                empresa seja encontrada com relevância no Google.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. SOLUCOES E SERVICOS
+  =========================================== -->
+  <section id="servicos" class="py-24 relative z-10 bg-[#0E0E12]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>Soluções Orientadas a Resultados</span>
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          Engenharia digital desenhada para <span class="text-gradient-brand">gerar novos negócios.</span>
+        </h2>
+        <p class="text-gray-400 text-base">
+          Não vendemos apenas código ou layouts. Entregamos plataformas estruturadas para acelerar a aquisição de
+          clientes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Solution 1: High Converting Landing Pages -->
+        <div
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
+            <i data-lucide="trending-up" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-violet-300 transition-colors">
+            Gerar Mais Leads Qualificados
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Landing Pages direcionadas para campanhas de tráfego pago. Estruturadas com copywriting persuasivo para
+            converter visitantes em oportunidades reais de vendas.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-violet-400 group-hover:text-violet-300">
+            <span>Foco em ROI e Captação Direct-to-Sales</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </div>
+
+        <!-- Solution 2: Corporate Brand Authority Websites -->
+        <div
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
+            <i data-lucide="award" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-violet-300 transition-colors">
+            Posicionar Sua Marca Com Autoridade
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Sites institucionais sob medida que transmitem solidez técnica, valor de mercado e sofisticação imediata
+            para grandes corporações e escritórios.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-violet-400 group-hover:text-violet-300">
+            <span>Arquitetura de Marca & Credibilidade</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </div>
+
+        <!-- Solution 3: Frictionless E-Commerce -->
+        <div
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
+            <i data-lucide="shopping-bag" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-violet-300 transition-colors">
+            Vender Produtos Sem Fricção
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Lojas virtuais com tempo de resposta instantâneo, navegação simplificada e checkout otimizado para evitar
+            abandonos de carrinho.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-violet-400 group-hover:text-violet-300">
+            <span>UX de Compra & Performance Mobile</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </div>
+
+        <!-- Solution 4: Strategic Redesign -->
+        <div
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
+            <i data-lucide="zap" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-violet-300 transition-colors">
+            Modernizar Sites Antigos & Lentos
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Redesign estratégico completo de plataformas legadas. Reformulamos a arquitetura visual e técnica para
+            eliminar a perda de clientes por lentidão.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-violet-400 group-hover:text-violet-300">
+            <span>Reconstrução de Código & Estética Modern</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </div>
+
+        <!-- Solution 5: Technical SEO -->
+        <div
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
+            <i data-lucide="search" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-violet-300 transition-colors">
+            Dominar Buscas Orgânicas no Google
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Engenharia de SEO Técnico com dados estruturados (Schema.org), metadados avançados e semântica de código
+            para posicionamento constante nas primeiras páginas.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-violet-400 group-hover:text-violet-300">
+            <span>Visibilidade Orgânica & Autoridade de Domínio</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </div>
+
+        <!-- Solution 6: Technical Security & Evolution -->
+        <div
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          <div
+            class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
+            <i data-lucide="shield-check" class="w-7 h-7"></i>
+          </div>
+          <h3 class="font-heading font-semibold text-xl text-white mb-3 group-hover:text-violet-300 transition-colors">
+            Garantir Estabilidade & Segurança
+          </h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">
+            Acompanhamento contínuo pós-entrega com suporte direto dos desenvolvedores. Seu site sempre atualizado,
+            seguro e operando em máxima velocidade.
+          </p>
+          <div class="flex items-center gap-2 text-xs font-semibold text-violet-400 group-hover:text-violet-300">
+            <span>Manutenção sem Complicações</span>
+            <i data-lucide="arrow-up-right"
+              class="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. PORTFOLIO & REAL CASE STUDIES
+  =========================================== -->
+  <section id="portfolio" class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>Estudos de Caso Reais</span>
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          Projetos desenvolvidos com <span class="text-gradient-brand">rigor técnico e propósito.</span>
+        </h2>
+        <p class="text-gray-400 text-base">
+          Conheça as soluções que construímos para marcas reais no mercado.
+        </p>
+      </div>
+
+      <!-- Real Case Studies Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Case Study 1: Angatu Viagens -->
+        <div
+          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
+          onclick="openCaseStudyModal('1')" data-category="turismo landing-pages">
+          <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
+            <img src="assets/projects/angatu.png?v=3" alt="Angatu Viagens - Turismo de Luxo"
+              class="w-full h-full object-cover object-top transition-transform duration-500">
+            <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-xs font-semibold text-violet-400 uppercase tracking-widest mb-1">Turismo de Luxo</span>
+              <h3 class="text-2xl font-heading font-bold text-white mb-2">Angatu Viagens</h3>
+              <p class="text-xs text-gray-300 mb-6 leading-relaxed">Plataforma digital imersiva para pacotes turísticos
+                premium com foco em captação de clientes via WhatsApp.</p>
+              <div class="flex items-center gap-3" onclick="event.stopPropagation()">
+                <button onclick="openCaseStudyModal('1')"
+                  class="open-project-modal btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
+                  data-project-id="1">
+                  <span>Analisar estudo de caso</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </button>
+                <a href="https://angatuviagens-eu.vercel.app/" target="_blank" rel="noopener noreferrer"
+                  class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
+                  <span>Ver site ao vivo</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 flex items-center justify-between">
+            <div>
+              <h4 class="font-heading font-semibold text-lg text-white">Angatu Viagens</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Turismo Premium & Agendamento Direto</p>
+            </div>
+            <span
+              class="text-xs font-medium px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300">Caso
+              Real</span>
+          </div>
+        </div>
+
+        <!-- Case Study 2: LabPrime Toxicológico -->
+        <div
+          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
+          onclick="openCaseStudyModal('2')" data-category="saude institucional">
+          <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
+            <img src="assets/projects/labprime.png?v=3" alt="LabPrime Toxicológico - Laboratório"
+              class="w-full h-full object-cover object-top transition-transform duration-500">
+            <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <span class="text-xs font-semibold text-violet-400 uppercase tracking-widest mb-1">Saúde & Análises
+                Clínicas</span>
+              <h3 class="text-2xl font-heading font-bold text-white mb-2">LabPrime Toxicológico</h3>
+              <p class="text-xs text-gray-300 mb-6 leading-relaxed">Portal clínico institucional para motoristas e
+                empresas com agendamento rápido em 4 passos e SEO Local.</p>
+              <div class="flex items-center gap-3" onclick="event.stopPropagation()">
+                <button onclick="openCaseStudyModal('2')"
+                  class="open-project-modal btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
+                  data-project-id="2">
+                  <span>Analisar estudo de caso</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </button>
+                <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer"
+                  class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
+                  <span>Ver site ao vivo</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 flex items-center justify-between">
+            <div>
+              <h4 class="font-heading font-semibold text-lg text-white">LabPrime Toxicológico</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Portal de Agendamento & SEO Local</p>
+            </div>
+            <span
+              class="text-xs font-medium px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300">Caso
+              Real</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. PROCESSO DE ENGENHARIA (TIMELINE)
+  =========================================== -->
+  <section id="processo" class="py-24 relative z-10 bg-[#0E0E12]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>Metodologia de Engenharia</span>
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          Do planejamento estratégico à <span class="text-gradient-brand">entrega impecável.</span>
+        </h2>
+        <p class="text-gray-400 text-base">
+          Trabalhamos com um cronograma estruturado em 7 passos para garantir previsibilidade e excelência visual.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+
+        <!-- Step 1: Discovery -->
+        <div class="glass-card p-6 rounded-2xl border border-white/10 reveal flex flex-col justify-between">
+          <div>
+            <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">01. Discovery</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Imersão & Diagnóstico</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Mapeamento profundo do modelo comercial da empresa, diferenciais de mercado, perfil de cliente e gargalos
+              de conversão.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2: Strategy -->
+        <div class="glass-card p-6 rounded-2xl border border-white/10 reveal flex flex-col justify-between">
+          <div>
+            <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">02. Estratégia</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Arquitetura & Copywriting</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Definição da estrutura de navegação, jerarquia de informações e redação persuasiva orientada à quebra de
+              objeções.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3: Design -->
+        <div class="glass-card p-6 rounded-2xl border border-white/10 reveal flex flex-col justify-between">
+          <div>
+            <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">03. Design UI/UX</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Prototipagem de Alta Fidelidade</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Criação da interface visual sob medida. Design autoral alinhado às diretrizes da marca com
+              micro-interações elegantes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4: Development -->
+        <div class="glass-card p-6 rounded-2xl border border-white/10 reveal flex flex-col justify-between">
+          <div>
+            <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">04. Desenvolvimento</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Engenharia Front-End</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Programação com código limpo e moderno. Responsividade total para smartphones, tablets e telas de alta
+              resolução.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 5: SEO -->
+        <div class="glass-card p-6 rounded-2xl border border-white/10 reveal flex flex-col justify-between">
+          <div>
+            <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">05. SEO Técnico</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Otimização de Buscas</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Configuração de Schema.org, metadados estratégicos, otimização de imagens e velocidade máxima de resposta
+              no Google.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 6: Launch -->
+        <div class="glass-card p-6 rounded-2xl border border-white/10 reveal flex flex-col justify-between">
+          <div>
+            <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">06. Lançamento</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Publicação & Testes</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Homologação completa, checagem de formulários, configuração de protocolo de segurança SSL e publicação
+              oficial no servidor.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 7: Support -->
+        <div
+          class="glass-card p-6 rounded-2xl border border-white/10 reveal flex flex-col justify-between md:col-span-2">
+          <div>
+            <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">07. Suporte
+              Contínuo</span>
+            <h3 class="font-heading font-bold text-lg text-white mb-2">Evolução & Manutenção Pós-Entrega</h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              Acompanhamento direto para tirar dúvidas, realizar pequenas atualizações e garantir estabilidade sem que
+              você se preocupe com problemas técnicos.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. POR QUE A DUO STUDIO? (GARANTIAS & TRUST)
+  =========================================== -->
+  <section class="py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>Comparativo Técnico</span>
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          A diferença entre um site comum e um <span class="text-gradient-brand">ativo de negócios.</span>
+        </h2>
+        <p class="text-gray-400 text-base">
+          Veja a comparação entre a engenharia desenvolvida pela Duo Studio e os modelos tradicionais do mercado.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+
+        <!-- Standard Web Solutions (Problem) -->
+        <div class="glass-card p-8 rounded-3xl border border-red-500/20 bg-red-950/10">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-red-500/20">
+            <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center">
+              <i data-lucide="x-circle" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-white">Abordagem Tradicional</h3>
+          </div>
+
+          <ul class="space-y-4 text-xs text-gray-400">
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
+              <span><strong>Templates pré-prontos:</strong> Sem personalidade e com visual genérico idêntico ao de
+                concorrentes.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
+              <span><strong>Lentidão excessiva:</strong> Construtores visuais pesados que sobrecarregam o servidor e
+                perdem clientes no mobile.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
+              <span><strong>Falta de estratégia de conversão:</strong> Textos vagos que não comunicam o valor do negócio
+                nem geram contatos.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
+              <span><strong>Abandono pós-entrega:</strong> Falta de suporte técnico adequado quando o cliente precisa de
+                ajustes urgentes.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Duo Studio Method (Solution) -->
+        <div
+          class="glass-card p-8 rounded-3xl border border-violet-500/40 bg-violet-950/10 shadow-xl shadow-violet-600/10">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-violet-500/30">
+            <div class="w-10 h-10 rounded-xl bg-violet-500/20 text-violet-400 flex items-center justify-center">
+              <i data-lucide="check-circle" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-white">Método Duo Studio</h3>
+          </div>
+
+          <ul class="space-y-4 text-xs text-gray-300">
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Design Autoral & Exclusivo:</strong> Layout criado sob medida para reforçar a autoridade e
+                posição única da sua marca.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Engenharia de Alta Performance:</strong> Código otimizado para resposta instantânea (&lt;
+                1s) em qualquer dispositivo.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Copywriting Estratégico:</strong> Textos estruturados para guiar o visitante até a tomada de
+                decisão.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <span><strong>Acompanhamento Próximo:</strong> Atendimento direto dos especialistas para suporte, evolução
+                e segurança contínua.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       7. PERGUNTAS FREQUENTES (FAQ)
+  =========================================== -->
+  <section id="faq" class="py-24 relative z-10 bg-[#0E0E12]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>Dúvidas Frequentes</span>
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          Respostas diretas para decisões <span class="text-gradient-brand">transparentes.</span>
+        </h2>
+        <p class="text-gray-400 text-base">
+          Tire suas dúvidas técnicas e comerciais sobre o processo de desenvolvimento.
+        </p>
+      </div>
+
+      <div class="space-y-4 reveal">
+
+        <div class="faq-item glass-card rounded-2xl border border-white/10 p-6">
+          <button class="faq-btn w-full flex items-center justify-between text-left focus:outline-none">
+            <h4 class="font-heading font-semibold text-white text-base">Quanto tempo leva para desenvolver um projeto?
+            </h4>
+            <i data-lucide="chevron-down"
+              class="faq-icon w-5 h-5 text-violet-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden mt-4 pt-4 border-t border-white/5 text-xs text-gray-300 leading-relaxed">
+            O prazo médio para projetos estratégicos como Landing Pages de Alta Conversão ou Sites Institucionais varia
+            entre 15 a 30 dias úteis, a depender da complexidade técnica e dos alinhamentos de conteúdo. Definimos um
+            cronograma claro desde o primeiro dia.
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-2xl border border-white/10 p-6">
+          <button class="faq-btn w-full flex items-center justify-between text-left focus:outline-none">
+            <h4 class="font-heading font-semibold text-white text-base">O site será meu ou precisarei pagar mensalidades
+              eternas de uso?</h4>
+            <i data-lucide="chevron-down"
+              class="faq-icon w-5 h-5 text-violet-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden mt-4 pt-4 border-t border-white/5 text-xs text-gray-300 leading-relaxed">
+            O projeto e todo o código-fonte são 100% seus. Não cobramos mensalidades sobre a propriedade do site. Apenas
+            os custos normais de hospedagem e domínio do próprio cliente.
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-2xl border border-white/10 p-6">
+          <button class="faq-btn w-full flex items-center justify-between text-left focus:outline-none">
+            <h4 class="font-heading font-semibold text-white text-base">O site funcionará perfeitamente no celular?</h4>
+            <i data-lucide="chevron-down"
+              class="faq-icon w-5 h-5 text-violet-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden mt-4 pt-4 border-t border-white/5 text-xs text-gray-300 leading-relaxed">
+            Sim. Trabalhamos com a metodologia Mobile-First. Mais de 70% dos seus potenciais clientes acessarão pelo
+            smartphone, portanto a experiência móvel é tratada como prioridade máxima.
+          </div>
+        </div>
+
+        <div class="faq-item glass-card rounded-2xl border border-white/10 p-6">
+          <button class="faq-btn w-full flex items-center justify-between text-left focus:outline-none">
+            <h4 class="font-heading font-semibold text-white text-base">Como funciona o suporte técnico após o
+              lançamento?</h4>
+            <i data-lucide="chevron-down"
+              class="faq-icon w-5 h-5 text-violet-400 transition-transform duration-300"></i>
+          </button>
+          <div class="faq-content hidden mt-4 pt-4 border-t border-white/5 text-xs text-gray-300 leading-relaxed">
+            Fornecemos garantia completa pós-lançamento para ajustes técnicos e oferecemos planos opcionais de
+            acompanhamento e suporte contínuo para manter seu ambiente sempre atualizado e seguro.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       8. CALL TO ACTION (CTA)
+  =========================================== -->
+  <section id="contato" class="py-24 relative z-10 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div
+        class="relative glass-card p-10 sm:p-16 rounded-[36px] border border-white/15 text-center overflow-hidden bg-cta-glow">
+        <div class="absolute -top-24 -left-24 w-72 h-72 bg-violet-600/30 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-indigo-600/30 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="relative z-10 max-w-2xl mx-auto reveal">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-tech text-xs font-semibold tracking-wide mb-6">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-violet-400"></i>
+            <span>Reunião Estratégica Sem Compromisso</span>
+          </div>
+
+          <h2 class="font-heading font-extrabold text-3xl sm:text-5xl text-white tracking-tight mb-6 leading-tight">
+            Pronto para transformar a presença digital da <span class="text-gradient-brand">sua empresa?</span>
+          </h2>
+
+          <p class="text-gray-300 text-base sm:text-lg mb-10 leading-relaxed font-normal">
+            Agende uma análise comercial. Avaliaremos o momento da sua empresa e apresentaremos o projeto ideal para
+            suas metas de vendas.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              class="open-budget-modal w-full sm:w-auto btn-gradient px-10 py-5 rounded-full text-base font-bold text-white shadow-2xl shadow-violet-600/30 flex items-center justify-center gap-3">
+              <span>Solicitar proposta comercial</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       9. RODAPÉ (FOOTER)
+  =========================================== -->
+  <footer class="pt-16 pb-12 relative z-10 bg-[#070709] border-t border-white/10 text-gray-400 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-white/5">
+
+        <!-- Column 1: Brand Info -->
+        <div class="md:col-span-5">
+          <a href="#" class="flex items-center gap-3 mb-4">
+            <img src="assets/logo-horizontal.png" alt="Duo Studio Logo" class="h-10 sm:h-12 w-auto object-contain">
+          </a>
+
+          <p class="text-gray-400 text-sm max-w-sm mb-6 leading-relaxed">
+            Desenvolvimento de plataformas web sob medida, landing pages estratégicas e arquitetura digital de alta
+            conversão.
+          </p>
+
+          <!-- Social Links -->
+          <div class="flex items-center gap-3">
+            <a href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/5 hover:bg-violet-600 hover:text-white border border-white/10 flex items-center justify-center transition-all text-gray-300"
+              aria-label="Instagram">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/5594992811658" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/5 hover:bg-emerald-600 hover:text-white border border-white/10 flex items-center justify-center transition-all text-gray-300"
+              aria-label="WhatsApp">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+            <a href="mailto:somosduostudiobr@gmail.com"
+              class="w-10 h-10 rounded-full bg-white/5 hover:bg-indigo-600 hover:text-white border border-white/10 flex items-center justify-center transition-all text-gray-300"
+              aria-label="Email">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div class="md:col-span-3">
+          <h4 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">Navegação</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="#sobre" class="hover:text-white transition-colors">Posicionamento</a></li>
+            <li><a href="#servicos" class="hover:text-white transition-colors">Soluções de Negócio</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition-colors">Casos Reais</a></li>
+            <li><a href="#processo" class="hover:text-white transition-colors">Processo de Engenharia</a></li>
+            <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="md:col-span-4">
+          <h4 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">Contato Direto</h4>
+          <div class="space-y-3 text-xs">
+            <a href="mailto:somosduostudiobr@gmail.com"
+              class="flex items-center gap-3 hover:text-white transition-colors">
+              <i data-lucide="mail" class="w-4 h-4 text-violet-400"></i>
+              <span>somosduostudiobr@gmail.com</span>
+            </a>
+            <a href="https://wa.me/5594992811658" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-3 hover:text-white transition-colors">
+              <i data-lucide="phone" class="w-4 h-4 text-violet-400"></i>
+              <span>+55 (94) 99281-1658</span>
+            </a>
+            <div class="flex items-center gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-violet-400"></i>
+              <span>Parauapebas - PA, Brasil</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bottom Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <p>&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
+        <p class="flex items-center gap-1">
+          Engenharia digital com <i data-lucide="shield" class="w-3.5 h-3.5 text-violet-500"></i> e alta performance.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================================
+       MODAL 1: SOLICITAR ORÇAMENTO / PROPOSTA
+  =========================================== -->
+  <div id="budget-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div
+      class="relative w-full max-w-xl glass-card rounded-3xl p-6 sm:p-8 border border-white/15 bg-[#121218] shadow-2xl overflow-hidden">
+
+      <button id="close-budget-modal"
+        class="absolute top-5 right-5 p-2 rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-tech text-[11px] font-semibold mb-2">
+          <span>Análise Comercial Sem Compromisso</span>
+        </div>
+        <h3 class="font-heading font-bold text-2xl text-white">Solicitar Proposta Comercial</h3>
+        <p class="text-xs text-gray-400 mt-1">Preencha os dados abaixo e nossa equipe entrará em contato para um
+          diagnóstico sem custos.</p>
+      </div>
+
+      <form id="budget-form" class="space-y-4">
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1.5">Qual o objetivo do projeto?</label>
+          <select required
+            class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500 transition-colors">
+            <option value="landing-page">Gerar mais leads (Landing Page de Alta Conversão)</option>
+            <option value="site-institucional">Posicionar marca (Site Institucional sob Medida)</option>
+            <option value="loja-virtual">Vender produtos (E-commerce / Loja Virtual)</option>
+            <option value="redesign">Modernizar site atual (Redesign Estratégico)</option>
+            <option value="outro">Projeto Web Personalizado</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Seu Nome / Empresa</label>
+            <input type="text" required placeholder="Ex: Carlos Silva"
+              class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">E-mail Corporativo</label>
+            <input type="email" required placeholder="carlos@empresa.com"
+              class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1.5">WhatsApp para Contato</label>
+          <input type="tel" required placeholder="(94) 99999-9999"
+            class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-gray-300 mb-1.5">Resumo da sua empresa ou necessidade</label>
+          <textarea rows="3" placeholder="Descreva brevemente seu negócio e metas..."
+            class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors resize-none"></textarea>
+        </div>
+
+        <button type="submit"
+          class="btn-gradient w-full py-4 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-2 shadow-lg shadow-violet-600/25">
+          <span>Solicitar Proposta Comercial</span>
+          <i data-lucide="send" class="w-4 h-4"></i>
+        </button>
+
+      </form>
+
+      <div id="budget-form-success" class="hidden text-center py-8">
+        <div
+          class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
+          <i data-lucide="check" class="w-8 h-8"></i>
+        </div>
+        <h4 class="font-heading font-bold text-2xl text-white mb-2">Solicitação Recebida com Sucesso!</h4>
+        <p class="text-sm text-gray-300 max-w-sm mx-auto mb-6">
+          Nossa equipe analisará os detalhes e entrará em contato via WhatsApp nas próximas horas.
+        </p>
+        <button onclick="document.getElementById('close-budget-modal').click()"
+          class="btn-gradient px-6 py-2.5 rounded-full text-xs font-semibold text-white">
+          Fechar janela
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       MODAL 2: ESTUDO DE CASO COMPLETO (REAL)
+  =========================================== -->
+  <div id="project-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div
+      class="relative w-full max-w-3xl glass-card rounded-3xl p-6 sm:p-8 border border-white/15 bg-[#121218] shadow-2xl overflow-y-auto max-h-[90vh]">
+
+      <button id="close-project-modal"
+        class="absolute top-5 right-5 p-2 rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden mb-6 bg-gray-900 border border-white/10">
+        <img id="pm-image" src="" alt="Project Preview" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#121218] via-transparent to-transparent"></div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4 pb-4 border-b border-white/10">
+        <div>
+          <span id="pm-category"
+            class="text-xs font-semibold text-violet-400 uppercase tracking-widest block mb-1">Categoria</span>
+          <h3 id="pm-title" class="font-heading font-bold text-2xl sm:text-3xl text-white">Estudo de Caso</h3>
+        </div>
+        <div class="flex items-center gap-6 text-xs text-gray-400">
+          <div>
+            <span class="block text-[10px] text-gray-500 uppercase">Cliente</span>
+            <span id="pm-client" class="font-semibold text-gray-200">Cliente</span>
+          </div>
+          <div>
+            <span class="block text-[10px] text-gray-500 uppercase">Ano</span>
+            <span id="pm-year" class="font-semibold text-gray-200">2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem & Objective Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+          <h4
+            class="font-heading font-semibold text-violet-300 text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+            <i data-lucide="alert-circle" class="w-4 h-4 text-violet-400"></i>
+            Desafio & Problema
+          </h4>
+          <p id="pm-problem" class="text-gray-300 text-xs leading-relaxed">...</p>
+        </div>
+        <div class="bg-white/5 p-4 rounded-xl border border-white/5">
+          <h4
+            class="font-heading font-semibold text-emerald-300 text-xs uppercase tracking-wider mb-2 flex items-center gap-2">
+            <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
+            Objetivos Comerciais
+          </h4>
+          <p id="pm-objective" class="text-gray-300 text-xs leading-relaxed">...</p>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="font-heading font-semibold text-white text-sm mb-2">Visão Geral da Solução:</h4>
+        <p id="pm-desc" class="text-gray-300 text-xs leading-relaxed">...</p>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="font-heading font-semibold text-white text-sm mb-3">Principais Resultados & Diferenciais Técnicos:
+        </h4>
+        <ul id="pm-highlights" class="space-y-2"></ul>
+      </div>
+
+      <div class="mb-6">
+        <h4 class="font-heading font-semibold text-white text-sm mb-3">Tecnologias Utilizadas:</h4>
+        <div id="pm-techs" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+        <a id="pm-live-link" href="#" target="_blank" rel="noopener noreferrer"
+          class="btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg">
+          <span>Acessar projeto ao vivo</span>
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="app.js"></script>
+</body>
+
+</html>
