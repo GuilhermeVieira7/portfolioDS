@@ -245,11 +245,33 @@ function initModals() {
   if (budgetForm) {
     budgetForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      const objectiveSelect = document.getElementById('budget-objective');
+      const objectiveText = objectiveSelect ? objectiveSelect.options[objectiveSelect.selectedIndex].text : '';
+      const name = document.getElementById('budget-name')?.value || '';
+      const email = document.getElementById('budget-email')?.value || '';
+      const phone = document.getElementById('budget-phone')?.value || '';
+      const description = document.getElementById('budget-description')?.value || '';
+
       const submitBtn = budgetForm.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Processando...`;
         lucide.createIcons();
+      }
+
+      const msg = `*Nova Solicitação de Proposta Comercial - Duo Studio*\n\n` +
+        `🎯 *Objetivo:* ${objectiveText}\n` +
+        `👤 *Nome / Empresa:* ${name}\n` +
+        `✉️ *E-mail:* ${email}\n` +
+        `📱 *WhatsApp:* ${phone}\n` +
+        `📝 *Resumo / Necessidade:* ${description || 'Não informado'}`;
+
+      const waUrl = `https://wa.me/5594999099386?text=${encodeURIComponent(msg)}`;
+
+      const waLinkBtn = document.getElementById('budget-wa-link');
+      if (waLinkBtn) {
+        waLinkBtn.href = waUrl;
       }
 
       setTimeout(() => {
@@ -258,6 +280,7 @@ function initModals() {
         if (window.confetti) {
           window.confetti({ particleCount: 90, spread: 80, origin: { y: 0.6 } });
         }
+        window.open(waUrl, '_blank');
       }, 1000);
     });
   }
