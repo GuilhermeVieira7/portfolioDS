@@ -638,7 +638,33 @@ function init3DGuaranteeDeck() {
   const deckHint = document.getElementById('deck-hint');
   if (!deckWrapper) return;
 
+  // No mobile (< 768px) as cartas ficam sempre visíveis em coluna - sem leque
+  function isMobileLayout() {
+    return window.innerWidth < 768;
+  }
+
+  // Aplica o estado correto baseado no tamanho da tela
+  function applyLayout() {
+    if (isMobileLayout()) {
+      // Mobile: sempre expandido, sem interação de clique
+      deckWrapper.classList.remove('deck-stacked');
+      deckWrapper.classList.add('deck-expanded');
+    } else {
+      // Desktop/Tablet: começa empilhado em leque
+      if (!deckWrapper.classList.contains('deck-expanded')) {
+        deckWrapper.classList.remove('deck-expanded');
+        deckWrapper.classList.add('deck-stacked');
+      }
+    }
+  }
+
+  applyLayout();
+  window.addEventListener('resize', applyLayout);
+
   deckWrapper.addEventListener('click', () => {
+    // Não faz nada no mobile
+    if (isMobileLayout()) return;
+
     if (deckWrapper.classList.contains('deck-stacked')) {
       deckWrapper.classList.remove('deck-stacked');
       deckWrapper.classList.add('deck-expanded');
@@ -655,4 +681,3 @@ function init3DGuaranteeDeck() {
     if (window.lucide) lucide.createIcons();
   });
 }
-
