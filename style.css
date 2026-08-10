@@ -253,3 +253,103 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.6);
 }
+
+/* ==========================================
+   3D GUARANTEE CARDS FAN DECK STACK
+=========================================== */
+/* ==========================================
+   3D GUARANTEE CARDS FAN DECK STACK
+=========================================== */
+.deck-wrapper {
+  perspective: 1200px;
+  position: relative;
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.deck-wrapper.deck-stacked {
+  height: 480px;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative !important;
+}
+
+.deck-wrapper.deck-stacked .guarantee-card {
+  position: absolute !important;
+  width: 350px !important;
+  max-width: 90vw !important;
+  left: 50% !important;
+  top: 20px !important;
+  margin-left: -175px !important;
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform-origin: center 130% !important;
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.9), 0 0 35px rgba(124, 58, 237, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  background: linear-gradient(145deg, rgba(22, 22, 32, 0.96) 0%, rgba(12, 12, 18, 0.98) 100%) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+/* Stacked Fan Deck Rotation Angles (Playing cards in hand) */
+.deck-wrapper.deck-stacked .g-card-1 {
+  transform: rotate(-14deg) translateX(-70px) translateY(10px) !important;
+  z-index: 10 !important;
+}
+
+.deck-wrapper.deck-stacked .g-card-2 {
+  transform: rotate(0deg) translateY(-10px) !important;
+  z-index: 20 !important;
+}
+
+.deck-wrapper.deck-stacked .g-card-3 {
+  transform: rotate(14deg) translateX(70px) translateY(10px) !important;
+  z-index: 30 !important;
+}
+
+.deck-wrapper.deck-stacked:hover .g-card-1 {
+  transform: rotate(-20deg) translateX(-95px) translateY(5px) !important;
+}
+
+.deck-wrapper.deck-stacked:hover .g-card-2 {
+  transform: rotate(0deg) translateY(-25px) !important;
+}
+
+.deck-wrapper.deck-stacked:hover .g-card-3 {
+  transform: rotate(20deg) translateX(95px) translateY(5px) !important;
+}
+
+/* Expanded Grid State (When clicked by user) */
+.deck-wrapper.deck-expanded {
+  height: auto;
+  min-height: 0;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .deck-wrapper.deck-expanded {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.deck-expanded .guarantee-card {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  margin-left: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  transform: rotate(0deg) translateX(0) translateY(0) !important;
+  z-index: 10 !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 20px rgba(124, 58, 237, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(145deg, rgba(22, 22, 32, 0.9) 0%, rgba(12, 12, 18, 0.95) 100%);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.deck-expanded .guarantee-card:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.35);
+}

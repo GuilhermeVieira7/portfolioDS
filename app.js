@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimatedCounters();
   initStickyMobileCTA();
   initMagneticButtons();
+  init3DGuaranteeDeck();
 });
 
 /* ----------------------------------------------------
@@ -628,3 +629,30 @@ function initSmoothScroll() {
     });
   });
 }
+
+/* ----------------------------------------------------
+   13. 3D Fan Deck Guarantee Cards Interaction
+---------------------------------------------------- */
+function init3DGuaranteeDeck() {
+  const deckWrapper = document.getElementById('deck-wrapper');
+  const deckHint = document.getElementById('deck-hint');
+  if (!deckWrapper) return;
+
+  deckWrapper.addEventListener('click', () => {
+    if (deckWrapper.classList.contains('deck-stacked')) {
+      deckWrapper.classList.remove('deck-stacked');
+      deckWrapper.classList.add('deck-expanded');
+      if (deckHint) {
+        deckHint.innerHTML = `<i data-lucide="shrink" class="w-4 h-4 text-violet-400"></i> <span>Clique para recolher o leque de garantias</span>`;
+      }
+    } else {
+      deckWrapper.classList.remove('deck-expanded');
+      deckWrapper.classList.add('deck-stacked');
+      if (deckHint) {
+        deckHint.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4 text-violet-400 animate-pulse"></i> <span>Clique para abrir nosso leque de garantias</span>`;
+      }
+    }
+    if (window.lucide) lucide.createIcons();
+  });
+}
+
