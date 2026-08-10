@@ -48,7 +48,7 @@
         "url": "https://duostudio-portfolio.vercel.app",
         "logo": "https://duostudio-portfolio.vercel.app/assets/og-image.png",
         "email": "somosduostudiobr@gmail.com",
-        "telephone": "+55-94-99909-9386",
+        "telephone": ["+55-94-99909-9386", "+55-94-99281-1658"],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Parauapebas",
@@ -79,7 +79,14 @@
   <!-- Google Fonts Preconnect & Display Swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -104,12 +111,7 @@
     }
   </script>
 
-  <!-- Lucide Icons -->
-  <script defer src="https://unpkg.com/lucide@latest"></script>
-  <!-- Canvas Confetti -->
-  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <!-- Custom Stylesheet -->
+  <!-- Custom Master Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
   <!-- Vercel Web Analytics -->
@@ -131,7 +133,8 @@
       <!-- Brand Logo -->
       <a href="#"
         class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-violet-500 rounded-lg p-1">
-        <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" decoding="async" fetchpriority="high" class="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+        <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" decoding="async" fetchpriority="high"
+          class="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
       </a>
 
       <!-- Desktop Navigation Links -->
@@ -139,6 +142,7 @@
         <a href="#sobre" class="hover:text-white transition-colors py-1">Posicionamento</a>
         <a href="#servicos" class="hover:text-white transition-colors py-1">Soluções</a>
         <a href="#portfolio" class="hover:text-white transition-colors py-1">Casos Reais</a>
+        <a href="#depoimentos" class="hover:text-white transition-colors py-1">Depoimentos</a>
         <a href="#processo" class="hover:text-white transition-colors py-1">Engenharia</a>
         <a href="#faq" class="hover:text-white transition-colors py-1">Dúvidas</a>
       </nav>
@@ -146,7 +150,7 @@
       <!-- Desktop Call-to-Action Button -->
       <div class="hidden md:flex items-center gap-4">
         <a href="#contato"
-          class="open-budget-modal btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white tracking-wide shadow-lg shadow-violet-600/20 hover:shadow-violet-600/40 transition-all flex items-center gap-2">
+          class="open-budget-modal btn-gradient btn-magnetic px-5 py-2.5 rounded-full text-xs font-semibold text-white tracking-wide shadow-lg shadow-violet-600/20 hover:shadow-violet-600/40 transition-all flex items-center gap-2">
           <span>Agendar reunião estratégica</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -171,6 +175,8 @@
           class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Soluções</a>
         <a href="#portfolio" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Casos
           Reais</a>
+        <a href="#depoimentos"
+          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Depoimentos</a>
         <a href="#processo"
           class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Engenharia</a>
         <a href="#faq" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Dúvidas</a>
@@ -184,7 +190,7 @@
   </header>
 
   <!-- ==========================================
-       1. HERO SECTION
+       1. HERO SECTION (WITH INTERACTIVE SPEC TABS)
   =========================================== -->
   <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -216,7 +222,7 @@
         <!-- CTA Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <button
-            class="open-budget-modal w-full sm:w-auto btn-gradient px-8 py-4 rounded-full text-sm font-semibold text-white shadow-xl shadow-violet-600/25 flex items-center justify-center gap-3">
+            class="open-budget-modal btn-magnetic w-full sm:w-auto btn-gradient px-8 py-4 rounded-full text-sm font-semibold text-white shadow-xl shadow-violet-600/25 flex items-center justify-center gap-3">
             <span>Solicitar proposta comercial</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
@@ -229,7 +235,7 @@
         </div>
       </div>
 
-      <!-- Hero Visual Showcase / Modern Browser Interactive Spec -->
+      <!-- Hero Visual Showcase / Modern Interactive Spec Window -->
       <div class="relative max-w-5xl mx-auto mt-6 reveal">
         <div
           class="absolute -inset-1 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] rounded-2xl blur-xl opacity-30 animate-pulse-glow">
@@ -237,74 +243,87 @@
 
         <div
           class="relative glass-card rounded-2xl p-2 sm:p-4 border border-white/10 shadow-2xl overflow-hidden bg-[#121217]/90">
-          <div class="flex items-center justify-between pb-3 px-3 border-b border-white/10 text-xs text-gray-500">
+
+          <!-- Browser Top Window Bar & Interactive Specs Selector Tabs -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 px-3 border-b border-white/10 text-xs text-gray-500 gap-3">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-red-500/70 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-yellow-500/70 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-green-500/70 inline-block"></span>
+              <span class="hidden md:inline-block text-gray-400 font-mono text-[11px] ml-2">duostudio.com.br</span>
             </div>
-            <div
-              class="hidden sm:flex items-center gap-2 bg-white/5 px-4 py-1 rounded-full text-gray-400 font-mono text-[11px] border border-white/5">
-              <i data-lucide="lock" class="w-3 h-3 text-emerald-400"></i>
-              <span>duostudio.com.br</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/10 text-emerald-400 font-medium">Core Web
-                Vitals Pass</span>
+
+            <!-- Hero Interactive Mode Selector Tabs -->
+            <div class="flex items-center gap-1.5 bg-white/5 p-1 rounded-xl border border-white/5 text-[11px]">
+              <button class="hero-tab-btn active px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="speed">⚡
+                Velocidade</button>
+              <button class="hero-tab-btn px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="ux">🎯 Conversão
+                UX</button>
+              <button class="hero-tab-btn px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="seo">🔍 SEO
+                100/100</button>
             </div>
           </div>
 
+          <!-- Dynamic Spec Content Window -->
           <div
-            class="relative min-h-[300px] sm:min-h-[460px] w-full rounded-xl bg-[#0B0B0B] p-4 sm:p-8 flex flex-col justify-between overflow-hidden">
+            class="relative min-h-[300px] sm:min-h-[380px] w-full rounded-xl bg-[#0B0B0B] p-4 sm:p-8 flex flex-col justify-between overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-transparent to-violet-900/20"></div>
 
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
 
-              <!-- Metric Card 1: Velocity -->
+              <!-- Dynamic Metric Card 1 -->
               <div class="glass-panel p-5 rounded-xl border border-white/10 backdrop-blur-md animate-float-slow">
                 <div class="flex items-center justify-between mb-3">
-                  <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Velocidade Crítica</span>
+                  <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Métrica de
+                    Performance</span>
                   <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
                 </div>
-                <div class="text-2xl font-bold font-heading text-white mb-1">&lt; 0.8s LCP</div>
-                <p class="text-xs text-gray-400">Carregamento imediato sem travamentos ou desistência de visitantes.</p>
+                <div id="hero-spec-metric-main" class="text-2xl font-bold font-heading text-white mb-1">&lt; 0.8s LCP
+                </div>
+                <p id="hero-spec-metric-desc" class="text-xs text-gray-400">Carregamento imediato sem travamentos ou
+                  desistência de visitantes.</p>
                 <div class="w-full bg-white/10 h-1.5 rounded-full mt-3 overflow-hidden">
-                  <div class="bg-gradient-to-r from-indigo-500 to-violet-500 h-full w-[98%]"></div>
+                  <div
+                    class="bg-gradient-to-r from-indigo-500 to-violet-500 h-full w-[98%] transition-all duration-500">
+                  </div>
                 </div>
               </div>
 
-              <!-- Center Spec Widget -->
+              <!-- Center Spec Details Widget -->
               <div
-                class="md:col-span-2 relative glass-panel p-6 rounded-xl border border-white/10 flex flex-col justify-between min-h-[220px] bg-gradient-to-br from-[#161622] to-[#0F0F16]">
+                class="md:col-span-2 relative glass-panel p-6 rounded-xl border border-white/10 flex flex-col justify-between min-h-[200px] bg-gradient-to-br from-[#161622] to-[#0F0F16]">
                 <div class="flex items-center justify-between mb-4">
                   <div class="flex items-center gap-3">
                     <div class="w-8 h-8 rounded-lg bg-violet-600/20 flex items-center justify-center text-violet-400">
                       <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </div>
                     <div>
-                      <h4 class="text-sm font-semibold text-white">Arquitetura de Conversão</h4>
-                      <p class="text-xs text-gray-400">Engenharia de Software de Alto Nível</p>
+                      <h4 id="hero-spec-title" class="text-sm font-semibold text-white">Arquitetura de Conversão &
+                        Velocidade</h4>
+                      <p id="hero-spec-subtitle" class="text-xs text-gray-400">Engenharia de Software de Alto Nível</p>
                     </div>
                   </div>
-                  <span class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full">Garantia
+                  <span id="hero-spec-tag"
+                    class="text-xs text-emerald-400 font-bold bg-emerald-500/10 px-2.5 py-1 rounded-full">Garantia
                     Técnica</span>
                 </div>
 
                 <div class="w-full grid grid-cols-2 gap-4 text-xs pt-2">
                   <div class="bg-white/5 p-3 rounded-lg border border-white/5">
-                    <span class="text-gray-400 block text-[11px]">Metodologia</span>
-                    <span class="text-white font-semibold">Clean Code & Next.js</span>
+                    <span class="text-gray-400 block text-[11px]">Estratégia</span>
+                    <span id="hero-spec-badge1" class="text-white font-semibold">Clean Code & Next.js</span>
                   </div>
                   <div class="bg-white/5 p-3 rounded-lg border border-white/5">
-                    <span class="text-gray-400 block text-[11px]">Segurança</span>
-                    <span class="text-white font-semibold">SSL & Proteção CDN</span>
+                    <span class="text-gray-400 block text-[11px]">Infraestrutura</span>
+                    <span id="hero-spec-badge2" class="text-white font-semibold">SSL & Proteção CDN</span>
                   </div>
                 </div>
               </div>
 
             </div>
 
-            <!-- Badges -->
+            <!-- Trust Badges -->
             <div
               class="relative z-10 mt-6 pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-400">
               <div class="flex items-center gap-2">
@@ -367,7 +386,7 @@
           </div>
         </div>
 
-        <!-- Right Side Pillar Cards (No fake metrics) -->
+        <!-- Right Side Pillar Cards -->
         <div class="lg:col-span-5 grid grid-cols-1 gap-4 reveal">
 
           <div class="glass-card p-6 rounded-2xl border border-white/10 flex items-start gap-4">
@@ -567,7 +586,7 @@
   </section>
 
   <!-- ==========================================
-       4. PORTFOLIO & REAL CASE STUDIES
+       4. PORTFOLIO & REAL CASE STUDIES (OPTIMIZED VISIBILITY)
   =========================================== -->
   <section id="portfolio" class="py-24 relative z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -593,23 +612,32 @@
           class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
           onclick="openCaseStudyModal('1')" data-category="turismo landing-pages">
           <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
-            <img src="assets/projects/angatu.webp" alt="Angatu Viagens - Turismo de Luxo" loading="lazy" decoding="async"
-              class="w-full h-full object-cover object-top transition-transform duration-500">
-            <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+            <img src="assets/projects/angatu.webp" alt="Angatu Viagens - Turismo de Luxo" loading="lazy"
+              decoding="async" class="w-full h-full object-cover object-top transition-transform duration-500">
+            <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
               <span class="text-xs font-semibold text-violet-400 uppercase tracking-widest mb-1">Turismo de Luxo</span>
               <h3 class="text-2xl font-heading font-bold text-white mb-2">Angatu Viagens</h3>
-              <p class="text-xs text-gray-300 mb-6 leading-relaxed">Plataforma digital imersiva para pacotes turísticos
+              <p class="text-xs text-gray-300 mb-4 leading-relaxed">Plataforma digital imersiva para pacotes turísticos
                 premium com foco em captação de clientes via WhatsApp.</p>
+
+              <!-- Impact Metrics Badge -->
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full flex items-center gap-1">
+                  <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> +180% Agendamentos no WhatsApp
+                </span>
+              </div>
+
               <div class="flex items-center gap-3" onclick="event.stopPropagation()">
                 <button onclick="openCaseStudyModal('1')"
-                  class="open-project-modal btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
+                  class="open-project-modal btn-gradient px-4 py-2 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
                   data-project-id="1">
-                  <span>Analisar estudo de caso</span>
+                  <span>Analisar caso</span>
                   <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                 </button>
                 <a href="https://angatuviagens-eu.vercel.app/" target="_blank" rel="noopener noreferrer"
-                  class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
-                  <span>Ver site ao vivo</span>
+                  class="px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
+                  <span>Ver site</span>
                   <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
                 </a>
               </div>
@@ -631,24 +659,32 @@
           class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
           onclick="openCaseStudyModal('2')" data-category="saude institucional">
           <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
-            <img src="assets/projects/labprime.webp" alt="LabPrime Toxicológico - Laboratório" loading="lazy" decoding="async"
-              class="w-full h-full object-cover object-top transition-transform duration-500">
-            <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-8">
+            <img src="assets/projects/labprime.webp" alt="LabPrime Toxicológico - Laboratório" loading="lazy"
+              decoding="async" class="w-full h-full object-cover object-top transition-transform duration-500">
+            <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
               <span class="text-xs font-semibold text-violet-400 uppercase tracking-widest mb-1">Saúde & Análises
                 Clínicas</span>
               <h3 class="text-2xl font-heading font-bold text-white mb-2">LabPrime Toxicológico</h3>
-              <p class="text-xs text-gray-300 mb-6 leading-relaxed">Portal clínico institucional para motoristas e
+              <p class="text-xs text-gray-300 mb-4 leading-relaxed">Portal clínico institucional para motoristas e
                 empresas com agendamento rápido em 4 passos e SEO Local.</p>
+
+              <!-- Impact Metrics Badge -->
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-bold rounded-full flex items-center gap-1">
+                  <i data-lucide="zap" class="w-3.5 h-3.5"></i> LCP < 0.8s Carregamento Instantâneo </span>
+              </div>
+
               <div class="flex items-center gap-3" onclick="event.stopPropagation()">
                 <button onclick="openCaseStudyModal('2')"
-                  class="open-project-modal btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
+                  class="open-project-modal btn-gradient px-4 py-2 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
                   data-project-id="2">
-                  <span>Analisar estudo de caso</span>
+                  <span>Analisar caso</span>
                   <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                 </button>
                 <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer"
-                  class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
-                  <span>Ver site ao vivo</span>
+                  class="px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
+                  <span>Ver site</span>
                   <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
                 </a>
               </div>
@@ -671,7 +707,88 @@
   </section>
 
   <!-- ==========================================
-       5. PROCESSO DE ENGENHARIA (TIMELINE)
+       5. NOVO: DEPOIMENTOS & PROVA SOCIAL
+  =========================================== -->
+  <section id="depoimentos" class="py-20 relative z-10 bg-[#0E0E12] border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <div
+          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
+          <span>Prova Social Integrada</span>
+        </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          O que dizem os parceiros da <span class="text-gradient-brand">Duo Studio.</span>
+        </h2>
+        <p class="text-gray-400 text-base">
+          Resultados reais em vendas, retenção de clientes e agilidade técnica.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+
+        <!-- Testimonial 1 -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 relative flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed italic">
+              "A reformulação da nossa presença digital pela Duo Studio transformou o fluxo de agendamentos da Angatu
+              Viagens. O site é leve, lindíssimo no celular e nosso cliente clica no WhatsApp já decidido a fechar a
+              viagem."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 pt-4 border-t border-white/5">
+            <div
+              class="w-10 h-10 rounded-full bg-violet-600/30 border border-violet-500/40 text-white font-bold flex items-center justify-center text-sm font-heading">
+              AV
+            </div>
+            <div>
+              <h4 class="font-heading font-semibold text-white text-sm">Direção Comercial</h4>
+              <p class="text-xs text-gray-400">Angatu Viagens & Turismo de Luxo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="glass-card p-8 rounded-3xl border border-white/10 relative flex flex-col justify-between">
+          <div class="mb-6">
+            <div class="flex items-center gap-1 text-amber-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            </div>
+            <p class="text-gray-300 text-sm leading-relaxed italic">
+              "Precisávamos de um portal clínico que passasse confiança imediata para motoristas de CNH C, D e E em
+              Parauapebas. O trabalho em 4 passos facilitou o agendamento e o SEO local nos colocou no topo das buscas."
+            </p>
+          </div>
+          <div class="flex items-center gap-4 pt-4 border-t border-white/5">
+            <div
+              class="w-10 h-10 rounded-full bg-indigo-600/30 border border-indigo-500/40 text-white font-bold flex items-center justify-center text-sm font-heading">
+              LP
+            </div>
+            <div>
+              <h4 class="font-heading font-semibold text-white text-sm">Gestão Clínica</h4>
+              <p class="text-xs text-gray-400">LabPrime Toxicológico</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. PROCESSO DE ENGENHARIA (TIMELINE)
   =========================================== -->
   <section id="processo" class="py-24 relative z-10 bg-[#0E0E12]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -709,7 +826,7 @@
             <span class="font-heading font-extrabold text-2xl text-gradient-brand block mb-2">02. Estratégia</span>
             <h3 class="font-heading font-bold text-lg text-white mb-2">Arquitetura & Copywriting</h3>
             <p class="text-gray-400 text-xs leading-relaxed">
-              Definição da estrutura de navegação, jerarquia de informações e redação persuasiva orientada à quebra de
+              Definição da estrutura de navegação, hierarquia de informações e redação persuasiva orientada à quebra de
               objeções.
             </p>
           </div>
@@ -783,99 +900,6 @@
   </section>
 
   <!-- ==========================================
-       6. POR QUE A DUO STUDIO? (GARANTIAS & TRUST)
-  =========================================== -->
-  <section class="py-24 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <div
-          class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
-          <span>Comparativo Técnico</span>
-        </div>
-        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-          A diferença entre um site comum e um <span class="text-gradient-brand">ativo de negócios.</span>
-        </h2>
-        <p class="text-gray-400 text-base">
-          Veja a comparação entre a engenharia desenvolvida pela Duo Studio e os modelos tradicionais do mercado.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-
-        <!-- Standard Web Solutions (Problem) -->
-        <div class="glass-card p-8 rounded-3xl border border-red-500/20 bg-red-950/10">
-          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-red-500/20">
-            <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-heading font-bold text-xl text-white">Abordagem Tradicional</h3>
-          </div>
-
-          <ul class="space-y-4 text-xs text-gray-400">
-            <li class="flex items-start gap-3">
-              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
-              <span><strong>Templates pré-prontos:</strong> Sem personalidade e com visual genérico idêntico ao de
-                concorrentes.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
-              <span><strong>Lentidão excessiva:</strong> Construtores visuais pesados que sobrecarregam o servidor e
-                perdem clientes no mobile.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
-              <span><strong>Falta de estratégia de conversão:</strong> Textos vagos que não comunicam o valor do negócio
-                nem geram contatos.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="x" class="w-4 h-4 text-red-400 shrink-0 mt-0.5"></i>
-              <span><strong>Abandono pós-entrega:</strong> Falta de suporte técnico adequado quando o cliente precisa de
-                ajustes urgentes.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Duo Studio Method (Solution) -->
-        <div
-          class="glass-card p-8 rounded-3xl border border-violet-500/40 bg-violet-950/10 shadow-xl shadow-violet-600/10">
-          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-violet-500/30">
-            <div class="w-10 h-10 rounded-xl bg-violet-500/20 text-violet-400 flex items-center justify-center">
-              <i data-lucide="check-circle" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-heading font-bold text-xl text-white">Método Duo Studio</h3>
-          </div>
-
-          <ul class="space-y-4 text-xs text-gray-300">
-            <li class="flex items-start gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-              <span><strong>Design Autoral & Exclusivo:</strong> Layout criado sob medida para reforçar a autoridade e
-                posição única da sua marca.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-              <span><strong>Engenharia de Alta Performance:</strong> Código otimizado para resposta instantânea (&lt;
-                1s) em qualquer dispositivo.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-              <span><strong>Copywriting Estratégico:</strong> Textos estruturados para guiar o visitante até a tomada de
-                decisão.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-              <span><strong>Acompanhamento Próximo:</strong> Atendimento direto dos especialistas para suporte, evolução
-                e segurança contínua.</span>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
        7. PERGUNTAS FREQUENTES (FAQ)
   =========================================== -->
   <section id="faq" class="py-24 relative z-10 bg-[#0E0E12]">
@@ -905,7 +929,7 @@
           </button>
           <div class="faq-content hidden mt-4 pt-4 border-t border-white/5 text-xs text-gray-300 leading-relaxed">
             O prazo médio para projetos estratégicos como Landing Pages de Alta Conversão ou Sites Institucionais varia
-            entre 15 a 30 dias úteis, a depender da complexidade técnica e dos alinhamentos de conteúdo. Definimos um
+            entre 2 a 5 dias úteis, a depender da complexidade técnica e dos alinhamentos de conteúdo. Definimos um
             cronograma claro desde o primeiro dia.
           </div>
         </div>
@@ -984,7 +1008,7 @@
 
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
-              class="open-budget-modal w-full sm:w-auto btn-gradient px-10 py-5 rounded-full text-base font-bold text-white shadow-2xl shadow-violet-600/30 flex items-center justify-center gap-3">
+              class="open-budget-modal btn-magnetic w-full sm:w-auto btn-gradient px-10 py-5 rounded-full text-base font-bold text-white shadow-2xl shadow-violet-600/30 flex items-center justify-center gap-3">
               <span>Solicitar proposta comercial</span>
               <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </button>
@@ -997,7 +1021,7 @@
   </section>
 
   <!-- ==========================================
-       9. RODAPÉ (FOOTER)
+       9. RODAPÉ (FOOTER - WITH BOTH PARTNER PHONES)
   =========================================== -->
   <footer class="pt-16 pb-12 relative z-10 bg-[#070709] border-t border-white/10 text-gray-400 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1007,7 +1031,8 @@
         <!-- Column 1: Brand Info -->
         <div class="md:col-span-5">
           <a href="#" class="flex items-center gap-3 mb-4">
-            <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" loading="lazy" decoding="async" class="h-10 sm:h-12 w-auto object-contain">
+            <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" loading="lazy" decoding="async"
+              class="h-10 sm:h-12 w-auto object-contain">
           </a>
 
           <p class="text-gray-400 text-sm max-w-sm mb-6 leading-relaxed">
@@ -1020,16 +1045,22 @@
             <a href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer"
               class="w-10 h-10 rounded-full bg-white/5 hover:bg-violet-600 hover:text-white border border-white/10 flex items-center justify-center transition-all text-gray-300"
               aria-label="Instagram">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
               </svg>
             </a>
+            <a href="https://wa.me/5594999099386" target="_blank" rel="noopener noreferrer"
+              class="w-10 h-10 rounded-full bg-white/5 hover:bg-emerald-600 hover:text-white border border-white/10 flex items-center justify-center transition-all text-gray-300"
+              aria-label="WhatsApp 1">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
             <a href="https://wa.me/5594992811658" target="_blank" rel="noopener noreferrer"
               class="w-10 h-10 rounded-full bg-white/5 hover:bg-emerald-600 hover:text-white border border-white/10 flex items-center justify-center transition-all text-gray-300"
-              aria-label="WhatsApp">
-              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              aria-label="WhatsApp 2">
+              <i data-lucide="phone" class="w-4 h-4"></i>
             </a>
             <a href="mailto:somosduostudiobr@gmail.com"
               class="w-10 h-10 rounded-full bg-white/5 hover:bg-indigo-600 hover:text-white border border-white/10 flex items-center justify-center transition-all text-gray-300"
@@ -1046,12 +1077,13 @@
             <li><a href="#sobre" class="hover:text-white transition-colors">Posicionamento</a></li>
             <li><a href="#servicos" class="hover:text-white transition-colors">Soluções de Negócio</a></li>
             <li><a href="#portfolio" class="hover:text-white transition-colors">Casos Reais</a></li>
+            <li><a href="#depoimentos" class="hover:text-white transition-colors">Depoimentos</a></li>
             <li><a href="#processo" class="hover:text-white transition-colors">Processo de Engenharia</a></li>
             <li><a href="#faq" class="hover:text-white transition-colors">Dúvidas Frequentes</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Contact Info -->
+        <!-- Column 3: Contact Info (Listing BOTH Partners) -->
         <div class="md:col-span-4">
           <h4 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4">Contato Direto</h4>
           <div class="space-y-3 text-xs">
@@ -1059,6 +1091,11 @@
               class="flex items-center gap-3 hover:text-white transition-colors">
               <i data-lucide="mail" class="w-4 h-4 text-violet-400"></i>
               <span>somosduostudiobr@gmail.com</span>
+            </a>
+            <a href="https://wa.me/5594999099386" target="_blank" rel="noopener noreferrer"
+              class="flex items-center gap-3 hover:text-white transition-colors">
+              <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
+              <span>+55 (94) 99909-9386</span>
             </a>
             <a href="https://wa.me/5594992811658" target="_blank" rel="noopener noreferrer"
               class="flex items-center gap-3 hover:text-white transition-colors">
@@ -1087,7 +1124,7 @@
 
 
   <!-- ==========================================
-       MODAL 1: SOLICITAR ORÇAMENTO / PROPOSTA
+       MODAL: SIMULADOR DE PROJETO INTERATIVO (MULTI-STEP QUIZ)
   =========================================== -->
   <div id="budget-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
     <div
@@ -1098,80 +1135,191 @@
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
+      <!-- Quiz Header & Progress Bar -->
       <div class="mb-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full badge-tech text-[11px] font-semibold mb-2">
-          <span>Análise Comercial Sem Compromisso</span>
+        <div class="flex items-center justify-between mb-2">
+          <span id="quiz-step-label" class="text-xs font-semibold text-violet-400 uppercase tracking-wider">Passo 1 de
+            3: Objetivo do Projeto</span>
+          <span class="text-xs text-gray-400">Diagnóstico Sem Custos</span>
         </div>
-        <h3 class="font-heading font-bold text-2xl text-white">Solicitar Proposta Comercial</h3>
-        <p class="text-xs text-gray-400 mt-1">Preencha os dados abaixo e nossa equipe entrará em contato para um
-          diagnóstico sem custos.</p>
+        <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+          <div id="quiz-progress-bar"
+            class="bg-gradient-to-r from-indigo-500 to-violet-500 h-full w-[33%] transition-all duration-300"></div>
+        </div>
       </div>
 
-      <form id="budget-form" class="space-y-4">
+      <form id="budget-form">
 
-        <div>
-          <label class="block text-xs font-semibold text-gray-300 mb-1.5">Qual o objetivo do projeto?</label>
-          <select id="budget-objective" required
-            class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-violet-500 transition-colors">
-            <option value="landing-page">Gerar mais leads (Landing Page de Alta Conversão)</option>
-            <option value="site-institucional">Posicionar marca (Site Institucional sob Medida)</option>
-            <option value="loja-virtual">Vender produtos (E-commerce / Loja Virtual)</option>
-            <option value="redesign">Modernizar site atual (Redesign Estratégico)</option>
-            <option value="outro">Projeto Web Personalizado</option>
-          </select>
-        </div>
+        <!-- STEP 1: OBJECTIVE SELECTION -->
+        <div id="quiz-step-1" class="space-y-4">
+          <h3 class="font-heading font-bold text-xl text-white">Qual o principal objetivo da sua empresa hoje?</h3>
+          <p class="text-xs text-gray-400">Selecione o modelo que melhor descreve sua necessidade atual:</p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-semibold text-gray-300 mb-1.5">Seu Nome / Empresa</label>
-            <input id="budget-name" type="text" required placeholder="Ex: Carlos Silva"
-              class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors">
+          <div class="grid grid-cols-1 gap-3 pt-2">
+            <div class="quiz-option-card quiz-obj-card selected p-4 rounded-xl flex items-center justify-between"
+              data-value="Gerar mais leads com Landing Page de Alta Conversão">
+              <div class="flex items-center gap-3">
+                <i data-lucide="trending-up" class="w-5 h-5 text-violet-400"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Gerar Mais Leads & Vendas</h4>
+                  <p class="text-[11px] text-gray-400">Landing Page focada em campanhas de tráfego pago</p>
+                </div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+            </div>
+
+            <div class="quiz-option-card quiz-obj-card p-4 rounded-xl flex items-center justify-between"
+              data-value="Posicionar marca com Site Institucional sob Medida">
+              <div class="flex items-center gap-3">
+                <i data-lucide="award" class="w-5 h-5 text-violet-400"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Posicionar Marca & Autoridade</h4>
+                  <p class="text-[11px] text-gray-400">Site Institucional corporativo de alto padrão</p>
+                </div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+            </div>
+
+            <div class="quiz-option-card quiz-obj-card p-4 rounded-xl flex items-center justify-between"
+              data-value="Vender produtos com Loja Virtual / E-Commerce">
+              <div class="flex items-center gap-3">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-violet-400"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Vender Produtos (E-Commerce)</h4>
+                  <p class="text-[11px] text-gray-400">Loja virtual rápida e sem atrito no checkout</p>
+                </div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+            </div>
+
+            <div class="quiz-option-card quiz-obj-card p-4 rounded-xl flex items-center justify-between"
+              data-value="Reformular site antigo ou lento (Redesign)">
+              <div class="flex items-center gap-3">
+                <i data-lucide="zap" class="w-5 h-5 text-violet-400"></i>
+                <div>
+                  <h4 class="text-sm font-semibold text-white">Modernizar Site Lento / Antigo</h4>
+                  <p class="text-[11px] text-gray-400">Redesign completo com código ultrarrápido</p>
+                </div>
+              </div>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+            </div>
           </div>
-          <div>
-            <label class="block text-xs font-semibold text-gray-300 mb-1.5">E-mail Corporativo</label>
-            <input id="budget-email" type="email" required placeholder="carlos@empresa.com"
-              class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors">
+
+          <div class="pt-4">
+            <button type="button" id="quiz-next-1"
+              class="btn-gradient w-full py-3.5 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-2">
+              <span>Avançar para Segmento</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
           </div>
         </div>
 
-        <div>
-          <label class="block text-xs font-semibold text-gray-300 mb-1.5">WhatsApp para Contato</label>
-          <input id="budget-phone" type="tel" required placeholder="(94) 99999-9999"
-            class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors">
+        <!-- STEP 2: SEGMENT SELECTION -->
+        <div id="quiz-step-2" class="space-y-4 hidden">
+          <h3 class="font-heading font-bold text-xl text-white">Em qual segmento sua empresa atua?</h3>
+          <p class="text-xs text-gray-400">Isso nos ajuda a preparar referências e dados específicos:</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="quiz-option-card quiz-seg-card selected p-4 rounded-xl" data-value="Serviços & Negócios Locais">
+              <h4 class="text-sm font-semibold text-white mb-1">Serviços & Negócios</h4>
+              <p class="text-[11px] text-gray-400">Consultoria, Engenharia, Advocacia</p>
+            </div>
+            <div class="quiz-option-card quiz-seg-card p-4 rounded-xl" data-value="Saúde, Clínicas & Laboratórios">
+              <h4 class="text-sm font-semibold text-white mb-1">Saúde & Clínicas</h4>
+              <p class="text-[11px] text-gray-400">Laboratórios, Médicos, Odonto</p>
+            </div>
+            <div class="quiz-option-card quiz-seg-card p-4 rounded-xl" data-value="Turismo, Gastronomia & Eventos">
+              <h4 class="text-sm font-semibold text-white mb-1">Turismo & Lazer</h4>
+              <p class="text-[11px] text-gray-400">Agências de Viagens, Hotelaria</p>
+            </div>
+            <div class="quiz-option-card quiz-seg-card p-4 rounded-xl" data-value="Comércio & E-commerce">
+              <h4 class="text-sm font-semibold text-white mb-1">Vendas & E-Commerce</h4>
+              <p class="text-[11px] text-gray-400">Produtos, Varejo, Marca Própria</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 pt-4">
+            <button type="button" id="quiz-prev-2"
+              class="px-5 py-3.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10">
+              Voltar
+            </button>
+            <button type="button" id="quiz-next-2"
+              class="btn-gradient flex-1 py-3.5 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-2">
+              <span>Avançar para Contato</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
         </div>
 
-        <div>
-          <label class="block text-xs font-semibold text-gray-300 mb-1.5">Resumo da sua empresa ou necessidade</label>
-          <textarea id="budget-description" rows="3" placeholder="Descreva brevemente seu negócio e metas..."
-            class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 transition-colors resize-none"></textarea>
-        </div>
+        <!-- STEP 3: CONTACT FORM & SUBMIT -->
+        <div id="quiz-step-3" class="space-y-4 hidden">
+          <h3 class="font-heading font-bold text-xl text-white">Onde devemos entregar seu diagnóstico?</h3>
+          <p class="text-xs text-gray-400">Preencha abaixo e entraremos em contato via WhatsApp com a proposta:</p>
 
-        <button type="submit"
-          class="btn-gradient w-full py-4 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-2 shadow-lg shadow-violet-600/25">
-          <span>Solicitar Proposta Comercial</span>
-          <i data-lucide="send" class="w-4 h-4"></i>
-        </button>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">Seu Nome / Empresa *</label>
+              <input id="budget-name" type="text" required placeholder="Ex: Carlos Silva"
+                class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1">WhatsApp para Contato *</label>
+              <input id="budget-phone" type="tel" required placeholder="(94) 99999-9999"
+                class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">E-mail Corporativo</label>
+            <input id="budget-email" type="email" placeholder="carlos@empresa.com"
+              class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1">Resumo das Metas da Empresa (Opcional)</label>
+            <textarea id="budget-description" rows="2" placeholder="Descreva brevemente suas metas de vendas..."
+              class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 resize-none"></textarea>
+          </div>
+
+          <div class="flex items-center gap-3 pt-2">
+            <button type="button" id="quiz-prev-3"
+              class="px-5 py-3.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10">
+              Voltar
+            </button>
+            <button type="submit"
+              class="btn-gradient flex-1 py-3.5 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-2 shadow-lg shadow-violet-600/25">
+              <span>Enviar Diagnóstico no WhatsApp</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
 
       </form>
 
+      <!-- SUCCESS REDIRECT STATE WITH BOTH PARTNER WHATSAPP BUTTONS -->
       <div id="budget-form-success" class="hidden text-center py-8">
         <div
           class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
           <i data-lucide="check" class="w-8 h-8"></i>
         </div>
         <h4 class="font-heading font-bold text-2xl text-white mb-2">Solicitação Pronta para Envio!</h4>
-        <p class="text-sm text-gray-300 max-w-sm mx-auto mb-4">
-          Redirecionando para o WhatsApp... Caso a conversa não abra automaticamente, clique no botão abaixo:
+        <p class="text-sm text-gray-300 max-w-sm mx-auto mb-6">
+          Escolha com qual dos nossos sócios você prefere iniciar a conversa no WhatsApp:
         </p>
-        <div class="flex flex-col items-center justify-center gap-3 mb-4">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
           <a id="budget-wa-link" href="#" target="_blank" rel="noopener noreferrer"
-            class="btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg">
-            <span>Iniciar conversa no WhatsApp</span>
+            class="btn-gradient w-full sm:w-auto px-5 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center justify-center gap-2 shadow-lg">
+            <span>Contato 1: (94) 99909-9386</span>
             <i data-lucide="message-circle" class="w-4 h-4"></i>
+          </a>
+          <a id="budget-wa-link-2" href="#" target="_blank" rel="noopener noreferrer"
+            class="w-full sm:w-auto px-5 py-3 rounded-full text-xs font-semibold text-gray-200 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center justify-center gap-2 transition-all">
+            <span>Contato 2: (94) 99281-1658</span>
+            <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
           </a>
         </div>
         <button onclick="document.getElementById('close-budget-modal').click()"
-          class="text-xs text-gray-400 hover:text-white transition-colors underline">
+          class="text-xs text-gray-400 hover:text-white transition-colors underline pt-2">
           Fechar janela
         </button>
       </div>
@@ -1263,18 +1411,41 @@
     </div>
   </div>
 
+
   <!-- Floating WhatsApp CTA Button -->
   <a href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Duo%20Studio."
     target="_blank" rel="noopener noreferrer"
     class="fixed bottom-6 right-6 z-40 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl shadow-emerald-500/50 transition-all transform hover:scale-110 group focus:outline-none"
     aria-label="Falar no WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      <path
+        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
     </svg>
-    <span class="absolute right-full mr-3 bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+    <span
+      class="absolute right-full mr-3 bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
       Falar no WhatsApp
     </span>
   </a>
+
+  <!-- Sticky Lead Bar Mobile -->
+  <div id="mobile-sticky-cta"
+    class="md:hidden fixed bottom-0 left-0 right-0 z-40 p-3 bg-[#0B0B0B]/90 border-t border-white/10 hidden animate-slide-up">
+    <div class="flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+        <span class="text-xs font-medium text-gray-300">Atendimento On-line</span>
+      </div>
+      <a href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20um%20diagn%C3%B3stico%20comercial."
+        target="_blank" rel="noopener noreferrer"
+        class="open-budget-modal btn-gradient px-4 py-2 rounded-full text-xs font-semibold text-white flex items-center gap-1.5 shadow-lg">
+        <span>Agendar Diagnóstico</span>
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+      </a>
+    </div>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
