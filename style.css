@@ -274,12 +274,15 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   left: 50% !important;
   top: 20px !important;
   margin-left: -175px !important;
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
   transform-origin: center 130% !important;
   box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.9), 0 0 35px rgba(124, 58, 237, 0.25) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
   background: linear-gradient(145deg, rgba(22, 22, 32, 0.96) 0%, rgba(12, 12, 18, 0.98) 100%) !important;
   backdrop-filter: blur(20px) !important;
+  user-select: none;
+  -webkit-user-drag: none;
+  will-change: transform;
 }
 
 /* Stacked Fan Deck State (Like playing cards in hand) */
@@ -310,21 +313,33 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   transform: rotate(20deg) translateX(95px) translateY(5px) !important;
 }
 
-/* Expanded State: Smooth 60fps Lateral Slide to 3 Full Column Cards */
+/* Expanded State: Smooth 60fps Lateral Slide & Stable Hover */
 @media (min-width: 1024px) {
   .deck-expanded .g-card-1 {
     transform: rotate(0deg) translateX(-390px) translateY(0px) !important;
     z-index: 10 !important;
+  }
+  .deck-expanded .g-card-1:hover {
+    transform: rotate(0deg) translateX(-390px) translateY(-10px) scale(1.03) !important;
+    z-index: 40 !important;
   }
 
   .deck-expanded .g-card-2 {
     transform: rotate(0deg) translateX(0px) translateY(0px) !important;
     z-index: 20 !important;
   }
+  .deck-expanded .g-card-2:hover {
+    transform: rotate(0deg) translateX(0px) translateY(-10px) scale(1.03) !important;
+    z-index: 40 !important;
+  }
 
   .deck-expanded .g-card-3 {
     transform: rotate(0deg) translateX(390px) translateY(0px) !important;
     z-index: 30 !important;
+  }
+  .deck-expanded .g-card-3:hover {
+    transform: rotate(0deg) translateX(390px) translateY(-10px) scale(1.03) !important;
+    z-index: 40 !important;
   }
 }
 
@@ -333,15 +348,27 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     transform: rotate(0deg) translateX(-290px) translateY(0px) scale(0.9) !important;
     z-index: 10 !important;
   }
+  .deck-expanded .g-card-1:hover {
+    transform: rotate(0deg) translateX(-290px) translateY(-10px) scale(0.93) !important;
+    z-index: 40 !important;
+  }
 
   .deck-expanded .g-card-2 {
     transform: rotate(0deg) translateX(0px) translateY(0px) scale(0.9) !important;
     z-index: 20 !important;
   }
+  .deck-expanded .g-card-2:hover {
+    transform: rotate(0deg) translateX(0px) translateY(-10px) scale(0.93) !important;
+    z-index: 40 !important;
+  }
 
   .deck-expanded .g-card-3 {
     transform: rotate(0deg) translateX(290px) translateY(0px) scale(0.9) !important;
     z-index: 30 !important;
+  }
+  .deck-expanded .g-card-3:hover {
+    transform: rotate(0deg) translateX(290px) translateY(-10px) scale(0.93) !important;
+    z-index: 40 !important;
   }
 }
 
@@ -362,10 +389,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     max-width: 100% !important;
     transform: rotate(0deg) translateX(0) translateY(0) !important;
   }
+  .deck-expanded .guarantee-card:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+  }
 }
 
 .deck-expanded .guarantee-card:hover {
-  transform: translateY(-8px) scale(1.03) !important;
   border-color: rgba(124, 58, 237, 0.6) !important;
   box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4) !important;
 }
