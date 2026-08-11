@@ -151,7 +151,7 @@ const projectData = {
       "Integração nativa com atendimento via WhatsApp Business (+180% agendamentos)"
     ],
     techs: ["Next.js", "Tailwind CSS", "TypeScript", "Lucide Icons", "Framer Motion", "Vercel Edge Network"],
-    image: "assets/projects/angatu.png?v=3"
+    image: "assets/projects/angatu.webp?v=4"
   },
   "2": {
     title: "LabPrime Toxicológico — Laboratório Clínico",
@@ -169,7 +169,7 @@ const projectData = {
       "Respostas diretas de dúvidas frequentes com carregamento instantâneo LCP < 0.8s"
     ],
     techs: ["Next.js", "Tailwind CSS", "TypeScript", "JSON-LD Schema", "Vercel Analytics"],
-    image: "assets/projects/labprime.png?v=3"
+    image: "assets/projects/labprime.webp?v=4"
   }
 };
 
