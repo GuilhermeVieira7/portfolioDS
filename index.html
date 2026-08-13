@@ -277,30 +277,7 @@
   <!-- Canvas Confetti (deferred) -->
   <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  <!-- Tailwind CSS CDN Failsafe & Compiled Stylesheet -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandDark: '#0B0B0B',
-            cardDark: '#121217',
-            cardBorder: 'rgba(255, 255, 255, 0.08)',
-            indigoBrand: '#4F46E5',
-            violetBrand: '#7C3AED',
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Sora', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Compiled Tailwind CSS -->
+  <!-- Compiled Master CSS (no render-blocking JS) -->
   <link rel="stylesheet" href="dist/tailwind.css">
   <!-- Custom Master Stylesheet -->
   <link rel="stylesheet" href="style.css?v=9">
@@ -315,16 +292,18 @@
   <div class="fixed inset-0 grid-bg-pattern pointer-events-none opacity-40 z-0"></div>
   <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-hero-glow pointer-events-none z-0"></div>
 
+  </main>
+
   <!-- ==========================================
-       HEADER / NAVBAR
+       FOOTER
   =========================================== -->
   <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 glass-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
 
       <!-- Brand Logo -->
-      <a href="#"
+      <a href="index.html"
         class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-violet-500 rounded-lg p-1">
-        <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" decoding="async" fetchpriority="high"
+        <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" width="160" height="40" decoding="async" fetchpriority="high"
           class="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
       </a>
 
@@ -379,6 +358,9 @@
       </div>
     </div>
   </header>
+
+  <!-- MAIN LANDMARK (ACCESSIBILITY 100) -->
+  <main id="main-content">
 
   <!-- ==========================================
        1. HERO SECTION (WITH INTERACTIVE SPEC TABS)
@@ -1402,6 +1384,8 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ==========================================
        9. RODAPÉ (FOOTER - WITH BOTH PARTNER PHONES)
   =========================================== -->
@@ -1494,7 +1478,7 @@
       </div>
 
       <!-- Copyright Bottom Bar -->
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400">
         <p>&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
         <p class="flex items-center gap-1">
           Engenharia digital com <i data-lucide="shield" class="w-3.5 h-3.5 text-violet-500"></i> e alta performance.
