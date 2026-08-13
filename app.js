@@ -1,6 +1,9 @@
 // Duo Studio - Interactive Application Logic & Case Study Engine
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (window.lucide) {
+    lucide.createIcons();
+  }
   initNavbarScroll();
   initMobileMenu();
   initScrollReveal();
