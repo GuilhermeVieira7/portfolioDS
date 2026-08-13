@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /generate-favicons.ps1
 
 Sitemap: https://somosduostudio.com.br/sitemap.xml
