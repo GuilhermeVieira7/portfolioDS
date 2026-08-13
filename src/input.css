@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #0B0B0B;
+  --color-card-dark: #121217;
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-indigo-brand: #4F46E5;
+  --color-violet-brand: #7C3AED;
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Sora', sans-serif;
+}

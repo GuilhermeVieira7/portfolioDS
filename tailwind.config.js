@@ -1,0 +1,21 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./*.html', './app.js'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        brandDark: '#0B0B0B',
+        cardDark: '#121217',
+        cardBorder: 'rgba(255, 255, 255, 0.08)',
+        indigoBrand: '#4F46E5',
+        violetBrand: '#7C3AED',
+      },
+      fontFamily: {
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
+        heading: ['Sora', 'sans-serif'],
+      }
+    }
+  },
+  plugins: [],
+}

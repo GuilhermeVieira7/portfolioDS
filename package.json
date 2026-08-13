@@ -4,6 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "build:css": "npx @tailwindcss/cli -i src/input.css -o dist/tailwind.css --minify",
+    "dev:css": "npx @tailwindcss/cli -i src/input.css -o dist/tailwind.css --watch",
+    "build": "npm run build:css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/GuilhermeVieira7/portfolioDS/issues"
   },
-  "homepage": "https://github.com/GuilhermeVieira7/portfolioDS#readme"
+  "homepage": "https://github.com/GuilhermeVieira7/portfolioDS#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
 }
