@@ -432,7 +432,9 @@ class DuoI18nEngine {
 
   getTranslation(key) {
     const langDict = duoTranslations[this.currentLang] || duoTranslations.pt;
-    return langDict[key] || duoTranslations.pt[key] || key;
+    if (langDict && langDict[key] !== undefined) return langDict[key];
+    if (duoTranslations.pt && duoTranslations.pt[key] !== undefined) return duoTranslations.pt[key];
+    return null;
   }
 
   setLanguage(lang) {
@@ -452,7 +454,7 @@ class DuoI18nEngine {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       const translation = this.getTranslation(key);
-      if (translation) {
+      if (translation !== null) {
         el.textContent = translation;
       }
     });
@@ -461,7 +463,7 @@ class DuoI18nEngine {
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
       const key = el.getAttribute('data-i18n-html');
       const translation = this.getTranslation(key);
-      if (translation) {
+      if (translation !== null) {
         el.innerHTML = translation;
       }
     });
@@ -470,13 +472,18 @@ class DuoI18nEngine {
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
       const key = el.getAttribute('data-i18n-placeholder');
       const translation = this.getTranslation(key);
-      if (translation) {
+      if (translation !== null) {
         el.setAttribute('placeholder', translation);
       }
     });
 
     // 4. Update language toggle button UI states
     this.updateToggleUI();
+
+    // 5. Re-render Lucide icons
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
   }
 
   updateToggleUI() {

@@ -536,7 +536,7 @@ function initHeroTabs() {
 
     displayTitle.textContent = data.title;
     displaySubtitle.textContent = data.subtitle;
-    if (displayMetricMain) displayMetricMain.innerHTML = data.metricMain;
+    if (displayMetricMain) displayMetricMain.textContent = data.metricMain;
     if (displayMetricDesc) displayMetricDesc.textContent = data.metricDesc;
     if (displayTag) displayTag.textContent = data.tag;
     if (displayBadge1) displayBadge1.textContent = data.badge1Value;
