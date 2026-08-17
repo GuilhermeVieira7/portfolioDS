@@ -78,13 +78,12 @@ function initMobileMenu() {
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
 
-  // Ativa imediatamente elementos que já estão no topo/viewport no carregamento inicial
+  // Garante que 100% dos elementos .reveal recebam a classe active imediatamente
   revealElements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      el.classList.add('active');
-    }
+    el.classList.add('active');
   });
+
+  if (!('IntersectionObserver' in window)) return;
 
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -94,8 +93,8 @@ function initScrollReveal() {
     });
   }, {
     root: null,
-    threshold: 0.01,
-    rootMargin: '50px 0px 50px 0px'
+    threshold: 0,
+    rootMargin: '100px 0px 100px 0px'
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
