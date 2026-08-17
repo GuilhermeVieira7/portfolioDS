@@ -78,6 +78,14 @@ function initMobileMenu() {
 function initScrollReveal() {
   const revealElements = document.querySelectorAll('.reveal');
 
+  // Ativa imediatamente elementos que já estão no topo/viewport no carregamento inicial
+  revealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('active');
+    }
+  });
+
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -86,8 +94,8 @@ function initScrollReveal() {
     });
   }, {
     root: null,
-    threshold: 0.05,
-    rootMargin: '0px 0px -20px 0px'
+    threshold: 0.01,
+    rootMargin: '50px 0px 50px 0px'
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
