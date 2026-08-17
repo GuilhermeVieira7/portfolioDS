@@ -139,40 +139,80 @@ function initPortfolioFilters() {
 ---------------------------------------------------- */
 const projectData = {
   "1": {
-    title: "Angatu Viagens — Turismo de Luxo & Reservas",
-    category: "Plataforma de Viagens & Landing Page Premium",
-    client: "Angatu Viagens",
-    year: "2026",
-    liveUrl: "https://angatuviagens-eu.vercel.app/",
-    problem: "A Angatu Viagens precisava de uma presença digital de altíssimo padrão para comunicar exclusividade, apresentar pacotes sazonais de viagem e eliminar a fricção na captação de clientes interessados em roteiros turísticos de alto ticket.",
-    objective: "Desenvolver uma plataforma imersiva com navegação mobile-first perfeita, vitrine de ofertas sazonais e integração direta com atendimento consultivo via WhatsApp.",
-    desc: "Projetamos um ecossistema visual minimalista focado em fotografia de alta definição, pacotes com datas confirmadas e canal direto para consultores de viagem.",
-    highlights: [
-      "Jornada do usuário focada em conversão em até 2 cliques",
-      "Vitrine interativa de destinos (Rio, Gramado, Santiago, Cancún)",
-      "Animações fluidas a 60fps com tempo de carregamento < 0.9s",
-      "Integração nativa com atendimento via WhatsApp Business (+180% agendamentos)"
-    ],
-    techs: ["Next.js", "Tailwind CSS", "TypeScript", "Lucide Icons", "Framer Motion", "Vercel Edge Network"],
-    image: "assets/projects/angatu.webp?v=4"
+    pt: {
+      title: "Angatu Viagens — Turismo de Luxo & Reservas",
+      category: "Plataforma de Viagens & Landing Page Premium",
+      client: "Angatu Viagens",
+      year: "2026",
+      liveUrl: "https://angatuviagens-eu.vercel.app/",
+      problem: "A Angatu Viagens precisava de uma presença digital de altíssimo padrão para comunicar exclusividade, apresentar pacotes sazonais de viagem e eliminar a fricção na captação de clientes interessados em roteiros turísticos de alto ticket.",
+      objective: "Desenvolver uma plataforma imersiva com navegação mobile-first perfeita, vitrine de ofertas sazonais e integração direta com atendimento consultivo via WhatsApp.",
+      desc: "Projetamos um ecossistema visual minimalista focado em fotografia de alta definição, pacotes com datas confirmadas e canal direto para consultores de viagem.",
+      highlights: [
+        "Jornada do usuário focada em conversão em até 2 cliques",
+        "Vitrine interativa de destinos (Rio, Gramado, Santiago, Cancún)",
+        "Animações fluidas a 60fps com tempo de carregamento < 0.9s",
+        "Integração nativa com atendimento via WhatsApp Business (+180% agendamentos)"
+      ],
+      techs: ["Next.js", "Tailwind CSS", "TypeScript", "Lucide Icons", "Framer Motion", "Vercel Edge Network"],
+      image: "assets/projects/angatu.webp?v=4"
+    },
+    en: {
+      title: "Angatu Viagens — Luxury Travel & Bookings",
+      category: "Travel Platform & Premium Landing Page",
+      client: "Angatu Viagens",
+      year: "2026",
+      liveUrl: "https://angatuviagens-eu.vercel.app/",
+      problem: "Angatu Viagens required an ultra-high-standard digital presence to convey exclusivity, display seasonal travel packages, and eliminate friction when capturing leads interested in high-ticket travel itineraries.",
+      objective: "Develop an immersive platform with perfect mobile-first navigation, a seasonal offer showcase, and direct WhatsApp advisory integration.",
+      desc: "We designed a minimalist visual ecosystem focusing on high-definition imagery, confirmed date packages, and direct advisory channels.",
+      highlights: [
+        "User journey focused on conversion within 2 clicks",
+        "Interactive destination showcase (Rio, Gramado, Santiago, Cancún)",
+        "60fps smooth animations with loading time < 0.9s",
+        "Native WhatsApp Business advisory integration (+180% bookings)"
+      ],
+      techs: ["Next.js", "Tailwind CSS", "TypeScript", "Lucide Icons", "Framer Motion", "Vercel Edge Network"],
+      image: "assets/projects/angatu.webp?v=4"
+    }
   },
   "2": {
-    title: "LabPrime Toxicológico — Laboratório Clínico",
-    category: "Portal Clínico & Captação de Agendamentos",
-    client: "LabPrime Toxicológico",
-    year: "2026",
-    liveUrl: "https://labprime.vercel.app/",
-    problem: "Motoristas profissionais e candidatos a concursos públicos precisavam de laudos toxicológicos com urgência, mas encontravam dificuldade de agendamento e dúvidas sobre a conformidade técnica com o DETRAN e CLT.",
-    objective: "Criar uma plataforma limpa, transparente e acessível que explicasse todo o processo em 4 passos e facilitasse a coleta agendada.",
-    desc: "Estruturamos um portal clínico com foco em clareza institucional, SEO local para Parauapebas/PA e respostas diretas para as principais dúvidas dos pacientes.",
-    highlights: [
-      "Processo em 4 passos (Agendamento, Atendimento, Coleta e Resultado)",
-      "Otimização para SEO Local com Schema.org MedicalClinic",
-      "Experiência mobile-first focada em motoristas CNH C, D e E",
-      "Respostas diretas de dúvidas frequentes com carregamento instantâneo LCP < 0.8s"
-    ],
-    techs: ["Next.js", "Tailwind CSS", "TypeScript", "JSON-LD Schema", "Vercel Analytics"],
-    image: "assets/projects/labprime.webp?v=4"
+    pt: {
+      title: "LabPrime Toxicológico — Laboratório Clínico",
+      category: "Portal Clínico & Captação de Agendamentos",
+      client: "LabPrime Toxicológico",
+      year: "2026",
+      liveUrl: "https://labprime.vercel.app/",
+      problem: "Motoristas profissionais e candidatos a concursos públicos precisavam de laudos toxicológicos com urgência, mas encontravam dificuldade de agendamento e dúvidas sobre a conformidade técnica com o DETRAN e CLT.",
+      objective: "Criar uma plataforma limpa, transparente e acessível que explicasse todo o processo em 4 passos e facilitasse a coleta agendada.",
+      desc: "Estruturamos um portal clínico com foco em clareza institucional, SEO local para Parauapebas/PA e respostas diretas para as principais dúvidas dos pacientes.",
+      highlights: [
+        "Processo em 4 passos (Agendamento, Atendimento, Coleta e Resultado)",
+        "Otimização para SEO Local com Schema.org MedicalClinic",
+        "Experiência mobile-first focada em motoristas CNH C, D e E",
+        "Respostas diretas de dúvidas frequentes com carregamento instantâneo LCP < 0.8s"
+      ],
+      techs: ["Next.js", "Tailwind CSS", "TypeScript", "JSON-LD Schema", "Vercel Analytics"],
+      image: "assets/projects/labprime.webp?v=4"
+    },
+    en: {
+      title: "LabPrime Toxicological — Clinical Laboratory",
+      category: "Clinical Portal & Appointment Booking",
+      client: "LabPrime Toxicological",
+      year: "2026",
+      liveUrl: "https://labprime.vercel.app/",
+      problem: "Professional drivers and public service applicants urgently needed toxicological test results, but faced scheduling friction and doubts regarding regulatory compliance.",
+      objective: "Create a clean, transparent, and accessible platform explaining the 4-step process and facilitating scheduled sample collections.",
+      desc: "We structured a clinical portal focusing on institutional clarity, local SEO for Parauapebas/PA, and direct answers to patient questions.",
+      highlights: [
+        "4-step process (Scheduling, Consultation, Sample Collection, Results)",
+        "Local SEO optimization with Schema.org MedicalClinic metadata",
+        "Mobile-first experience optimized for commercial drivers",
+        "Direct FAQ responses with instant loading LCP < 0.8s"
+      ],
+      techs: ["Next.js", "Tailwind CSS", "TypeScript", "JSON-LD Schema", "Vercel Analytics"],
+      image: "assets/projects/labprime.webp?v=4"
+    }
   }
 };
 
@@ -251,48 +291,6 @@ function initModals() {
 
 function openCaseStudyModal(projectId) {
   const projectModal = document.getElementById('project-modal');
-  const data = projectData[projectId];
-  if (data && projectModal) {
-    document.getElementById('pm-title').textContent = data.title;
-    document.getElementById('pm-category').textContent = data.category;
-    document.getElementById('pm-client').textContent = data.client;
-    document.getElementById('pm-year').textContent = data.year;
-    document.getElementById('pm-desc').textContent = data.desc;
-    document.getElementById('pm-problem').textContent = data.problem;
-    document.getElementById('pm-objective').textContent = data.objective;
-    document.getElementById('pm-image').src = data.image;
-
-    const liveLink = document.getElementById('pm-live-link');
-    if (liveLink && data.liveUrl) {
-      liveLink.setAttribute('href', data.liveUrl);
-      liveLink.setAttribute('target', '_blank');
-      liveLink.setAttribute('rel', 'noopener noreferrer');
-      liveLink.style.display = 'inline-flex';
-    } else if (liveLink) {
-      liveLink.style.display = 'none';
-    }
-
-    const highlightsList = document.getElementById('pm-highlights');
-    highlightsList.innerHTML = '';
-    data.highlights.forEach(h => {
-      const li = document.createElement('li');
-      li.className = 'flex items-start gap-2.5 text-xs text-gray-300';
-      li.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-violet-400 shrink-0 mt-0.5"></i> <span>${h}</span>`;
-      highlightsList.appendChild(li);
-    });
-
-    const techContainer = document.getElementById('pm-techs');
-    techContainer.innerHTML = '';
-    data.techs.forEach(t => {
-      const span = document.createElement('span');
-      span.className = 'px-3 py-1 bg-violet-500/10 border border-violet-500/20 text-violet-300 rounded-full text-xs font-medium';
-      span.textContent = t;
-      techContainer.appendChild(span);
-    });
-
-    if (window.lucide) lucide.createIcons();
-
-    projectModal.classList.remove('hidden');
     projectModal.classList.add('flex');
     document.body.style.overflow = 'hidden';
   }
@@ -455,59 +453,109 @@ function initHeroTabs() {
   if (!tabs.length || !displayTitle) return;
 
   const specData = {
-    "speed": {
-      title: "Arquitetura de Conversão & Velocidade",
-      subtitle: "Engenharia de Software de Alto Nível",
-      metricMain: "< 0.8s LCP",
-      metricDesc: "Carregamento imediato sem travamentos ou desistência de visitantes.",
-      tag: "Garantia Técnica",
-      badge1Label: "Metodologia",
-      badge1Value: "Clean Code & Next.js",
-      badge2Label: "Segurança",
-      badge2Value: "SSL & Proteção CDN"
+    pt: {
+      "speed": {
+        title: "Arquitetura de Conversão & Velocidade",
+        subtitle: "Engenharia de Software de Alto Nível",
+        metricMain: "< 0.8s LCP",
+        metricDesc: "Carregamento imediato sem travamentos ou desistência de visitantes.",
+        tag: "Garantia Técnica",
+        badge1Label: "Metodologia",
+        badge1Value: "Clean Code & Next.js",
+        badge2Label: "Segurança",
+        badge2Value: "SSL & Proteção CDN"
+      },
+      "ux": {
+        title: "Design Persuasivo & UX Reduzido",
+        subtitle: "Jornada Direcionada à Venda",
+        metricMain: "2-Clicks CTA",
+        metricDesc: "Eliminação total de atritos de navegação para maximizar o número de leads.",
+        tag: "Alta Retenção",
+        badge1Label: "Copywriting",
+        badge1Value: "Quebra de Objeções",
+        badge2Label: "Responsividade",
+        badge2Value: "Mobile-First Nativo"
+      },
+      "seo": {
+        title: "SEO Técnico & Schema.org Estruturado",
+        subtitle: "Posicionamento Prioritário no Google",
+        metricMain: "100/100 Core Vitals",
+        metricDesc: "Código estruturado em semântica completa para rankeamento orgânico constante.",
+        tag: "Aprovação Google",
+        badge1Label: "Metadados",
+        badge1Value: "JSON-LD & OpenGraph",
+        badge2Label: "Indexação",
+        badge2Value: "Instantânea pelo Googlebot"
+      }
     },
-    "ux": {
-      title: "Design Persuasivo & UX Reduzido",
-      subtitle: "Jornada Direcionada à Venda",
-      metricMain: "2-Clicks CTA",
-      metricDesc: "Eliminação total de atritos de navegação para maximizar o número de leads.",
-      tag: "Alta Retenção",
-      badge1Label: "Copywriting",
-      badge1Value: "Quebra de Objeções",
-      badge2Label: "Responsividade",
-      badge2Value: "Mobile-First Nativo"
-    },
-    "seo": {
-      title: "SEO Técnico & Schema.org Estruturado",
-      subtitle: "Posicionamento Prioritário no Google",
-      metricMain: "100/100 Core Vitals",
-      metricDesc: "Código estruturado em semântica completa para rankeamento orgânico constante.",
-      tag: "Aprovação Google",
-      badge1Label: "Metadados",
-      badge1Value: "JSON-LD & OpenGraph",
-      badge2Label: "Indexação",
-      badge2Value: "Instantânea pelo Googlebot"
+    en: {
+      "speed": {
+        title: "Speed & Conversion Architecture",
+        subtitle: "High-End Software Engineering",
+        metricMain: "< 0.8s LCP",
+        metricDesc: "Instant loading without lag or visitor bounce.",
+        tag: "Technical Guarantee",
+        badge1Label: "Methodology",
+        badge1Value: "Clean Code & Next.js",
+        badge2Label: "Security",
+        badge2Value: "SSL & CDN Shield"
+      },
+      "ux": {
+        title: "Persuasive Design & Frictionless UX",
+        subtitle: "Sales-Driven User Journey",
+        metricMain: "2-Click CTA",
+        metricDesc: "Elimination of navigation friction to maximize lead conversion.",
+        tag: "High Retention",
+        badge1Label: "Copywriting",
+        badge1Value: "Objection Handling",
+        badge2Label: "Responsiveness",
+        badge2Value: "Native Mobile-First"
+      },
+      "seo": {
+        title: "Technical SEO & Structured Schema.org",
+        subtitle: "Top Google Ranking Priority",
+        metricMain: "100/100 Core Vitals",
+        metricDesc: "Semantic codebase structured for continuous organic search ranking.",
+        tag: "Google Verified",
+        badge1Label: "Metadata",
+        badge1Value: "JSON-LD & OpenGraph",
+        badge2Label: "Indexing",
+        badge2Value: "Instant Googlebot Crawl"
+      }
     }
   };
+
+  function updateActiveTab() {
+    const activeTab = document.querySelector('.hero-tab-btn.active') || tabs[0];
+    const target = activeTab.getAttribute('data-tab');
+    const currentLang = window.duoI18n ? window.duoI18n.currentLang : 'pt';
+    const langDict = specData[currentLang] || specData.pt;
+    const data = langDict[target] || langDict.speed;
+
+    if (!data) return;
+
+    displayTitle.textContent = data.title;
+    displaySubtitle.textContent = data.subtitle;
+    if (displayMetricMain) displayMetricMain.innerHTML = data.metricMain;
+    if (displayMetricDesc) displayMetricDesc.textContent = data.metricDesc;
+    if (displayTag) displayTag.textContent = data.tag;
+    if (displayBadge1) displayBadge1.textContent = data.badge1Value;
+    if (displayBadge2) displayBadge2.textContent = data.badge2Value;
+  }
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
-
-      const target = tab.getAttribute('data-tab');
-      const data = specData[target];
-      if (!data) return;
-
-      displayTitle.textContent = data.title;
-      displaySubtitle.textContent = data.subtitle;
-      if (displayMetricMain) displayMetricMain.innerHTML = data.metricMain;
-      if (displayMetricDesc) displayMetricDesc.textContent = data.metricDesc;
-      if (displayTag) displayTag.textContent = data.tag;
-      if (displayBadge1) displayBadge1.textContent = data.badge1Value;
-      if (displayBadge2) displayBadge2.textContent = data.badge2Value;
+      updateActiveTab();
     });
   });
+
+  window.addEventListener('duoLanguageChanged', () => {
+    updateActiveTab();
+  });
+
+  updateActiveTab();
 }
 
 /* ----------------------------------------------------

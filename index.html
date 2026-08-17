@@ -25,11 +25,6 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Duo Studio - Engenharia Digital & Websites de Alta Conversão">
-  <meta property="og:image" content="https://somosduostudio.com.br/assets/og-image.webp">
-  <meta property="og:image:secure_url" content="https://somosduostudio.com.br/assets/og-image.webp">
-  <meta property="og:image:type" content="image/webp">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Duo Studio">
 
@@ -330,19 +325,29 @@
 
       <!-- Desktop Navigation Links -->
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-        <a href="index.html" class="text-white font-semibold py-1">Início</a>
-        <a href="sobre.html" class="hover:text-white transition-colors py-1">Sobre</a>
-        <a href="servicos.html" class="hover:text-white transition-colors py-1">Soluções</a>
-        <a href="portfolio.html" class="hover:text-white transition-colors py-1">Portfólio</a>
-        <a href="blog.html" class="hover:text-white transition-colors py-1">Blog</a>
-        <a href="contato.html" class="hover:text-white transition-colors py-1">Contato</a>
+        <a href="index.html" class="text-white font-semibold py-1" data-i18n="nav.home">Início</a>
+        <a href="sobre.html" class="hover:text-white transition-colors py-1" data-i18n="nav.about">Sobre</a>
+        <a href="servicos.html" class="hover:text-white transition-colors py-1" data-i18n="nav.solutions">Soluções</a>
+        <a href="portfolio.html" class="hover:text-white transition-colors py-1" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="blog.html" class="hover:text-white transition-colors py-1" data-i18n="nav.blog">Blog</a>
+        <a href="contato.html" class="hover:text-white transition-colors py-1" data-i18n="nav.contact">Contato</a>
       </nav>
 
-      <!-- Desktop Call-to-Action Button -->
+      <!-- Desktop Call-to-Action Button & Language Switcher -->
       <div class="hidden md:flex items-center gap-4">
+        <!-- Language Switcher Pill -->
+        <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-[11px] font-semibold">
+          <button data-lang-val="pt" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
+            <span>🇧🇷</span> <span>PT</span>
+          </button>
+          <button data-lang-val="en" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
+            <span>🇺🇸</span> <span>EN</span>
+          </button>
+        </div>
+
         <a href="#contato"
           class="open-budget-modal btn-gradient btn-magnetic px-5 py-2.5 rounded-full text-xs font-semibold text-white tracking-wide shadow-lg shadow-violet-600/20 hover:shadow-violet-600/40 transition-all flex items-center gap-2">
-          <span>Agendar reunião estratégica</span>
+          <span data-i18n="nav.schedule_cta">Agendar reunião estratégica</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
       </div>
@@ -360,20 +365,33 @@
     <div id="mobile-menu"
       class="hidden md:hidden px-4 pt-4 pb-6 bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-white/10 mt-3 transition-all duration-300">
       <div class="flex flex-col gap-4 text-base font-medium">
-        <a href="index.html" class="mobile-nav-link text-white font-semibold py-2 border-b border-white/5">Início</a>
-        <a href="sobre.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Sobre</a>
-        <a href="servicos.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Soluções</a>
-        <a href="portfolio.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Portfólio</a>
-        <a href="blog.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Blog</a>
-        <a href="contato.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Contato</a>
+        <!-- Language Toggle Mobile -->
+        <div class="flex items-center justify-between py-2 border-b border-white/5 text-gray-300">
+          <span class="text-xs uppercase font-medium text-gray-400">Idioma / Language</span>
+          <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-xs font-semibold">
+            <button data-lang-val="pt" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
+              <span>🇧🇷</span> <span>PT</span>
+            </button>
+            <button data-lang-val="en" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
+              <span>🇺🇸</span> <span>EN</span>
+            </button>
+          </div>
+        </div>
+
+        <a href="index.html" class="mobile-nav-link text-white font-semibold py-2 border-b border-white/5" data-i18n="nav.home">Início</a>
+        <a href="sobre.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.about">Sobre</a>
+        <a href="servicos.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.solutions">Soluções</a>
+        <a href="portfolio.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="blog.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.blog">Blog</a>
+        <a href="contato.html" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.contact">Contato</a>
         <a href="#depoimentos"
-          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Depoimentos</a>
+          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.testimonials">Depoimentos</a>
         <a href="#processo"
-          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Engenharia</a>
-        <a href="#faq" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5">Dúvidas</a>
+          class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.engineering">Engenharia</a>
+        <a href="#faq" class="mobile-nav-link text-gray-300 hover:text-white py-2 border-b border-white/5" data-i18n="nav.faq">Dúvidas</a>
         <button
           class="open-budget-modal btn-gradient w-full py-3 rounded-xl text-sm font-semibold text-white mt-2 flex items-center justify-center gap-2">
-          <span>Agendar reunião estratégica</span>
+          <span data-i18n="nav.schedule_cta">Agendar reunião estratégica</span>
           <i data-lucide="sparkles" class="w-4 h-4"></i>
         </button>
       </div>
@@ -397,18 +415,20 @@
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
           </span>
-          <span>Engenharia de Software & Arquitetura UX de Alta Velocidade</span>
+          <span data-i18n="hero.tech_badge">Engenharia de Software & Arquitetura UX de Alta Velocidade</span>
         </div>
 
         <!-- Headline focused on Business Transformation -->
         <h1
-          class="font-heading font-extrabold text-4xl sm:text-6xl md:text-7xl tracking-tight leading-[1.1] mb-8 text-white">
+          class="font-heading font-extrabold text-4xl sm:text-6xl md:text-7xl tracking-tight leading-[1.1] mb-8 text-white"
+          data-i18n-html="hero.title_html">
           Construímos sites que <br class="hidden sm:inline" />
           <span class="text-gradient-brand">aceleram vendas e geram valor.</span>
         </h1>
 
         <!-- Subtitle focused on ROI and Authority -->
-        <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+        <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal"
+          data-i18n="hero.subtitle">
           Desenvolvimento web sob medida, performance extrema e estratégia de conversão para empresas que se recusam a
           parecer genéricas no mercado.
         </p>
@@ -417,13 +437,13 @@
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
           <button
             class="open-budget-modal btn-magnetic w-full sm:w-auto btn-gradient px-8 py-4 rounded-full text-sm font-semibold text-white shadow-xl shadow-violet-600/25 flex items-center justify-center gap-3">
-            <span>Solicitar proposta comercial</span>
+            <span data-i18n="hero.cta_proposal">Solicitar proposta comercial</span>
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </button>
 
           <a href="#portfolio"
             class="w-full sm:w-auto px-8 py-4 rounded-full text-sm font-semibold text-gray-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all flex items-center justify-center gap-2">
-            <span>Ver projetos reais</span>
+            <span data-i18n="hero.cta_projects">Ver projetos reais</span>
             <i data-lucide="eye" class="w-4 h-4 text-violet-400"></i>
           </a>
         </div>
@@ -450,11 +470,11 @@
 
             <!-- Hero Interactive Mode Selector Tabs -->
             <div class="flex items-center gap-1.5 bg-white/5 p-1 rounded-xl border border-white/5 text-[11px]">
-              <button class="hero-tab-btn active px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="speed">⚡
+              <button class="hero-tab-btn active px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="speed" data-i18n="hero.tab_speed">⚡
                 Velocidade</button>
-              <button class="hero-tab-btn px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="ux">🎯 Conversão
+              <button class="hero-tab-btn px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="ux" data-i18n="hero.tab_ux">🎯 Conversão
                 UX</button>
-              <button class="hero-tab-btn px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="seo">🔍 SEO
+              <button class="hero-tab-btn px-3 py-1 rounded-lg text-gray-300 font-medium" data-tab="seo" data-i18n="hero.tab_seo">🔍 SEO
                 100/100</button>
             </div>
           </div>
@@ -1841,6 +1861,7 @@
       }
     });
   </script>
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 
