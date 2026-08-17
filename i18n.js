@@ -180,6 +180,8 @@ const duoTranslations = {
     "about.hero_badge": "Quem Somos & Nossa Filosofia",
     "about.hero_title_html": "Recusamo-nos a criar <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">sites genéricos e lentos.</span>",
     "about.hero_desc": "A Duo Studio nasce com o propósito claro de tratar o site corporativo como o ativo mais rentável de uma empresa no digital.",
+    "about.pillar3_title": "Transparência & Contrato",
+    "about.pillar3_desc": "Cronogramas cravados em contrato formal. Todo o código-fonte é entregue 100% ao cliente, sem mensalidades ocultas sobre a propriedade do projeto.",
 
     "port.hero_badge": "Estudos de Caso & Trabalhos Autorais",
     "port.hero_title_html": "Projetos reais criados para <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">dominar o mercado digital.</span>",
@@ -190,8 +192,25 @@ const duoTranslations = {
     "port.cta_desc": "Desenvolvemos o projeto ideal para suas metas de vendas.",
     "port.cta_btn": "Iniciar Novo Projeto",
 
+    "contact.hero_badge": "Atendimento Direto com os Sócios",
     "contact.title_html": "Fale Conosco & <span class=\"text-gradient-brand\">Agende sua Reunião</span>",
     "contact.desc": "Estamos prontos para entender seu momento de negócio e desenhar a arquitetura web ideal para escalar suas vendas.",
+    "contact.wa1_tag": "WhatsApp Sócio 1",
+    "contact.wa1_desc": "Atendimento rápido para projetos comerciais e orçamentos.",
+    "contact.wa2_tag": "WhatsApp Sócio 2",
+    "contact.wa2_desc": "Atendimento direto para parcerias e alinhamentos de engenharia.",
+    "contact.form_title": "Ou envie sua mensagem diretamente",
+    "contact.form_subtitle": "Responderemos em no máximo 2 horas úteis.",
+    "contact.form_name_label": "Seu Nome / Empresa *",
+    "contact.form_name_ph": "Ex: João da Silva",
+    "contact.form_msg_label": "Mensagem ou Descrição do Projeto *",
+    "contact.form_msg_ph": "Conte brevemente sobre o seu projeto...",
+    "contact.form_btn": "Iniciar Conversa no WhatsApp",
+
+    "blog.hero_badge": "Conhecimento & Engenharia Digital",
+    "blog.hero_title_html": "Estratégia, SEO e conversão <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">para impulsionar seu negócio.</span>",
+    "blog.hero_desc": "Artigos diretos ao ponto desenvolvidos pelos especialistas da Duo Studio.",
+    "blog.read_article": "Ler artigo completo",
 
     // Modals
     "modal.budget_title": "Agendar Reunião Estratégica",
@@ -394,6 +413,8 @@ const duoTranslations = {
     "about.hero_badge": "Who We Are & Our Philosophy",
     "about.hero_title_html": "We refuse to create <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">generic and slow websites.</span>",
     "about.hero_desc": "Duo Studio was founded with a clear mission: treating corporate websites as a business's most profitable digital asset.",
+    "about.pillar3_title": "Transparency & Contracts",
+    "about.pillar3_desc": "Milestones defined in formal contracts. 100% of source code handed over to you with zero recurring ownership fees.",
 
     "port.hero_badge": "Case Studies & Custom Works",
     "port.hero_title_html": "Real projects built to <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">dominate the digital market.</span>",
@@ -404,8 +425,25 @@ const duoTranslations = {
     "port.cta_desc": "We engineer the ideal project for your revenue goals.",
     "port.cta_btn": "Start New Project",
 
+    "contact.hero_badge": "Direct Founder Access",
     "contact.title_html": "Get in Touch & <span class=\"text-gradient-brand\">Book a Consultation</span>",
     "contact.desc": "We are ready to understand your business goals and architect the ideal web platform to scale your sales.",
+    "contact.wa1_tag": "Co-Founder WhatsApp 1",
+    "contact.wa1_desc": "Fast service for commercial proposals and quotes.",
+    "contact.wa2_tag": "Co-Founder WhatsApp 2",
+    "contact.wa2_desc": "Direct line for partnerships and engineering alignment.",
+    "contact.form_title": "Or Send Your Message Directly",
+    "contact.form_subtitle": "We respond within 2 business hours max.",
+    "contact.form_name_label": "Your Name / Company *",
+    "contact.form_name_ph": "Ex: John Doe",
+    "contact.form_msg_label": "Message or Project Brief *",
+    "contact.form_msg_ph": "Briefly describe your project...",
+    "contact.form_btn": "Start WhatsApp Conversation",
+
+    "blog.hero_badge": "Knowledge & Digital Engineering",
+    "blog.hero_title_html": "Strategy, SEO & conversion <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">to boost your business.</span>",
+    "blog.hero_desc": "Actionable insights written by Duo Studio web engineering experts.",
+    "blog.read_article": "Read Full Article",
 
     // Modals
     "modal.budget_title": "Schedule Strategic Meeting",
@@ -537,6 +575,16 @@ class DuoI18nEngine {
 // Instantiate and attach to window
 window.duoI18n = new DuoI18nEngine();
 
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
   window.duoI18n.init();
+} else {
+  document.addEventListener('DOMContentLoaded', () => {
+    window.duoI18n.init();
+  });
+}
+
+window.addEventListener('load', () => {
+  if (window.duoI18n) {
+    window.duoI18n.applyLanguage(window.duoI18n.currentLang);
+  }
 });

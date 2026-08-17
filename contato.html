@@ -159,7 +159,7 @@
   <section class="relative pt-36 pb-16 md:pt-44 md:pb-24 z-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
       <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-6">
-        <span data-i18n="manifesto.yes_3_html">Atendimento Direto com os Sócios</span>
+        <span data-i18n="contact.hero_badge">Atendimento Direto com os Sócios</span>
       </div>
       <h1 class="font-heading font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-tight mb-6" data-i18n-html="contact.title_html">
         Fale Conosco & <span class="text-gradient-brand">Agende sua Reunião</span>
@@ -179,9 +179,9 @@
           <i data-lucide="message-circle" class="w-7 h-7"></i>
         </div>
         <div>
-          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">WhatsApp Sócio 1</span>
+          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1" data-i18n="contact.wa1_tag">WhatsApp Sócio 1</span>
           <h3 class="font-heading font-bold text-xl text-white mb-1">+55 (94) 99909-9386</h3>
-          <p class="text-xs text-gray-400">Atendimento rápido para projetos comerciais e orçamentos.</p>
+          <p class="text-xs text-gray-400" data-i18n="contact.wa1_desc">Atendimento rápido para projetos comerciais e orçamentos.</p>
         </div>
       </a>
 
@@ -190,9 +190,9 @@
           <i data-lucide="phone" class="w-7 h-7"></i>
         </div>
         <div>
-          <span class="text-xs font-semibold text-violet-400 uppercase tracking-wider block mb-1">WhatsApp Sócio 2</span>
+          <span class="text-xs font-semibold text-violet-400 uppercase tracking-wider block mb-1" data-i18n="contact.wa2_tag">WhatsApp Sócio 2</span>
           <h3 class="font-heading font-bold text-xl text-white mb-1">+55 (94) 99281-1658</h3>
-          <p class="text-xs text-gray-400">Atendimento direto para parcerias e alinhamentos de engenharia.</p>
+          <p class="text-xs text-gray-400" data-i18n="contact.wa2_desc">Atendimento direto para parcerias e alinhamentos de engenharia.</p>
         </div>
       </a>
 
@@ -203,20 +203,20 @@
   <section class="py-12 relative z-10">
     <div class="max-w-3xl mx-auto px-4">
       <div class="glass-card p-8 sm:p-12 rounded-3xl border border-white/10">
-        <h3 class="font-heading font-bold text-2xl text-white mb-2 text-center">Ou envie sua mensagem diretamente</h3>
-        <p class="text-xs text-gray-400 text-center mb-8">Responderemos em no máximo 2 horas úteis.</p>
+        <h3 class="font-heading font-bold text-2xl text-white mb-2 text-center" data-i18n="contact.form_title">Ou envie sua mensagem diretamente</h3>
+        <p class="text-xs text-gray-400 text-center mb-8" data-i18n="contact.form_subtitle">Responderemos em no máximo 2 horas úteis.</p>
 
         <form onsubmit="event.preventDefault(); window.location.href='https://wa.me/5594999099386?text=Ol%C3%A1!%20Meu%20nome%20%C3%A9%20'+encodeURIComponent(document.getElementById('c-name').value)+'.%20Mensagem:%20'+encodeURIComponent(document.getElementById('c-msg').value);" class="space-y-4">
           <div>
-            <label class="block text-xs font-semibold text-gray-300 mb-1">Seu Nome / Empresa *</label>
-            <input id="c-name" type="text" required placeholder="Ex: João da Silva" class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500">
+            <label class="block text-xs font-semibold text-gray-300 mb-1" data-i18n="contact.form_name_label">Seu Nome / Empresa *</label>
+            <input id="c-name" type="text" required placeholder="Ex: João da Silva" data-i18n-placeholder="contact.form_name_ph" class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-gray-300 mb-1">Mensagem ou Descrição do Projeto *</label>
-            <textarea id="c-msg" rows="4" required placeholder="Conte brevemente sobre o seu projeto..." class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 resize-none"></textarea>
+            <label class="block text-xs font-semibold text-gray-300 mb-1" data-i18n="contact.form_msg_label">Mensagem ou Descrição do Projeto *</label>
+            <textarea id="c-msg" rows="4" required placeholder="Conte brevemente sobre o seu projeto..." data-i18n-placeholder="contact.form_msg_ph" class="w-full bg-[#0B0B0B] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-violet-500 resize-none"></textarea>
           </div>
           <button type="submit" class="btn-gradient w-full py-4 rounded-xl text-sm font-bold text-white flex items-center justify-center gap-2 shadow-lg">
-            <span>Iniciar Conversa no WhatsApp</span>
+            <span data-i18n="contact.form_btn">Iniciar Conversa no WhatsApp</span>
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
         </form>
