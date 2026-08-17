@@ -28,74 +28,46 @@ const duoTranslations = {
     "hero.tab_seo": "🔍 SEO 100/100",
     "hero.metric_title": "Métrica de Performance",
     "hero.guarantee_tag": "Garantia Técnica",
-    "hero.guarantee_subtag": "Padrão Internacional",
-    "hero.audited_title": "Auditado no Google Lighthouse",
-    "hero.audited_desc": "Pontuação 98+ em Performance, Acessibilidade e Melhores Práticas",
 
-    // Interactive Spec Tabs Data
-    "hero.tab_speed_metric": "< 0.8s LCP",
-    "hero.tab_speed_metric_desc": "Carregamento imediato sem travamentos ou desistência de visitantes.",
-    "hero.tab_speed_title": "Arquitetura de Conversão & Velocidade",
-    "hero.tab_speed_subtitle": "Engenharia de Software de Alto Nível",
-    "hero.tab_speed_detail": "Código nativo otimizado em Next.js/Vite sem plugins pesados do WordPress que travam o celular do seu cliente.",
+    // Posicionamento / Sobre nós na Home
+    "pos.badge": "Posicionamento de Negócio",
+    "pos.title_html": "Por que empresas sérias escolhem a <span class=\"text-gradient-brand\">Duo Studio?</span>",
+    "pos.p1": "A maioria dos sites corporativos sofre do mesmo problema: são templates lentos, genéricos e incapazes de transformar um visitante em uma oportunidade real de venda.",
+    "pos.p2": "Na Duo Studio, tratamos seu site como um ativo estratégico de vendas. Unimos psicologia de consumo, design de interface de classe mundial e código extremamente rápido para garantir que sua empresa domine a atenção do cliente e supere a concorrência.",
+    "pos.cta": "Conhecer nossas soluções",
+    "pos.card1_title": "Copywriting & Foco em Conversão",
+    "pos.card1_desc": "Mensagens estratégicas desenhadas para responder às objeções do seu cliente e motivá-lo a entrar em contato.",
+    "pos.card2_title": "Engenharia Sob Medida",
+    "pos.card2_desc": "Sem construtores pesados. Construímos a estrutura com tecnologias modernas para garantir rapidez e segurança.",
+    "pos.card3_title": "SEO & Preparação para Buscas",
+    "pos.card3_desc": "Estruturação completa de dados e metadados para que sua empresa seja encontrada com relevância no Google.",
 
-    "hero.tab_ux_metric": "+180% Conversão",
-    "hero.tab_ux_metric_desc": "Design intuitivo desenhado para guiar o cliente até a ação final.",
-    "hero.tab_ux_title": "Jornada do Usuário & Psicologia de Vendas",
-    "hero.tab_ux_subtitle": "UI/UX Estratégico",
-    "hero.tab_ux_detail": "Estrutura visual desenvolvida para eliminar dúvidas e direcionar a tomada de decisão com CTAs estratégicos.",
+    // Manifesto Section
+    "manifesto.badge": "Compromisso Inflexível com a Qualidade",
+    "manifesto.title_html": "O Manifesto <span class=\"text-gradient-brand\">Duo Studio</span>",
+    "manifesto.subtitle": "Recusamo-nos a aceitar os padrões medianos do mercado de desenvolvimento web. Existimos para criar ativos digitais de alta performance que geram valor real para empresas sérias.",
+    "manifesto.not_title": "O que NÃO fazemos",
+    "manifesto.not_1_html": "<strong>Sem Templates Prontos</strong>: Não usamos temas genéricos de WordPress ou Wix carregados de plugins que travam o celular.",
+    "manifesto.not_2_html": "<strong>Sem Aluguel de Código</strong>: Não prendemos sua empresa em mensalidades eternas de uso sobre o seu próprio site.",
+    "manifesto.not_3_html": "<strong>Sem Prazos Burocráticos</strong>: Não demoramos 60 dias para entregar um projeto que sua empresa precisa hoje.",
+    "manifesto.yes_title": "Nosso Padrão Inegociável",
+    "manifesto.yes_1_html": "<strong>Engenharia Autoral</strong>: Cada linha de código é construída com foco em velocidade sub-segundo (< 0.8s LCP).",
+    "manifesto.yes_2_html": "<strong>Propriedade 100% Sua</strong>: O código-fonte é entregue integralmente ao cliente após o lançamento.",
+    "manifesto.yes_3_html": "<strong>Atendimento com os Sócios</strong>: Comunicação direta com os desenvolvedores responsáveis pelo projeto.",
 
-    "hero.tab_seo_metric": "Top #1 Google",
-    "hero.tab_seo_metric_desc": "Indexação técnica perfeita e marcação de dados Schema.org.",
-    "hero.tab_seo_title": "Otimização Avançada para Mecanismos de Busca",
-    "hero.tab_seo_subtitle": "SEO Técnico Nativo",
-    "hero.tab_seo_detail": "Seu site posicionado no topo do Google para buscas de alto valor e clientes qualificados na sua região.",
-
-    // Metrics / Stats Bar
-    "stats.title_1": "Velocidade Média LCP",
-    "stats.desc_1": "Carregamento instantâneo",
-    "stats.title_2": "Projetos Entregues",
-    "stats.desc_2": "100% código autoral",
-    "stats.title_3": "Retorno sobre Investimento",
-    "stats.desc_3": "Clientes satisfeitos",
-    "stats.title_4": "Garantia de Entrega",
-    "stats.desc_4": "Sem prazos estourados",
-
-    // Solutions / Services Section
-    "solutions.badge": "Soluções Digitais sob Medida",
-    "solutions.title_html": "Engenharia web de alta performance para <span class=\"text-gradient-brand\">escala do seu negócio.</span>",
-    "solutions.subtitle": "Eliminamos a complexidade técnica e entregamos ecossistemas digitais robustos, rápidos e desenhados para gerar autoridade imediata.",
-    
-    "solutions.card1_badge": "Mais Solicitado",
-    "solutions.card1_title": "Landing Pages de Alta Conversão",
-    "solutions.card1_desc": "Páginas projetadas especificamente para campanhas de tráfego pago (Google Ads, Meta Ads) com foco em ROI máximo e captação de leads qualificados.",
-    "solutions.card1_feat1": "Arquitetura com foco em conversão direta",
-    "solutions.card1_feat2": "Carregamento instantâneo em redes 4G/5G",
-    "solutions.card1_feat3": "Integração nativa com WhatsApp e CRM",
-
-    "solutions.card2_badge": "Corporativo",
-    "solutions.card2_title": "Sites Institucionais de Elite",
-    "solutions.card2_desc": "Portais empresariais completos que posicionam sua marca no topo do mercado, transmitindo a solidez e a infraestrutura que grandes clientes exigem.",
-    "solutions.card2_feat1": "Design autoral e exclusivo (zero templates)",
-    "solutions.card2_feat2": "Páginas institucionais, serviços e equipe",
-    "solutions.card2_feat3": "Painel de controle amigável e expansível",
-
-    "solutions.card3_badge": "E-Commerce",
-    "solutions.card3_title": "Lojas Virtuais & Plataformas Web",
-    "solutions.card3_desc": "Sistemas de vendas online rápidos e seguros com checkout sem atrito, gestão simplificada de catálogo e alta taxa de retenção de clientes.",
-    "solutions.card3_feat1": "Checkout transparente com Pix e Cartão",
-    "solutions.card3_feat2": "Navegação mobile perfeita e intuitiva",
-    "solutions.card3_feat3": "SEO de produto e integração logística",
-
-    "solutions.card4_badge": "Consultoria",
-    "solutions.card4_title": "Redesign Estratégico & SEO Técnico",
-    "solutions.card4_desc": "Reformulação completa de sites antigos e lentos para padrões modernos de código, recuperando tráfego orgânico e multiplicando as vendas.",
-    "solutions.card4_feat1": "Auditoria profunda de performance e UX",
-    "solutions.card4_feat2": "Otimização de Core Web Vitals (Google)",
-    "solutions.card4_feat3": "Migração segura sem perda de posicionamento",
-
-    "solutions.cta": "Precisa de uma solução personalizada?",
-    "solutions.cta_btn": "Falar com nosso arquiteto web",
+    // Services / Solutions on Home
+    "serv.badge": "Soluções Orientadas a Resultados",
+    "serv.title_html": "Engenharia digital desenhada para <span class=\"text-gradient-brand\">gerar novos negócios.</span>",
+    "serv.subtitle": "Não vendemos apenas código ou layouts. Entregamos plataformas estruturadas para acelerar a aquisição de clientes.",
+    "serv.card1_title": "Gerar Mais Leads Qualificados",
+    "serv.card1_desc": "Landing Pages direcionadas para campanhas de tráfego pago. Estruturadas com copywriting persuasivo para converter visitantes em oportunidades reais de vendas.",
+    "serv.card1_tag": "Foco em ROI e Captação Direct-to-Sales",
+    "serv.card2_title": "Posicionar Sua Marca Com Autoridade",
+    "serv.card2_desc": "Sites institucionais sob medida que transmitem solidez técnica, valor de mercado e sofisticação imediata para grandes corporações e escritórios.",
+    "serv.card2_tag": "Arquitetura de Marca & Credibilidade",
+    "serv.card3_title": "Vender Produtos Sem Fricção",
+    "serv.card3_desc": "Lojas virtuais com tempo de resposta instantâneo, navegação simplificada e checkout otimizado para evitar abandonos de carrinho.",
+    "serv.card3_tag": "UX de Compra & Performance Mobile",
 
     // Portfolio Section
     "portfolio.badge": "Portfólio & Casos de Sucesso",
@@ -124,31 +96,12 @@ const duoTranslations = {
     "process.step4_title": "Lançamento & Otimização",
     "process.step4_desc": "Realizamos auditorias de segurança, otimização de velocidade, SEO técnico e colocamos seu ambiente no ar com acompanhamento contínuo.",
 
-    // Interactive Quiz Section
+    // Quiz Section
     "quiz.badge": "Simulador de Investimento",
     "quiz.title_html": "Descubra a estrutura ideal para o <span class=\"text-gradient-brand\">seu projeto em 1 minuto.</span>",
     "quiz.subtitle": "Responda a 3 perguntas rápidas e receba uma estimativa personalizada com recomendação do nosso time técnico.",
-    "quiz.step1_title": "Passo 1 de 3: Qual é o objetivo principal do seu novo site?",
-    "quiz.opt1_1": "Captação de Leads / Vendas Diretas (Landing Page)",
-    "quiz.opt1_2": "Presença Institucional / Autoridade de Marca",
-    "quiz.opt1_3": "Venda de Produtos Online (E-Commerce)",
-    "quiz.opt1_4": "Reformulação / Redesign de Site Atual",
 
-    "quiz.step2_title": "Passo 2 de 3: Qual o prazo desejado para o lançamento?",
-    "quiz.opt2_1": "Urgente (em até 5 dias úteis)",
-    "quiz.opt2_2": "Médio Prazo (de 1 a 2 semanas)",
-    "quiz.opt2_3": "Sem pressa (foco em projeto complexo)",
-
-    "quiz.step3_title": "Passo 3 de 3: Para onde devemos enviar a proposta detalhada?",
-    "quiz.name_label": "Seu Nome Completo",
-    "quiz.name_ph": "Ex: Carlos Silva",
-    "quiz.phone_label": "Seu WhatsApp (com DDD)",
-    "quiz.phone_ph": "(94) 99999-9999",
-    "quiz.submit_btn": "Gerar Estimativa Personalizada",
-    "quiz.prev_btn": "Voltar",
-    "quiz.next_btn": "Próximo Passo",
-
-    // Guarantees Section (3D Deck)
+    // Guarantees (3D Deck)
     "guarantee.badge": "Compromisso Duo Studio",
     "guarantee.title_html": "3 Garantias fundamentais que <span class=\"text-gradient-brand\">protegem seu investimento.</span>",
     "guarantee.subtitle": "Na Duo Studio, transparência e pontualidade são inegociáveis. Conheça as diretrizes técnicas que asseguram a excelência da sua entrega.",
@@ -159,7 +112,7 @@ const duoTranslations = {
     "guarantee.card3_title": "Pontualidade Rigorosa na Entrega",
     "guarantee.card3_desc": "Cronograma claro e pré-estabelecido em contrato. Entregamos seu projeto dentro do prazo combinado com marcos transparentes de revisão.",
 
-    // Testimonials Section
+    // Testimonials
     "testimonials.badge": "Provas Sociais & Depoimentos",
     "testimonials.title_html": "O que dizem os clientes que <span class=\"text-gradient-brand\">confiaram na Duo Studio.</span>",
     "testimonials.subtitle": "Empresas que transformaram a sua presença digital e alavancaram seus resultados comerciais através do nosso desenvolvimento autoral.",
@@ -178,6 +131,8 @@ const duoTranslations = {
     "faq.a4": "Fornecemos garantia completa pós-lançamento para ajustes técnicos e oferecemos planos opcionais de acompanhamento e suporte contínuo para manter seu ambiente sempre atualizado e seguro.",
 
     // Footer
+    "footer.cta_title": "Pronto para levar seu negócio ao próximo nível digital?",
+    "footer.cta_subtitle": "Converse com nossos especialistas e receba um diagnóstico sem compromisso.",
     "footer.desc": "Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão para marcas exigentes.",
     "footer.quick_links": "Links Rápidos",
     "footer.solutions_title": "Soluções",
@@ -185,6 +140,14 @@ const duoTranslations = {
     "footer.rights": "© 2026 Duo Studio. Todos os direitos reservados. Engenharia de Software Autoral.",
     "footer.privacy": "Política de Privacidade",
     "footer.terms": "Termos de Uso",
+
+    // Subpages
+    "about.hero_badge": "Quem Somos & Nossa Filosofia",
+    "about.hero_title_html": "Recusamo-nos a criar <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">sites genéricos e lentos.</span>",
+    "about.hero_desc": "A Duo Studio nasce com o propósito claro de tratar o site corporativo como o ativo mais rentável de uma empresa no digital.",
+
+    "contact.title_html": "Fale Conosco & <span class=\"text-gradient-brand\">Agende sua Reunião</span>",
+    "contact.desc": "Estamos prontos para entender seu momento de negócio e desenhar a arquitetura web ideal para escalar suas vendas.",
 
     // Modals
     "modal.budget_title": "Agendar Reunião Estratégica",
@@ -235,74 +198,46 @@ const duoTranslations = {
     "hero.tab_seo": "🔍 100/100 SEO",
     "hero.metric_title": "Performance Metric",
     "hero.guarantee_tag": "Technical Guarantee",
-    "hero.guarantee_subtag": "International Standard",
-    "hero.audited_title": "Google Lighthouse Audited",
-    "hero.audited_desc": "98+ Score in Performance, Accessibility, and Best Practices",
 
-    // Interactive Spec Tabs Data
-    "hero.tab_speed_metric": "< 0.8s LCP",
-    "hero.tab_speed_metric_desc": "Instant loading without lag or visitor bounce.",
-    "hero.tab_speed_title": "Speed & Conversion Architecture",
-    "hero.tab_speed_subtitle": "High-End Software Engineering",
-    "hero.tab_speed_detail": "Optimized native code built with Next.js/Vite, free from heavy WordPress plugins that slow down mobile devices.",
+    // Posicionamento / About Us on Home
+    "pos.badge": "Business Positioning",
+    "pos.title_html": "Why serious companies choose <span class=\"text-gradient-brand\">Duo Studio?</span>",
+    "pos.p1": "Most corporate websites suffer from the same fundamental flaw: slow, generic templates incapable of converting visitors into real revenue opportunities.",
+    "pos.p2": "At Duo Studio, we engineer your website as a strategic sales engine. We combine consumer psychology, world-class UI design, and lightning-fast software code to ensure your brand captures client attention and outranks competitors.",
+    "pos.cta": "Explore Our Solutions",
+    "pos.card1_title": "Copywriting & Conversion Focus",
+    "pos.card1_desc": "Strategic sales copy engineered to overcome objections and prompt immediate customer contact.",
+    "pos.card2_title": "Custom Software Engineering",
+    "pos.card2_desc": "Zero heavy page builders. We build modern custom codebases to deliver unmatched speed, security, and scalability.",
+    "pos.card3_title": "SEO & Search Optimization",
+    "pos.card3_desc": "Comprehensive structured schema data and metadata architecture so your company dominates Google search results.",
 
-    "hero.tab_ux_metric": "+180% Conversion",
-    "hero.tab_ux_metric_desc": "Intuitive design crafted to guide visitors seamlessly to purchase actions.",
-    "hero.tab_ux_title": "User Journey & Sales Psychology",
-    "hero.tab_ux_subtitle": "Strategic UI/UX Design",
-    "hero.tab_ux_detail": "Visual layout engineered to eliminate friction and prompt immediate decision-making with high-impact CTAs.",
+    // Manifesto Section
+    "manifesto.badge": "Uncompromising Commitment to Quality",
+    "manifesto.title_html": "The <span class=\"text-gradient-brand\">Duo Studio</span> Manifesto",
+    "manifesto.subtitle": "We refuse to accept average standards in web development. We exist to engineer high-performance digital assets that drive genuine business value.",
+    "manifesto.not_title": "What We DO NOT Do",
+    "manifesto.not_1_html": "<strong>Zero Generic Templates</strong>: We never use generic WordPress or Wix themes loaded with heavy plugins that slow down mobile phones.",
+    "manifesto.not_2_html": "<strong>Zero Code Rental</strong>: We never trap your business in monthly licensing fees for software you already paid for.",
+    "manifesto.not_3_html": "<strong>Zero Red-Tape Deadlines</strong>: We don't take 60 days to deliver a project your business needs today.",
+    "manifesto.yes_title": "Our Non-Negotiable Standard",
+    "manifesto.yes_1_html": "<strong>Custom Engineering</strong>: Every single line of code is written focusing on sub-second speed (< 0.8s LCP).",
+    "manifesto.yes_2_html": "<strong>100% Code Ownership</strong>: All source code, design assets, and credentials are fully handed over to you upon launch.",
+    "manifesto.yes_3_html": "<strong>Direct Founder Access</strong>: Communicate directly with the lead software engineers building your platform.",
 
-    "hero.tab_seo_metric": "Top #1 Google",
-    "hero.tab_seo_metric_desc": "Flawless technical indexing and Schema.org rich snippet metadata.",
-    "hero.tab_seo_title": "Advanced Search Engine Optimization",
-    "hero.tab_seo_subtitle": "Native Technical SEO",
-    "hero.tab_seo_detail": "Rank your business at the top of Google search results for high-intent keywords and premium local clients.",
-
-    // Metrics / Stats Bar
-    "stats.title_1": "Average LCP Speed",
-    "stats.desc_1": "Instantaneous load time",
-    "stats.title_2": "Projects Delivered",
-    "stats.desc_2": "100% custom codebase",
-    "stats.title_3": "Return on Investment",
-    "stats.desc_3": "Satisfied enterprise clients",
-    "stats.title_4": "Delivery Guarantee",
-    "stats.desc_4": "Zero deadline overruns",
-
-    // Solutions / Services Section
-    "solutions.badge": "Tailored Digital Solutions",
-    "solutions.title_html": "High-performance web engineering for <span class=\"text-gradient-brand\">scaling your business.</span>",
-    "solutions.subtitle": "We eliminate technical friction and deliver fast, robust, and beautiful digital ecosystems built to establish instant authority.",
-    
-    "solutions.card1_badge": "Most Popular",
-    "solutions.card1_title": "High-Conversion Landing Pages",
-    "solutions.card1_desc": "Pages engineered specifically for ad campaigns (Google Ads, Meta Ads) focused on maximum ROI and qualified lead generation.",
-    "solutions.card1_feat1": "Conversion-focused conversion funnel",
-    "solutions.card1_feat2": "Instantaneous loading on 4G/5G mobile networks",
-    "solutions.card1_feat3": "Native WhatsApp & CRM lead integration",
-
-    "solutions.card2_badge": "Enterprise",
-    "solutions.card2_title": "Elite Corporate Websites",
-    "solutions.card2_desc": "Comprehensive corporate portals that position your brand at the top of your market, projecting stability and high reputation.",
-    "solutions.card2_feat1": "Bespoke custom UI/UX design (zero templates)",
-    "solutions.card2_feat2": "Institutional pages, services catalog, and team",
-    "solutions.card2_feat3": "User-friendly and scalable management stack",
-
-    "solutions.card3_badge": "E-Commerce",
-    "solutions.card3_title": "Online Stores & Web Apps",
-    "solutions.card3_desc": "Fast and secure online shopping systems with friction-free checkout, streamlined product catalog management, and high retention.",
-    "solutions.card3_feat1": "Frictionless checkout with modern gateways",
-    "solutions.card3_feat2": "Flawless mobile navigation experience",
-    "solutions.card3_feat3": "Built-in product SEO and logistics workflow",
-
-    "solutions.card4_badge": "Consulting",
-    "solutions.card4_title": "Strategic Redesign & Technical SEO",
-    "solutions.card4_desc": "Complete overhaul of legacy websites into modern high-speed code, recovering lost search traffic and multiplying conversions.",
-    "solutions.card4_feat1": "Deep technical performance & UX audit",
-    "solutions.card4_feat2": "Core Web Vitals optimization (Google)",
-    "solutions.card4_feat3": "Seamless SEO migration without rank loss",
-
-    "solutions.cta": "Need a fully custom solution?",
-    "solutions.cta_btn": "Talk to our principal web architect",
+    // Services / Solutions on Home
+    "serv.badge": "Results-Driven Solutions",
+    "serv.title_html": "Digital web engineering designed to <span class=\"text-gradient-brand\">generate new business.</span>",
+    "serv.subtitle": "We don't sell just code or layouts. We deliver structured platforms engineered to accelerate client acquisition.",
+    "serv.card1_title": "Generate Qualified Sales Leads",
+    "serv.card1_desc": "High-Conversion Landing Pages built specifically for paid ad campaigns (Google Ads, Meta Ads). Structured with persuasive sales copy.",
+    "serv.card1_tag": "Focus on ROI & Direct-to-Sales Conversion",
+    "serv.card2_title": "Position Your Brand With Authority",
+    "serv.card2_desc": "Custom corporate websites that project technical solidity, premium market value, and immediate credibility for market leaders.",
+    "serv.card2_tag": "Brand Architecture & Corporate Credibility",
+    "serv.card3_title": "Sell Products Frictionlessly",
+    "serv.card3_desc": "E-commerce stores with instant page response times, intuitive navigation, and friction-free checkouts to prevent cart abandonment.",
+    "serv.card3_tag": "Buying UX & Mobile Performance",
 
     // Portfolio Section
     "portfolio.badge": "Portfolio & Case Studies",
@@ -331,31 +266,12 @@ const duoTranslations = {
     "process.step4_title": "Launch & Continuous SEO",
     "process.step4_desc": "We run security audits, speed optimization, and technical SEO, launching your digital asset with ongoing technical support.",
 
-    // Interactive Quiz Section
+    // Quiz Section
     "quiz.badge": "Investment Estimator",
     "quiz.title_html": "Discover the ideal architecture for <span class=\"text-gradient-brand\">your project in 1 minute.</span>",
     "quiz.subtitle": "Answer 3 quick questions and receive a custom estimate recommended by our engineering team.",
-    "quiz.step1_title": "Step 1 of 3: What is the main objective of your new website?",
-    "quiz.opt1_1": "Lead Generation / Direct Sales (Landing Page)",
-    "quiz.opt1_2": "Brand Authority & Corporate Presence",
-    "quiz.opt1_3": "Online Product Sales (E-Commerce)",
-    "quiz.opt1_4": "Website Redesign & Overhaul",
 
-    "quiz.step2_title": "Step 2 of 3: What is your target launch timeframe?",
-    "quiz.opt2_1": "Urgent (within 5 business days)",
-    "quiz.opt2_2": "Medium Term (1 to 2 weeks)",
-    "quiz.opt2_3": "Flexible (focus on complex custom project)",
-
-    "quiz.step3_title": "Step 3 of 3: Where should we send your detailed proposal?",
-    "quiz.name_label": "Your Full Name",
-    "quiz.name_ph": "e.g. John Smith",
-    "quiz.phone_label": "Your WhatsApp / Phone",
-    "quiz.phone_ph": "+1 (555) 000-0000",
-    "quiz.submit_btn": "Generate Custom Estimate",
-    "quiz.prev_btn": "Back",
-    "quiz.next_btn": "Next Step",
-
-    // Guarantees Section (3D Deck)
+    // Guarantees (3D Deck)
     "guarantee.badge": "Duo Studio Commitment",
     "guarantee.title_html": "3 Fundamental guarantees that <span class=\"text-gradient-brand\">protect your investment.</span>",
     "guarantee.subtitle": "At Duo Studio, transparency and punctuality are non-negotiable. Learn about the engineering standards that guarantee delivery excellence.",
@@ -366,7 +282,7 @@ const duoTranslations = {
     "guarantee.card3_title": "Strict On-Time Delivery Guarantee",
     "guarantee.card3_desc": "Clear milestones contractual schedule. We deliver your project strictly on time with transparent review checkpoints.",
 
-    // Testimonials Section
+    // Testimonials
     "testimonials.badge": "Social Proof & Reviews",
     "testimonials.title_html": "What our clients say about <span class=\"text-gradient-brand\">partnering with Duo Studio.</span>",
     "testimonials.subtitle": "Companies that transformed their digital presence and boosted sales with our custom web software.",
@@ -385,6 +301,8 @@ const duoTranslations = {
     "faq.a4": "We provide complete post-launch guarantees for technical adjustments, as well as optional ongoing maintenance and monitoring packages to keep your platform secure and up-to-date.",
 
     // Footer
+    "footer.cta_title": "Ready to take your business to the next digital level?",
+    "footer.cta_subtitle": "Talk to our software architects and receive a custom solution proposal.",
     "footer.desc": "Specialized digital agency in high-performance web development, strategic UI/UX design, and conversion optimization for ambitious brands.",
     "footer.quick_links": "Quick Links",
     "footer.solutions_title": "Solutions",
@@ -392,6 +310,14 @@ const duoTranslations = {
     "footer.rights": "© 2026 Duo Studio. All rights reserved. Custom Web Software Engineering.",
     "footer.privacy": "Privacy Policy",
     "footer.terms": "Terms of Use",
+
+    // Subpages
+    "about.hero_badge": "Who We Are & Our Philosophy",
+    "about.hero_title_html": "We refuse to create <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">generic and slow websites.</span>",
+    "about.hero_desc": "Duo Studio was founded with a clear mission: treating corporate websites as a business's most profitable digital asset.",
+
+    "contact.title_html": "Get in Touch & <span class=\"text-gradient-brand\">Book a Consultation</span>",
+    "contact.desc": "We are ready to understand your business goals and architect the ideal web platform to scale your sales.",
 
     // Modals
     "modal.budget_title": "Schedule Strategic Meeting",
