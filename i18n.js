@@ -145,6 +145,7 @@ const duoTranslations = {
     "guarantee.card2_desc": "Todo o código-fonte, imagens e acessos pertencem integralmente à sua empresa. Sem taxas surpresas de manutenção forçada.",
     "guarantee.card3_title": "Pontualidade Rigorosa na Entrega",
     "guarantee.card3_desc": "Cronograma claro e pré-estabelecido em contrato. Entregamos seu projeto dentro do prazo combinado com marcos transparentes de revisão.",
+    "deck.hint": "Clique para abrir nosso leque de garantias",
 
     // Testimonials
     "testimonials.badge": "Provas Sociais & Depoimentos",
@@ -358,6 +359,7 @@ const duoTranslations = {
     "guarantee.card2_desc": "All source code, design assets, and administrative access belong 100% to your company with zero mandatory recurring fees.",
     "guarantee.card3_title": "Strict On-Time Delivery Guarantee",
     "guarantee.card3_desc": "Clear milestones contractual schedule. We deliver your project strictly on time with transparent review checkpoints.",
+    "deck.hint": "Click to expand our guarantees deck",
 
     // Testimonials
     "testimonials.badge": "Social Proof & Reviews",
