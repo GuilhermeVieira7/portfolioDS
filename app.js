@@ -298,9 +298,52 @@ function initModals() {
 
 function openCaseStudyModal(projectId) {
   const projectModal = document.getElementById('project-modal');
-    projectModal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
+  if (!projectModal) return;
+
+  const currentLang = window.duoI18n ? window.duoI18n.currentLang : 'pt';
+  const dataGroup = projectData[projectId];
+  if (!dataGroup) return;
+  const data = dataGroup[currentLang] || dataGroup.pt;
+  if (!data) return;
+
+  const titleEl = document.getElementById('modal-project-title');
+  const catEl = document.getElementById('modal-project-category');
+  const problemEl = document.getElementById('modal-project-problem');
+  const objEl = document.getElementById('modal-project-objective');
+  const solEl = document.getElementById('modal-project-desc');
+  const highlightsEl = document.getElementById('modal-project-highlights');
+  const techsEl = document.getElementById('modal-project-techs');
+  const liveBtn = document.getElementById('modal-project-live-btn');
+  const imgEl = document.getElementById('modal-project-image');
+
+  if (titleEl) titleEl.textContent = data.title;
+  if (catEl) catEl.textContent = data.category;
+  if (problemEl) problemEl.textContent = data.problem;
+  if (objEl) objEl.textContent = data.objective;
+  if (solEl) solEl.textContent = data.desc;
+  if (imgEl && data.image) imgEl.src = data.image;
+
+  if (highlightsEl && data.highlights) {
+    highlightsEl.innerHTML = data.highlights.map(h => 
+      `<li class="flex items-start gap-2 text-xs text-gray-300"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i><span>${h}</span></li>`
+    ).join('');
   }
+
+  if (techsEl && data.techs) {
+    techsEl.innerHTML = data.techs.map(t => 
+      `<span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-full text-[11px] font-semibold text-gray-300">${t}</span>`
+    ).join('');
+  }
+
+  if (liveBtn && data.liveUrl) {
+    liveBtn.href = data.liveUrl;
+  }
+
+  if (window.lucide) lucide.createIcons();
+
+  projectModal.classList.remove('hidden');
+  projectModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
 }
 
 /* ----------------------------------------------------
