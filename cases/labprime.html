@@ -82,16 +82,21 @@
         <img src="../assets/logo-horizontal.webp" alt="Duo Studio Logo" class="h-9 sm:h-10 w-auto object-contain">
       </a>
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-        <a href="../index.html" class="hover:text-white transition-colors py-1">Início</a>
-        <a href="../sobre.html" class="hover:text-white transition-colors py-1">Sobre</a>
-        <a href="../servicos.html" class="hover:text-white transition-colors py-1">Soluções</a>
-        <a href="../portfolio.html" class="text-violet-400 font-semibold py-1">Portfólio</a>
-        <a href="../blog.html" class="hover:text-white transition-colors py-1">Blog</a>
-        <a href="../contato.html" class="hover:text-white transition-colors py-1">Contato</a>
+        <a href="../index.html" class="hover:text-white transition-colors py-1" data-i18n="nav.home">Início</a>
+        <a href="../sobre.html" class="hover:text-white transition-colors py-1" data-i18n="nav.about">Sobre</a>
+        <a href="../servicos.html" class="hover:text-white transition-colors py-1" data-i18n="nav.services">Soluções</a>
+        <a href="../portfolio.html" class="text-violet-400 font-semibold py-1" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="../blog.html" class="hover:text-white transition-colors py-1" data-i18n="nav.blog">Blog</a>
+        <a href="../contato.html" class="hover:text-white transition-colors py-1" data-i18n="nav.contact">Contato</a>
       </nav>
-      <div class="hidden md:flex items-center gap-4">
-        <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white flex items-center gap-2">
-          <span>Ver Site Ao Vivo</span>
+      <div class="flex items-center gap-4">
+        <!-- Language Switcher -->
+        <div class="flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-xs">
+          <button class="lang-btn-pt px-2.5 py-1 rounded-full font-semibold transition-all" data-i18n="nav.lang_pt">PT</button>
+          <button class="lang-btn-en px-2.5 py-1 rounded-full font-semibold transition-all" data-i18n="nav.lang_en">EN</button>
+        </div>
+        <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white items-center gap-2">
+          <span data-i18n="port.live_site">Ver Site Ao Vivo</span>
           <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
       </div>
@@ -102,11 +107,11 @@
   <article class="pt-36 pb-20 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <a href="../portfolio.html" class="inline-flex items-center gap-2 text-xs font-semibold text-violet-400 hover:text-violet-300 mb-6">
       <i data-lucide="arrow-left" class="w-4 h-4"></i>
-      <span>Voltar para o Portfólio</span>
+      <span data-i18n="case.back_port">Voltar para o Portfólio</span>
     </a>
 
-    <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest block mb-2">Estudo de Caso #02</span>
-    <h1 class="font-heading font-extrabold text-3xl sm:text-5xl text-white mb-6 leading-tight">
+    <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest block mb-2" data-i18n="case.case2_badge">Estudo de Caso #02</span>
+    <h1 class="font-heading font-extrabold text-3xl sm:text-5xl text-white mb-6 leading-tight" data-i18n="case.case2_title">
       LabPrime Toxicológico: Agendamento clínico em 4 passos e liderança no SEO local
     </h1>
 
@@ -119,36 +124,36 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
       <div class="glass-card p-6 rounded-2xl border border-white/10 text-center">
         <span class="text-3xl font-extrabold text-indigo-400 font-heading block mb-1">4 Passos</span>
-        <span class="text-xs text-gray-400">Fluxo de Agendamento Guiado</span>
+        <span class="text-xs text-gray-400" data-i18n="case.case2_m1_desc">Fluxo de Agendamento Guiado</span>
       </div>
       <div class="glass-card p-6 rounded-2xl border border-white/10 text-center">
         <span class="text-3xl font-extrabold text-emerald-400 font-heading block mb-1">Sub-0.8s</span>
-        <span class="text-xs text-gray-400">Tempo de Resposta do Servidor</span>
+        <span class="text-xs text-gray-400" data-i18n="case.case2_m2_desc">Tempo de Resposta do Servidor</span>
       </div>
       <div class="glass-card p-6 rounded-2xl border border-white/10 text-center">
         <span class="text-3xl font-extrabold text-violet-400 font-heading block mb-1">SEO Local</span>
-        <span class="text-xs text-gray-400">Otimizado para CNH C, D e E</span>
+        <span class="text-xs text-gray-400" data-i18n="case.case2_m3_desc">Otimizado para CNH C, D e E</span>
       </div>
     </div>
 
     <!-- Article Breakdown -->
     <div class="space-y-8 text-gray-300 text-base leading-relaxed font-normal">
       <div>
-        <h2 class="font-heading font-bold text-2xl text-white mb-3">O Desafio Clínico</h2>
-        <p class="text-sm sm:text-base text-gray-400">
+        <h2 class="font-heading font-bold text-2xl text-white mb-3" data-i18n="case.heading_challenge">O Desafio Clínico</h2>
+        <p class="text-sm sm:text-base text-gray-400" data-i18n="case.case2_challenge">
           Motoristas profissionais que precisam renovar a CNH (categorias C, D e E) buscam clareza e agilidade. O portal anterior exigia múltiplos passos confusos e não aparecia nas buscas regionais do Google.
         </p>
       </div>
 
       <div>
-        <h2 class="font-heading font-bold text-2xl text-white mb-3">A Solução Desenvolvida pela Duo Studio</h2>
-        <p class="text-sm sm:text-base text-gray-400">
+        <h2 class="font-heading font-bold text-2xl text-white mb-3" data-i18n="case.heading_solution">A Solução Desenvolvida pela Duo Studio</h2>
+        <p class="text-sm sm:text-base text-gray-400" data-i18n="case.case2_solution">
           Desenvolvemos uma estrutura clínica direta com formulário interativo de agendamento em 4 passos. Adicionamos metadados de SEO local com coordenadas geográficas e Schema.org MedicalBusiness para indexação imediata nas buscas da cidade.
         </p>
       </div>
 
       <div>
-        <h2 class="font-heading font-bold text-2xl text-white mb-3">Tecnologias Utilizadas</h2>
+        <h2 class="font-heading font-bold text-2xl text-white mb-3" data-i18n="modal.techs_label">Tecnologias Utilizadas</h2>
         <div class="flex flex-wrap gap-2 pt-2">
           <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-semibold text-gray-300">HTML5 / Tailwind CSS</span>
           <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-semibold text-gray-300">Schema.org MedicalBusiness</span>
@@ -159,7 +164,7 @@
 
     <div class="mt-12 pt-8 border-t border-white/10 text-center">
       <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-gradient px-8 py-4 rounded-full text-xs font-bold text-white inline-flex items-center gap-2 shadow-xl">
-        <span>Visitar o Site do LabPrime</span>
+        <span data-i18n="case.case2_visit">Visitar o Site do LabPrime</span>
         <i data-lucide="external-link" class="w-4 h-4"></i>
       </a>
     </div>
@@ -168,7 +173,7 @@
   <!-- FOOTER -->
   <footer class="pt-12 pb-12 bg-[#070709] border-t border-white/10 text-gray-400 text-sm">
     <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
-      <p>&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
+      <p data-i18n="footer.rights">&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
     </div>
   </footer>
 

@@ -400,18 +400,21 @@ function initMultiStepQuiz() {
     step2.classList.add('hidden');
     step3.classList.add('hidden');
 
+    const currentLang = window.duoI18n ? window.duoI18n.currentLang : 'pt';
+    const isEn = currentLang === 'en';
+
     if (step === 1) {
       step1.classList.remove('hidden');
       if (progressBar) progressBar.style.width = '33%';
-      if (stepLabel) stepLabel.textContent = 'Passo 1 de 3: Objetivo do Projeto';
+      if (stepLabel) stepLabel.textContent = isEn ? 'Step 1 of 3: Project Goal' : 'Passo 1 de 3: Objetivo do Projeto';
     } else if (step === 2) {
       step2.classList.remove('hidden');
       if (progressBar) progressBar.style.width = '66%';
-      if (stepLabel) stepLabel.textContent = 'Passo 2 de 3: Segmento do Negócio';
+      if (stepLabel) stepLabel.textContent = isEn ? 'Step 2 of 3: Business Industry' : 'Passo 2 de 3: Segmento do Negócio';
     } else if (step === 3) {
       step3.classList.remove('hidden');
       if (progressBar) progressBar.style.width = '100%';
-      if (stepLabel) stepLabel.textContent = 'Passo 3 de 3: Seus Dados para o Diagnóstico';
+      if (stepLabel) stepLabel.textContent = isEn ? 'Step 3 of 3: Your Contact Details' : 'Passo 3 de 3: Seus Dados para o Diagnóstico';
     }
   }
 
@@ -438,20 +441,31 @@ function initMultiStepQuiz() {
       const phone = document.getElementById('budget-phone')?.value || '';
       const description = document.getElementById('budget-description')?.value || '';
 
+      const isEn = (window.duoI18n ? window.duoI18n.currentLang : 'pt') === 'en';
       const submitBtn = budgetForm.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> Gerando Diagnóstico...`;
+        const loadingText = isEn ? 'Generating Assessment...' : 'Gerando Diagnóstico...';
+        submitBtn.innerHTML = `<i data-lucide="loader-2" class="w-5 h-5 animate-spin"></i> ${loadingText}`;
         if (window.lucide) lucide.createIcons();
       }
 
-      const msg = `*Solicitação de Diagnóstico Comercial - Duo Studio*\n\n` +
+      const msg = isEn ? 
+        `*Project Assessment Request - Duo Studio*\n\n` +
+        `🎯 *Goal:* ${selectedObjective}\n` +
+        `🏢 *Industry:* ${selectedSegment}\n` +
+        `👤 *Name/Company:* ${name}\n` +
+        `📱 *WhatsApp:* ${phone}\n` +
+        `📧 *Corporate Email:* ${email || 'Not provided'}\n` +
+        `📝 *Goals:* ${description || 'Not provided'}`
+        :
+        `*Solicitação de Diagnóstico Comercial - Duo Studio*\n\n` +
         `🎯 *Objetivo:* ${selectedObjective}\n` +
         `🏢 *Segmento:* ${selectedSegment}\n` +
-        `👤 *Nome:* ${name}\n` +
-        `✉️ *E-mail:* ${email}\n` +
+        `👤 *Nome/Empresa:* ${name}\n` +
         `📱 *WhatsApp:* ${phone}\n` +
-        `📝 *Detalhes:* ${description || 'Nenhum detalhe adicional informado'}`;
+        `📧 *E-mail Corporativo:* ${email || 'Não informado'}\n` +
+        `📝 *Metas:* ${description || 'Não informado'}`;
 
       const phone1 = "5594999099386";
       const phone2 = "5594992811658";
@@ -766,17 +780,21 @@ function init3DGuaranteeDeck() {
     // Não faz nada no mobile
     if (isMobileLayout()) return;
 
+    const currentLang = window.duoI18n ? window.duoI18n.currentLang : 'pt';
+    const collapseText = currentLang === 'en' ? 'Click to collapse guarantees deck' : 'Clique para recolher o leque de garantias';
+    const expandText = currentLang === 'en' ? 'Click to expand our guarantees deck' : 'Clique para abrir nosso leque de garantias';
+
     if (deckWrapper.classList.contains('deck-stacked')) {
       deckWrapper.classList.remove('deck-stacked');
       deckWrapper.classList.add('deck-expanded');
       if (deckHint) {
-        deckHint.innerHTML = `<i data-lucide="shrink" class="w-4 h-4 text-violet-400"></i> <span>Clique para recolher o leque de garantias</span>`;
+        deckHint.innerHTML = `<i data-lucide="shrink" class="w-4 h-4 text-violet-400"></i> <span>${collapseText}</span>`;
       }
     } else {
       deckWrapper.classList.remove('deck-expanded');
       deckWrapper.classList.add('deck-stacked');
       if (deckHint) {
-        deckHint.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4 text-violet-400 animate-pulse"></i> <span>Clique para abrir nosso leque de garantias</span>`;
+        deckHint.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4 text-violet-400 animate-pulse"></i> <span>${expandText}</span>`;
       }
     }
     if (window.lucide) lucide.createIcons();
