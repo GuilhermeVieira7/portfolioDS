@@ -41,20 +41,23 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "ImageObject",
+        "@id": "https://somosduostudio.com.br/#logo",
+        "url": "https://somosduostudio.com.br/assets/favicon-512x512.png",
+        "contentUrl": "https://somosduostudio.com.br/assets/favicon-512x512.png",
+        "caption": "Duo Studio Logo",
+        "inLanguage": "pt-BR",
+        "width": 512,
+        "height": 512
+      },
+      {
         "@type": "Organization",
         "@id": "https://somosduostudio.com.br/#organization",
         "name": "Duo Studio",
         "alternateName": ["Duo Studio Digital Agency", "Somos Duo Studio"],
-        "url": "https://somosduostudio.com.br",
+        "url": "https://somosduostudio.com.br/",
         "logo": {
-          "@type": "ImageObject",
-          "@id": "https://somosduostudio.com.br/#logo",
-          "url": "https://somosduostudio.com.br/assets/favicon-512x512.png",
-          "contentUrl": "https://somosduostudio.com.br/assets/favicon-512x512.png",
-          "caption": "Duo Studio Logo",
-          "inLanguage": "pt-BR",
-          "width": 512,
-          "height": 512
+          "@id": "https://somosduostudio.com.br/#logo"
         },
         "image": {
           "@id": "https://somosduostudio.com.br/#logo"
@@ -91,20 +94,19 @@
           "@type": "QuantitativeValue",
           "minValue": 2,
           "maxValue": 10
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "bestRating": "5",
-          "ratingCount": "2",
-          "reviewCount": "2"
         }
       },
       {
         "@type": "LocalBusiness",
         "@id": "https://somosduostudio.com.br/#business",
+        "parentOrganization": {
+          "@id": "https://somosduostudio.com.br/#organization"
+        },
         "name": "Duo Studio",
-        "url": "https://somosduostudio.com.br",
+        "url": "https://somosduostudio.com.br/",
+        "logo": {
+          "@id": "https://somosduostudio.com.br/#logo"
+        },
         "image": "https://somosduostudio.com.br/assets/og-image.png",
         "description": "Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão para empresas que buscam autoridade e vendas no digital.",
         "priceRange": "$$",
@@ -143,31 +145,12 @@
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Técnico" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Redesign Estratégico" } }
           ]
-        },
-        "review": [
-          {
-            "@type": "Review",
-            "author": { "@type": "Organization", "name": "Angatu Viagens & Turismo de Luxo" },
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-            "reviewBody": "A reformulação da nossa presença digital pela Duo Studio transformou o fluxo de agendamentos da Angatu Viagens. O site é leve, lindíssimo no celular e nosso cliente clica no WhatsApp já decidido a fechar a viagem.",
-            "datePublished": "2026-08-01"
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Organization", "name": "LabPrime Toxicológico" },
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-            "reviewBody": "Precisávamos de um portal clínico que passasse confiança imediata para motoristas de CNH C, D e E em Parauapebas. O trabalho em 4 passos facilitou o agendamento e o SEO local nos colocou no topo das buscas.",
-            "datePublished": "2026-08-01"
-          }
-        ],
-        "parentOrganization": {
-          "@id": "https://somosduostudio.com.br/#organization"
         }
       },
       {
         "@type": "WebSite",
         "@id": "https://somosduostudio.com.br/#website",
-        "url": "https://somosduostudio.com.br",
+        "url": "https://somosduostudio.com.br/",
         "name": "Duo Studio | Engenharia Digital & Websites de Alta Conversão",
         "description": "Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão.",
         "publisher": {
@@ -178,7 +161,7 @@
       {
         "@type": "WebPage",
         "@id": "https://somosduostudio.com.br/#webpage",
-        "url": "https://somosduostudio.com.br",
+        "url": "https://somosduostudio.com.br/",
         "name": "Duo Studio | Engenharia Digital & Websites de Alta Conversão",
         "isPartOf": {
           "@id": "https://somosduostudio.com.br/#website"
@@ -189,7 +172,7 @@
         "description": "Sites modernos, ultrarrápidos e estratégicos projetados para acelerar vendas e posicionar sua empresa como líder de mercado.",
         "inLanguage": "pt-BR",
         "datePublished": "2026-08-01",
-        "dateModified": "2026-08-13",
+        "dateModified": "2026-08-20",
         "breadcrumb": {
           "@id": "https://somosduostudio.com.br/#breadcrumb"
         }
@@ -929,7 +912,7 @@
       </div>
 
       <!-- Real Case Studies Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Case Study 1: Angatu Viagens -->
         <div
@@ -953,12 +936,11 @@
               </div>
 
               <div class="flex items-center gap-3" onclick="event.stopPropagation()">
-                <button onclick="openCaseStudyModal('1')"
-                  class="open-project-modal btn-gradient px-4 py-2 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
-                  data-project-id="1">
+                <a href="cases/angatu.html"
+                  class="open-project-modal btn-gradient px-4 py-2 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md">
                   <span data-i18n="port.read_case">Analisar caso</span>
                   <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                </button>
+                </a>
                 <a href="https://angatuviagens-eu.vercel.app/" target="_blank" rel="noopener noreferrer"
                   class="px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
                   <span data-i18n="port.live_site">Ver site</span>
@@ -972,16 +954,16 @@
               <h4 class="font-heading font-semibold text-lg text-white">Angatu Viagens</h4>
               <p class="text-xs text-gray-400 mt-0.5" data-i18n="port.case1_sub">Turismo Premium & Agendamento Direto</p>
             </div>
-            <span
-              class="text-xs font-medium px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300" data-i18n="port.real_case">Caso
-              Real</span>
+            <a href="cases/angatu.html"
+              class="text-xs font-medium px-3.5 py-1 bg-violet-500/10 hover:bg-violet-500/20 border border-violet-500/20 rounded-full text-violet-300 transition-colors" data-i18n="port.real_case">Caso
+              Real</a>
           </div>
         </div>
 
         <!-- Case Study 2: LabPrime Toxicológico -->
         <div
           class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
-          onclick="openCaseStudyModal('2')" data-category="saude institucional">
+          onclick="window.location.href='cases/labprime.html'" data-category="saude institucional">
           <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
             <img src="assets/projects/labprime.webp" alt="Site LabPrime Toxicológico desenvolvido pela Duo Studio - Portal clínico com agendamento em 4 passos e SEO local em Parauapebas" loading="lazy"
               decoding="async" class="w-full h-full object-cover object-top transition-transform duration-500">
@@ -1000,12 +982,11 @@
               </div>
 
               <div class="flex items-center gap-3" onclick="event.stopPropagation()">
-                <button onclick="openCaseStudyModal('2')"
-                  class="open-project-modal btn-gradient px-4 py-2 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md"
-                  data-project-id="2">
+                <a href="cases/labprime.html"
+                  class="open-project-modal btn-gradient px-4 py-2 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md">
                   <span data-i18n="port.read_case">Analisar caso</span>
                   <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                </button>
+                </a>
                 <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer"
                   class="px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
                   <span data-i18n="port.live_site">Ver site</span>
@@ -1022,6 +1003,53 @@
             <span
               class="text-xs font-medium px-3.5 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-violet-300" data-i18n="port.real_case">Caso
               Real</span>
+          </div>
+        </div>
+
+        <!-- Case Study 3: InterSolar Energia Renovável -->
+        <div
+          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
+          onclick="window.location.href='cases/intersolar.html'" data-category="energia institucional">
+          <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
+            <img src="assets/projects/intersolar-hero.webp" alt="Site InterSolar Energia Renovável desenvolvido pela Duo Studio - Landing page institucional de energia solar em Parauapebas" loading="lazy"
+              decoding="async" class="w-full h-full object-cover object-top transition-transform duration-500">
+            <div class="portfolio-overlay absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest mb-1" data-i18n="port.case3_tag">Energia Solar &
+                Sustentabilidade</span>
+              <h3 class="text-2xl font-heading font-bold text-white mb-2">InterSolar Energia Renovável</h3>
+              <p class="text-xs text-gray-300 mb-4 leading-relaxed" data-i18n="port.case3_desc">Site institucional para projetos de energia solar
+                residencial e comercial com captação direta via WhatsApp.</p>
+
+              <!-- Impact Metrics Badge -->
+              <div class="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold rounded-full flex items-center gap-1">
+                  <i data-lucide="sun" class="w-3.5 h-3.5"></i> <span data-i18n="port.case3_metric">Presença Digital & Geração de Leads</span>
+                </span>
+              </div>
+
+              <div class="flex items-center gap-3" onclick="event.stopPropagation()">
+                <a href="cases/intersolar.html"
+                  class="btn-gradient px-4 py-2 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md">
+                  <span data-i18n="port.read_case">Analisar caso</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </a>
+                <a href="https://intersolarpa.com.br/" target="_blank" rel="noopener noreferrer"
+                  class="px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 border border-white/10 inline-flex items-center gap-1.5 transition-all">
+                  <span data-i18n="port.live_site">Ver site</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="p-6 flex items-center justify-between">
+            <div>
+              <h4 class="font-heading font-semibold text-lg text-white">InterSolar Energia Renovável</h4>
+              <p class="text-xs text-gray-400 mt-0.5" data-i18n="port.case3_sub">Energia Solar & Presença Institucional</p>
+            </div>
+            <a href="cases/intersolar.html"
+              class="text-xs font-medium px-3.5 py-1 bg-violet-500/10 hover:bg-violet-500/20 border border-violet-500/20 rounded-full text-violet-300 transition-colors" data-i18n="port.real_case">Caso
+              Real</a>
           </div>
         </div>
 

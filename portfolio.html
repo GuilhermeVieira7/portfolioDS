@@ -72,6 +72,68 @@
   <!-- CSS -->
   <link rel="stylesheet" href="dist/tailwind.css">
   <link rel="stylesheet" href="style.css?v=9">
+
+  <!-- Structured Data CollectionPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://somosduostudio.com.br/portfolio.html#webpage",
+        "url": "https://somosduostudio.com.br/portfolio.html",
+        "name": "Portfólio & Casos Reais | Duo Studio - Engenharia Digital",
+        "description": "Explore o portfólio de projetos desenvolvidos pela Duo Studio. Projetos autorais com foco em resultados reais de vendas, alta velocidade e SEO técnico em Parauapebas e Brasil.",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://somosduostudio.com.br/#website",
+          "url": "https://somosduostudio.com.br/",
+          "name": "Duo Studio"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://somosduostudio.com.br/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Portfólio",
+              "item": "https://somosduostudio.com.br/portfolio.html"
+            }
+          ]
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://somosduostudio.com.br/cases/angatu.html",
+              "name": "Estudo de Caso: Angatu Viagens"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://somosduostudio.com.br/cases/labprime.html",
+              "name": "Estudo de Caso: LabPrime Toxicológico"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://somosduostudio.com.br/cases/intersolar.html",
+              "name": "Estudo de Caso: InterSolar Energia Renovável"
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-[#0B0B0B] text-gray-100 antialiased selection:bg-violet-600 selection:text-white overflow-x-hidden">
@@ -158,7 +220,7 @@
 
   <!-- CASES DE DESTAQUE -->
   <section class="py-12 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
       <!-- Case 1: Angatu Viagens -->
       <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
@@ -203,6 +265,31 @@
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
             <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 inline-flex items-center gap-1.5 transition-all">
+              <span data-i18n="port.live_site">Acessar Site Ao Vivo</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case 3: InterSolar Energia Renovável -->
+      <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
+        <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
+          <img src="assets/projects/intersolar-hero.webp" alt="Site InterSolar Energia Renovável criado pela Duo Studio" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/40 to-transparent"></div>
+        </div>
+        <div class="p-8">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2" data-i18n="port.case3_tag">Energia Solar & Sustentabilidade</span>
+          <h2 class="font-heading font-bold text-2xl text-white mb-3">InterSolar Energia Renovável</h2>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="port.case3_desc">
+            Site institucional para projetos de energia solar residencial e comercial em Parauapebas, com apresentação clara dos serviços e captação direta de clientes via WhatsApp.
+          </p>
+          <div class="flex items-center gap-3">
+            <a href="cases/intersolar.html" class="btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md">
+              <span data-i18n="port.read_case">Ler Estudo de Caso</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+            <a href="https://intersolarpa.com.br/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 inline-flex items-center gap-1.5 transition-all">
               <span data-i18n="port.live_site">Acessar Site Ao Vivo</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
             </a>

@@ -316,6 +316,10 @@ const duoTranslations = {
     "port.case2_desc": "Portal clínico focado em exames para motoristas CNH C, D e E com agendamento guiado em 4 passos e infraestrutura otimizada para buscas locais no Google.",
     "port.case2_metric": "LCP < 0.8s Carregamento Instantâneo",
     "port.case2_sub": "Portal de Agendamento & SEO Local",
+    "port.case3_tag": "Energia Solar & Sustentabilidade",
+    "port.case3_desc": "Site institucional para projetos de energia solar residencial e comercial em Parauapebas, com apresentação clara dos serviços e captação direta de clientes via WhatsApp.",
+    "port.case3_metric": "Presença Digital & Geração de Leads",
+    "port.case3_sub": "Energia Solar & Presença Institucional",
     "port.real_case": "Caso Real",
     "port.read_case": "Ler Estudo de Caso",
     "port.live_site": "Acessar Site Ao Vivo",
@@ -492,7 +496,16 @@ const duoTranslations = {
     "case.case2_m3_desc": "Otimizado para CNH C, D e E",
     "case.case2_challenge": "Motoristas profissionais que precisam renovar a CNH (categorias C, D e E) buscam clareza e agilidade. O portal anterior exigia múltiplos passos confusos e não aparecia nas buscas regionais do Google.",
     "case.case2_solution": "Desenvolvemos uma estrutura clínica direta com formulário interativo de agendamento em 4 passos. Adicionamos metadados de SEO local com coordenadas geográficas e Schema.org MedicalBusiness para indexação imediata nas buscas da cidade.",
-    "case.case2_visit": "Visitar o Site do LabPrime"
+    "case.case2_visit": "Visitar o Site do LabPrime",
+
+    "case.case3_badge": "Estudo de Caso #03",
+    "case.case3_title": "InterSolar Energia Renovável: presença digital para consolidar autoridade em energia solar em Parauapebas",
+    "case.case3_m1_desc": "Jornada Completa do Interesse à Conversão",
+    "case.case3_m2_desc": "Captação Direta via Botão Flutuante",
+    "case.case3_m3_desc": "Otimizado para Buscas em Parauapebas e Região",
+    "case.case3_challenge": "A InterSolar precisava de uma presença digital que traduzisse um tema técnico — sistemas fotovoltaicos — em uma explicação simples para leigos, ao mesmo tempo em que construísse confiança em uma empresa nova no mercado local e guiasse tanto clientes residenciais quanto comerciais até uma conversa no WhatsApp.",
+    "case.case3_solution": "Desenvolvemos um site institucional narrativo com uma seção dedicada explicando visualmente como a energia solar funciona, apresentação do fundador para gerar confiança, benefícios, projetos reais executados e um botão de WhatsApp sempre visível. A estrutura recebeu dados estruturados Schema.org LocalBusiness voltados para buscas em Parauapebas e região.",
+    "case.case3_visit": "Visitar o Site da InterSolar"
   },
 
   en: {
@@ -809,6 +822,10 @@ const duoTranslations = {
     "port.case2_desc": "Clinical healthcare portal tailored for commercial driver drug testing with a 4-step booking workflow and local SEO architecture.",
     "port.case2_metric": "LCP < 0.8s Instant Load Time",
     "port.case2_sub": "Booking Portal & Local SEO",
+    "port.case3_tag": "Solar Energy & Sustainability",
+    "port.case3_desc": "Institutional site for residential and commercial solar energy projects in Parauapebas, with a clear service showcase and direct WhatsApp lead capture.",
+    "port.case3_metric": "Digital Presence & Lead Generation",
+    "port.case3_sub": "Solar Energy & Institutional Presence",
     "port.real_case": "Real Case",
     "port.read_case": "Read Case Study",
     "port.live_site": "Visit Live Site",
@@ -985,7 +1002,16 @@ const duoTranslations = {
     "case.case2_m3_desc": "Optimized for Commercial Drivers",
     "case.case2_challenge": "Commercial drivers renewing licenses (categories C, D & E) need clarity and fast booking. The previous site was confusing and unranked on local search.",
     "case.case2_solution": "We developed a clean clinical architecture with an intuitive 4-step booking form, paired with structured Schema.org MedicalBusiness data and geo-tags for local search dominance.",
-    "case.case2_visit": "Visit LabPrime Website"
+    "case.case2_visit": "Visit LabPrime Website",
+
+    "case.case3_badge": "Case Study #03",
+    "case.case3_title": "InterSolar Energia Renovável: digital presence to build solar energy authority in Parauapebas",
+    "case.case3_m1_desc": "Full Journey From Interest to Conversion",
+    "case.case3_m2_desc": "Direct Lead Capture via Floating Button",
+    "case.case3_m3_desc": "Optimized for Parauapebas Regional Search",
+    "case.case3_challenge": "InterSolar needed a digital presence that translated a technical subject — photovoltaic systems — into a clear explanation for non-experts, while building trust as a new player in the local market and guiding both residential and commercial prospects into a WhatsApp conversation.",
+    "case.case3_solution": "We built a narrative-driven institutional site with a dedicated section visually explaining how solar energy works, a founder section to build trust, benefits, a gallery of real completed projects, and an always-visible WhatsApp button. The structure was paired with Schema.org LocalBusiness data targeting Parauapebas and the surrounding region.",
+    "case.case3_visit": "Visit InterSolar Website"
   }
 };
 
