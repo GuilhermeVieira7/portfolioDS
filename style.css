@@ -4,8 +4,9 @@
   --bg-card-hover: #181820;
   --border-subtle: rgba(255, 255, 255, 0.08);
   --border-highlight: rgba(124, 58, 237, 0.4);
-  --brand-indigo: #4F46E5;
   --brand-violet: #7C3AED;
+  --brand-plum: #4C1D95;
+  --brand-lime: #D4FF3D;
 }
 
 * {
@@ -38,16 +39,16 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #4F46E5;
+  background: #7C3AED;
 }
 
 /* Glowing Background Gradients */
 .bg-hero-glow {
-  background: radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.18) 0%, rgba(124, 58, 237, 0.12) 35%, rgba(11, 11, 11, 0) 70%);
+  background: radial-gradient(circle at 50% 20%, rgba(124, 58, 237, 0.2) 0%, rgba(76, 29, 149, 0.14) 35%, rgba(11, 11, 11, 0) 70%);
 }
 
 .bg-cta-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.25) 0%, rgba(79, 70, 229, 0.1) 50%, rgba(11, 11, 11, 0) 80%);
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.25) 0%, rgba(76, 29, 149, 0.12) 50%, rgba(11, 11, 11, 0) 80%);
 }
 
 .grid-bg-pattern {
@@ -84,19 +85,19 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 
 /* Gradient Text & Borders */
 .text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 30%, #A5B4FC 60%, #C084FC 100%);
+  background: linear-gradient(135deg, #FFFFFF 30%, #C4B5FD 60%, #D4FF3D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-brand {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #C084FC 100%);
+  background: linear-gradient(120deg, #7C3AED 0%, #4C1D95 55%, #D4FF3D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .btn-gradient {
-  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  background: linear-gradient(135deg, #7C3AED 0%, #4C1D95 100%);
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -110,7 +111,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 255, 61, 0.35), transparent);
   transition: all 0.6s ease;
 }
 
@@ -119,7 +120,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .btn-gradient:hover {
-  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 10px 25px -5px rgba(212, 255, 61, 0.35);
   transform: translateY(-2px);
 }
 
@@ -127,7 +128,7 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .badge-tech {
   background: rgba(124, 58, 237, 0.12);
   border: 1px solid rgba(124, 58, 237, 0.3);
-  color: #C084FC;
+  color: #D4FF3D;
 }
 
 /* Animations */
@@ -412,4 +413,58 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   .deck-expanded .g-card-1:hover { transform: rotate(0deg) translateX(-390px) translateY(-10px) scale(1.03) !important; z-index: 40 !important; border-color: rgba(124, 58, 237, 0.6) !important; box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4) !important; }
   .deck-expanded .g-card-2:hover { transform: rotate(0deg) translateX(0px) translateY(-10px) scale(1.03) !important; z-index: 40 !important; border-color: rgba(124, 58, 237, 0.6) !important; box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4) !important; }
   .deck-expanded .g-card-3:hover { transform: rotate(0deg) translateX(390px) translateY(-10px) scale(1.03) !important; z-index: 40 !important; border-color: rgba(124, 58, 237, 0.6) !important; box-shadow: 0 25px 50px -12px rgba(124, 58, 237, 0.4) !important; }
+}
+
+/* ==========================================
+   CUSTOM CURSOR — desktop, fine pointer only
+=========================================== */
+body.has-custom-cursor,
+body.has-custom-cursor a,
+body.has-custom-cursor button,
+body.has-custom-cursor [role="button"] {
+  cursor: none;
+}
+
+#custom-cursor-dot,
+#custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+#custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #D4FF3D;
+}
+
+#custom-cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(212, 255, 61, 0.55);
+  transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+body.has-custom-cursor.cursor-hover #custom-cursor-ring {
+  width: 54px;
+  height: 54px;
+  background: rgba(212, 255, 61, 0.1);
+  border-color: #D4FF3D;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  #custom-cursor-dot,
+  #custom-cursor-ring {
+    display: none !important;
+  }
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button {
+    cursor: auto;
+  }
 }

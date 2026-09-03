@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStickyMobileCTA();
   initMagneticButtons();
   init3DGuaranteeDeck();
+  initCustomCursor();
 });
 
 /* ----------------------------------------------------
@@ -798,5 +799,62 @@ function init3DGuaranteeDeck() {
       }
     }
     if (window.lucide) lucide.createIcons();
+  });
+}
+
+/* ----------------------------------------------------
+   13. Custom Cursor (desktop, fine pointer only)
+---------------------------------------------------- */
+function initCustomCursor() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+  if (prefersReducedMotion || !hasFinePointer) return;
+
+  const dot = document.createElement('div');
+  dot.id = 'custom-cursor-dot';
+  const ring = document.createElement('div');
+  ring.id = 'custom-cursor-ring';
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+  document.body.classList.add('has-custom-cursor');
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let ringX = mouseX;
+  let ringY = mouseY;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+  });
+
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.18;
+    ringY += (mouseY - ringY) * 0.18;
+    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
+    requestAnimationFrame(animateRing);
+  }
+  requestAnimationFrame(animateRing);
+
+  const interactiveSelector = 'a, button, [role="button"], input, textarea, select, .cursor-hover-target';
+  document.addEventListener('mouseover', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      document.body.classList.add('cursor-hover');
+    }
+  });
+  document.addEventListener('mouseout', (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      document.body.classList.remove('cursor-hover');
+    }
+  });
+
+  document.addEventListener('mouseleave', () => {
+    dot.style.opacity = '0';
+    ring.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', () => {
+    dot.style.opacity = '1';
+    ring.style.opacity = '1';
   });
 }
