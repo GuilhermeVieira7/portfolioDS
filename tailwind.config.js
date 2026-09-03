@@ -13,7 +13,7 @@ module.exports = {
         brandDark: '#0B0B0B',
         cardDark: '#121217',
         cardBorder: 'rgba(255, 255, 255, 0.08)',
-        indigoBrand: '#4F46E5',
+        limeBrand: '#D4FF3D',
         violetBrand: '#7C3AED',
       },
       fontFamily: {

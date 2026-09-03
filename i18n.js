@@ -20,7 +20,7 @@ const duoTranslations = {
     
     // Hero
     "hero.tech_badge": "Engenharia de Software & Arquitetura UX de Alta Velocidade",
-    "hero.title_html": "Construímos sites que <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">aceleram vendas e geram valor.</span>",
+    "hero.title_html": "<span class=\"block font-medium text-gray-400 text-xl sm:text-2xl md:text-3xl tracking-normal mb-2 sm:mb-3\">Construímos sites que</span><span class=\"block font-extrabold text-white text-5xl sm:text-7xl md:text-8xl xl:text-9xl leading-[0.95] tracking-tighter\"><span class=\"text-gradient-brand\">aceleram vendas<br class=\"hidden sm:inline\" /> e geram valor.</span></span>",
     "hero.subtitle": "Desenvolvimento web sob medida, performance extrema e estratégia de conversão para empresas que se recusam a parecer genéricas no mercado.",
     "hero.cta_proposal": "Solicitar proposta comercial",
     "hero.cta_projects": "Ver projetos reais",
@@ -534,7 +534,7 @@ const duoTranslations = {
     
     // Hero
     "hero.tech_badge": "High-Speed Software Engineering & UX Architecture",
-    "hero.title_html": "We build websites that <br class=\"hidden sm:inline\" /><span class=\"text-gradient-brand\">accelerate sales and drive growth.</span>",
+    "hero.title_html": "<span class=\"block font-medium text-gray-400 text-xl sm:text-2xl md:text-3xl tracking-normal mb-2 sm:mb-3\">We build websites that</span><span class=\"block font-extrabold text-white text-5xl sm:text-7xl md:text-8xl xl:text-9xl leading-[0.95] tracking-tighter\"><span class=\"text-gradient-brand\">accelerate sales<br class=\"hidden sm:inline\" /> and drive growth.</span></span>",
     "hero.subtitle": "Bespoke web development, extreme performance, and conversion strategies for businesses that refuse to look generic.",
     "hero.cta_proposal": "Request Commercial Proposal",
     "hero.cta_projects": "View Live Projects",
