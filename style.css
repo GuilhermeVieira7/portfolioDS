@@ -468,3 +468,45 @@ body.has-custom-cursor.cursor-hover #custom-cursor-ring {
     cursor: auto;
   }
 }
+
+/* ==========================================
+   STAGGERED CARD REVEAL — additive, opt-in only
+   (default state is fully visible; JS adds the
+   hidden-then-in classes so nothing regresses if
+   JS fails or an element is never observed)
+=========================================== */
+.stagger-item.stagger-init {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: var(--stagger-delay, 0s);
+}
+
+.stagger-item.stagger-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================
+   REDUCED MOTION — global guard for looping /
+   decorative animations
+=========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow,
+  .animate-float-delayed,
+  .animate-pulse-glow,
+  .animate-ping,
+  .timeline-dot::after {
+    animation: none !important;
+  }
+
+  .stagger-item.stagger-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

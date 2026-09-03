@@ -18,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   init3DGuaranteeDeck();
   initCustomCursor();
+  initStaggerReveal();
+  initHeroGlowParallax();
 });
 
 /* ----------------------------------------------------
@@ -857,4 +859,94 @@ function initCustomCursor() {
     dot.style.opacity = '1';
     ring.style.opacity = '1';
   });
+}
+
+/* ----------------------------------------------------
+   14. Staggered Card Reveal (services + portfolio grids)
+   Additive only: cards render fully visible by default
+   (.stagger-item alone does nothing), so if this never
+   runs or IntersectionObserver misbehaves, nothing hides.
+---------------------------------------------------- */
+function initStaggerReveal() {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) return;
+
+  const groups = document.querySelectorAll('#servicos-grid, #portfolio-grid');
+  if (!groups.length) return;
+
+  const allItems = [];
+
+  groups.forEach(group => {
+    const items = group.querySelectorAll(':scope > .stagger-item');
+    items.forEach((el, i) => {
+      el.style.setProperty('--stagger-delay', `${Math.min(i, 5) * 0.08}s`);
+      el.classList.add('stagger-init');
+      allItems.push(el);
+    });
+  });
+
+  // Once revealed, drop the stagger classes entirely so no leftover
+  // transform rule can ever fight the card's own :hover lift.
+  function settle(el) {
+    el.classList.add('stagger-in');
+    setTimeout(() => {
+      el.classList.remove('stagger-init', 'stagger-in');
+      el.style.removeProperty('--stagger-delay');
+    }, 700);
+  }
+
+  // Elements already in the viewport at load reveal immediately, no observer needed.
+  allItems.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      settle(el);
+    }
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        settle(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { root: null, threshold: 0.15, rootMargin: '80px 0px 80px 0px' });
+
+  allItems.forEach(el => {
+    if (!el.classList.contains('stagger-in')) observer.observe(el);
+  });
+
+  // Safety net: never let a card stay hidden if something goes wrong.
+  setTimeout(() => {
+    allItems.forEach(el => {
+      if (el.classList.contains('stagger-init') && !el.classList.contains('stagger-in')) settle(el);
+    });
+  }, 4000);
+}
+
+/* ----------------------------------------------------
+   15. Subtle Hero Glow Parallax
+---------------------------------------------------- */
+function initHeroGlowParallax() {
+  const glow = document.getElementById('hero-glow-parallax');
+  if (!glow) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let ticking = false;
+  function update() {
+    const offset = Math.min(window.scrollY * 0.12, 140);
+    const fade = Math.max(1 - window.scrollY / 700, 0.15);
+    glow.style.transform = `translate(-50%, ${offset}px)`;
+    glow.style.opacity = fade;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  update();
 }

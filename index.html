@@ -291,7 +291,7 @@
 
   <!-- Background Ambient Glow & Grid Pattern -->
   <div class="fixed inset-0 grid-bg-pattern pointer-events-none opacity-40 z-0"></div>
-  <div class="fixed -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-hero-glow pointer-events-none z-0"></div>
+  <div id="hero-glow-parallax" class="fixed -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-hero-glow pointer-events-none z-0"></div>
 
   <!-- ==========================================
        HEADER / NAVBAR
@@ -719,11 +719,11 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="servicos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Solution 1: High Converting Landing Pages -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal active">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal active stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="trending-up" class="w-7 h-7"></i>
@@ -744,7 +744,7 @@
 
         <!-- Solution 2: Corporate Brand Authority Websites -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal active">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal active stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="award" class="w-7 h-7"></i>
@@ -765,7 +765,7 @@
 
         <!-- Solution 3: Frictionless E-Commerce -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal active">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal active stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="shopping-bag" class="w-7 h-7"></i>
@@ -786,7 +786,7 @@
 
         <!-- Solution 4: Strategic Redesign -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="zap" class="w-7 h-7"></i>
@@ -807,7 +807,7 @@
 
         <!-- Solution 5: Technical SEO -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="search" class="w-7 h-7"></i>
@@ -828,7 +828,7 @@
 
         <!-- Solution 6: Instagram Posts & Social Design (NEW) -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-pink-500/20 to-violet-500/20 text-pink-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-pink-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="instagram" class="w-7 h-7"></i>
@@ -848,7 +848,7 @@
 
         <!-- Solution 7: Sales Automations & Workflows (NEW) -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-emerald-500/40 transition-all reveal">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-emerald-500/40 transition-all reveal stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-emerald-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="bot" class="w-7 h-7"></i>
@@ -868,7 +868,7 @@
 
         <!-- Solution 8: Technical Security & Evolution -->
         <div
-          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal">
+          class="glass-card p-8 rounded-3xl group border border-white/10 hover:border-violet-500/40 transition-all reveal stagger-item">
           <div
             class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-500/20 text-violet-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300 shadow-md">
             <i data-lucide="shield-check" class="w-7 h-7"></i>
@@ -893,6 +893,27 @@
   </section>
 
   <!-- ==========================================
+       3.5 BREATHER — full-bleed statement, no cards
+  =========================================== -->
+  <section class="relative py-28 md:py-40 overflow-hidden z-10 border-y border-white/5">
+    <div class="grid-bg-pattern absolute inset-0 opacity-20 pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal active">
+      <p class="text-xs uppercase tracking-[0.35em] text-gray-500 mb-6" data-i18n="breather.eyebrow">Enquanto isso, na prática</p>
+      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl md:text-6xl leading-[1.15] text-white" data-i18n-html="breather.title_html">
+        Cada segundo de carregamento <span class="text-gradient-brand">custa um cliente.</span><br class="hidden sm:inline">
+        A gente projeta pra você não perder nenhum.
+      </h2>
+    </div>
+    <div class="mt-16 flex flex-wrap items-center justify-center gap-x-8 sm:gap-x-10 gap-y-4 text-xs sm:text-sm uppercase tracking-widest text-gray-600 font-semibold px-4">
+      <span data-i18n="breather.tag1">Performance</span><span class="text-violet-500">•</span>
+      <span data-i18n="breather.tag2">Conversão</span><span class="text-violet-500">•</span>
+      <span data-i18n="breather.tag3">SEO técnico</span><span class="text-violet-500">•</span>
+      <span data-i18n="breather.tag4">Design autoral</span><span class="text-violet-500">•</span>
+      <span data-i18n="breather.tag5">Suporte real</span>
+    </div>
+  </section>
+
+  <!-- ==========================================
        4. PORTFOLIO & REAL CASE STUDIES (OPTIMIZED VISIBILITY)
   =========================================== -->
   <section id="portfolio" class="py-24 relative z-10">
@@ -912,11 +933,11 @@
       </div>
 
       <!-- Real Case Studies Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Case Study 1: Angatu Viagens -->
         <div
-          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
+          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal stagger-item cursor-pointer"
           onclick="openCaseStudyModal('1')" data-category="turismo landing-pages">
           <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
             <img src="assets/projects/angatu.webp" alt="Site Angatu Viagens desenvolvido pela Duo Studio - Landing page de turismo de luxo com agendamento via WhatsApp em Parauapebas" loading="lazy"
@@ -962,7 +983,7 @@
 
         <!-- Case Study 2: LabPrime Toxicológico -->
         <div
-          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
+          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal stagger-item cursor-pointer"
           onclick="window.location.href='cases/labprime.html'" data-category="saude institucional">
           <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
             <img src="assets/projects/labprime.webp" alt="Site LabPrime Toxicológico desenvolvido pela Duo Studio - Portal clínico com agendamento em 4 passos e SEO local em Parauapebas" loading="lazy"
@@ -1008,7 +1029,7 @@
 
         <!-- Case Study 3: InterSolar Energia Renovável -->
         <div
-          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal cursor-pointer"
+          class="portfolio-item portfolio-card glass-card rounded-3xl overflow-hidden group border border-white/10 reveal stagger-item cursor-pointer"
           onclick="window.location.href='cases/intersolar.html'" data-category="energia institucional">
           <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
             <img src="assets/projects/intersolar-hero.webp" alt="Site InterSolar Energia Renovável desenvolvido pela Duo Studio - Landing page institucional de energia solar em Parauapebas" loading="lazy"
