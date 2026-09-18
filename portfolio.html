@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark scroll-smooth">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -31,47 +31,11 @@
   <meta property="og:site_name" content="Duo Studio">
 
   <!-- Favicon -->
-  <meta name="theme-color" content="#0B0B0B">
+  <meta name="theme-color" content="#F2EEE6">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png">
   <link rel="manifest" href="/site.webmanifest">
-
-  <!-- Google Fonts Preconnect & Preload -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script defer src="https://unpkg.com/lucide@0.460.0"></script>
-
-  <!-- Tailwind CSS CDN Engine & Custom Config -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandDark: '#0B0B0B',
-            cardDark: '#121217',
-            cardBorder: 'rgba(255, 255, 255, 0.08)',
-            limeBrand: '#D4FF3D',
-            violetBrand: '#7C3AED',
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Sora', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="dist/tailwind.css">
-  <link rel="stylesheet" href="style.css?v=9">
 
   <!-- Structured Data CollectionPage -->
   <script type="application/ld+json">
@@ -134,201 +98,398 @@
     ]
   }
   </script>
+
+  <!-- Tipografia + sistema visual (independente de Tailwind/style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=2">
 </head>
 
-<body class="bg-[#0B0B0B] text-gray-100 antialiased selection:bg-violet-600 selection:text-white overflow-x-hidden">
+<body data-theme="paper">
 
-  <!-- Background Glow -->
-  <div class="fixed inset-0 grid-bg-pattern pointer-events-none opacity-40 z-0"></div>
-  <div id="hero-glow-parallax" class="fixed -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-hero-glow pointer-events-none z-0"></div>
+  <a class="skip" href="#main-content" data-i18n="h.skip">Ir para o conteúdo</a>
 
-  <!-- HEADER -->
-  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
-        <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" class="h-9 sm:h-10 w-auto object-contain">
+  <!-- Ícones (sprite inline: zero requisições) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
+  </svg>
+
+  <!-- ==========================================
+       HEADER — segue o tema da seção sob ele (home.js)
+  =========================================== -->
+  <header class="site-header" id="site-header" data-theme="paper">
+    <div class="wrap hd-inner">
+      <a class="logo" href="index.html" aria-label="Duo Studio — início">
+        <img src="assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" decoding="async" fetchpriority="high">
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-        <a href="index.html" class="hover:text-white transition-colors py-1" data-i18n="nav.home">Início</a>
-        <a href="sobre.html" class="hover:text-white transition-colors py-1" data-i18n="nav.about">Sobre</a>
-        <a href="servicos.html" class="hover:text-white transition-colors py-1" data-i18n="nav.solutions">Soluções</a>
-        <a href="portfolio.html" class="text-violet-400 font-semibold py-1" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="hover:text-white transition-colors py-1" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="hover:text-white transition-colors py-1" data-i18n="nav.contact">Contato</a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html" data-i18n="nav.home">Início</a>
+        <a href="sobre.html" data-i18n="nav.about">Sobre</a>
+        <a href="servicos.html" data-i18n="nav.solutions">Soluções</a>
+        <a href="portfolio.html" aria-current="page" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="contato.html" data-i18n="nav.contact">Contato</a>
       </nav>
-      <div class="hidden md:flex items-center gap-4">
-        <!-- Language Switcher Pill -->
-        <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-[11px] font-semibold">
-          <button data-lang-val="pt" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
-            <span>🇧🇷</span> <span>PT</span>
-          </button>
-          <button data-lang-val="en" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
-            <span>🇺🇸</span> <span>EN</span>
-          </button>
-        </div>
 
-        <button class="open-budget-modal btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white shadow-lg flex items-center gap-2">
-          <span data-i18n="nav.schedule_cta">Agendar reunião estratégica</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      <div class="hd-right">
+        <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+          <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
+        </div>
+        <button type="button" class="btn btn--sm open-budget-modal">
+          <span data-i18n="h.nav_cta">Pedir proposta</span>
+          <svg aria-hidden="true"><use href="#i-arrow"/></svg>
         </button>
-      </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white" aria-label="Menu">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
-    </div>
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-4 pb-6 bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-white/10 mt-3">
-      <div class="flex flex-col gap-4 text-base font-medium">
-        <!-- Language Toggle Mobile -->
-        <div class="flex items-center justify-between py-2 border-b border-white/5 text-gray-300">
-          <span class="text-xs uppercase font-medium text-gray-400">Idioma / Language</span>
-          <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-xs font-semibold">
-            <button data-lang-val="pt" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
-              <span>🇧🇷</span> <span>PT</span>
-            </button>
-            <button data-lang-val="en" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
-              <span>🇺🇸</span> <span>EN</span>
-            </button>
-          </div>
-        </div>
-
-        <a href="index.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.home">Início</a>
-        <a href="sobre.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.about">Sobre</a>
-        <a href="servicos.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.solutions">Soluções</a>
-        <a href="portfolio.html" class="mobile-nav-link text-violet-400 font-bold py-2 border-b border-white/5" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.contact">Contato</a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Abrir menu" data-i18n-aria="h.menu">
+          <span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO PORTFÓLIO -->
-  <section class="relative pt-36 pb-16 md:pt-44 md:pb-24 z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-6">
-        <span data-i18n="port.hero_badge">Estudos de Caso & Trabalhos Autorais</span>
+  <div class="drawer" id="nav-drawer" data-theme="paper" hidden>
+    <a class="dl" href="index.html" data-i18n="nav.home">Início</a>
+    <a class="dl" href="sobre.html" data-i18n="nav.about">Sobre</a>
+    <a class="dl" href="servicos.html" data-i18n="nav.solutions">Soluções</a>
+    <a class="dl" href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a>
+    <a class="dl" href="blog.html" data-i18n="nav.blog">Blog</a>
+    <a class="dl" href="contato.html" data-i18n="nav.contact">Contato</a>
+    <div class="dr-foot">
+      <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+        <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
       </div>
-      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-tight mb-6" data-i18n-html="port.hero_title_html">
-        Projetos reais criados para <br class="hidden sm:inline" />
-        <span class="text-gradient-brand">dominar o mercado digital.</span>
-      </h1>
-      <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed" data-i18n="port.hero_desc">
-        Confira como transformamos a presença digital de nossos parceiros em plataformas ultrarrápidas com foco em captação contínua de clientes.
-      </p>
+      <button type="button" class="btn open-budget-modal">
+        <span data-i18n="h.nav_cta">Pedir proposta</span>
+        <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+      </button>
     </div>
-  </section>
+  </div>
 
-  <!-- CASES DE DESTAQUE -->
-  <section class="py-12 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  <!-- Marcador fixo: 01/05 … e o "extra" nas seções de apoio -->
+  <div class="marker" id="marker" data-theme="paper" aria-hidden="true"><b id="marker-n">01/05</b><span id="marker-l">Promessa</span></div>
 
-      <!-- Case 1: Angatu Viagens -->
-      <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
-        <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
-          <img src="assets/projects/angatu.webp" alt="Site Angatu Viagens criado pela Duo Studio" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/40 to-transparent"></div>
+  <main id="main-content">
+
+    <section class="phero has-art" data-theme="paper" data-mk="p.mk_intro" data-mkn="nav.portfolio">
+      <div class="wrap phero-grid">
+        <div class="phero-copy">
+          <p class="kicker"><span data-i18n="h.series">Outra história, por favor.</span> · <span data-i18n="nav.portfolio">Portfólio</span></p>
+          <h1 class="h1 h1--page" data-i18n-html="p.port_title_html">Projetos reais criados para dominar o mercado <em>digital.</em></h1>
+          <p class="lede" data-i18n="port.hero_desc">Confira como transformamos a presença digital de nossos parceiros em plataformas ultrarrápidas com foco em captação contínua de clientes.</p>
+          <div class="hero-cta"><a class="btn" href="#sites"><span data-i18n="p.port_tab_sites">Sites e sistemas</span><svg aria-hidden="true"><use href="#i-down"/></svg></a><a class="tlink" href="#arte"><span data-i18n="p.port_tab_art">Direção de arte</span><svg aria-hidden="true"><use href="#i-down"/></svg></a></div>
         </div>
-        <div class="p-8">
-          <span class="text-xs font-bold text-violet-400 uppercase tracking-widest block mb-2" data-i18n="port.case1_tag">Turismo de Luxo</span>
-          <h2 class="font-heading font-bold text-2xl text-white mb-3">Angatu Viagens</h2>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="port.case1_desc">
-            Plataforma imersiva de turismo premium desenvolvida para simplificar a apresentação de pacotes de viagem e direcionar o visitante direto para o fechamento no WhatsApp.
-          </p>
-          <div class="flex items-center gap-3">
-            <a href="cases/angatu.html" class="btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md">
-              <span data-i18n="port.read_case">Ler Estudo de Caso</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <a href="https://angatuviagens-eu.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 inline-flex items-center gap-1.5 transition-all">
-              <span data-i18n="port.live_site">Acessar Site Ao Vivo</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
-            </a>
+        <div class="phero-art"><div class="pair"><figure class="poster par"><img src="assets/cenas/01-conto-de-fadas-1000.webp" srcset="assets/cenas/01-conto-de-fadas-560.webp 560w, assets/cenas/01-conto-de-fadas-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" decoding="async" draggable="false" alt="Boneco de madeira estilo Pinóquio, de chapéu de papel e casaco roxo, com o nariz enorme furando uma placa de papel em branco." data-alt-en="Wooden Pinocchio-style puppet in a paper hat and purple jacket, its huge nose poking through a blank paper sign."></figure><figure class="poster  pair-2"><img src="assets/arte/metaforas/01-sufocando-1000.webp" srcset="assets/arte/metaforas/01-sufocando-560.webp 560w, assets/arte/metaforas/01-sufocando-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Tem algo sufocando sua marca." data-alt-en="Duo Studio artwork — Something is suffocating your brand."></figure></div></div>
+      </div>
+    </section>
+    <section class="cases cases--page" id="sites" data-theme="ink" data-mk="p.mk_sites" data-mkn="nav.portfolio">
+      <div class="wrap">
+        
+        <div class="sec-head rv">
+          <p class="kicker"><span data-i18n="h.mk_extra">Extra</span> · <span data-i18n="p.mk_sites">Sites e sistemas</span></p>
+          <h2 class="h2" data-i18n-html="h.cs_title_html">Histórias que já saíram do <em>papel.</em></h2>
+          
+        </div>
+        <ol class="cs-list">
+          <li class="cs rv">
+            <a class="cs-img" href="cases/angatu.html" tabindex="-1" aria-hidden="true"><img src="assets/projects/angatu.webp" alt="" width="1200" height="750" loading="lazy" decoding="async"></a>
+            <div class="cs-copy">
+              <span class="cs-n">01</span>
+              <p class="kicker" data-i18n="port.case1_tag">Turismo de Luxo</p>
+              <h3 class="h3"><a href="cases/angatu.html">Angatu Viagens</a></h3>
+              <p class="lede" data-i18n="port.case1_desc">Plataforma imersiva de turismo premium desenvolvida para simplificar a apresentação de pacotes de viagem e direcionar o visitante direto para o fechamento no WhatsApp.</p>
+              <p class="metric" data-i18n="port.case1_metric">+180% Agendamentos no WhatsApp</p>
+              <div class="cs-actions"><a class="btn btn--sm" href="cases/angatu.html"><span data-i18n="port.read_case">Ler Estudo de Caso</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="tlink" href="https://angatuviagens-eu.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="port.live_site">Acessar Site Ao Vivo</span><svg aria-hidden="true"><use href="#i-up"/></svg></a></div>
+            </div>
+          </li>
+          <li class="cs rv">
+            <a class="cs-img" href="cases/labprime.html" tabindex="-1" aria-hidden="true"><img src="assets/projects/labprime.webp" alt="" width="1200" height="750" loading="lazy" decoding="async"></a>
+            <div class="cs-copy">
+              <span class="cs-n">02</span>
+              <p class="kicker" data-i18n="port.case2_tag">Saúde &amp; Análises Clínicas</p>
+              <h3 class="h3"><a href="cases/labprime.html">LabPrime Toxicológico</a></h3>
+              <p class="lede" data-i18n="port.case2_desc">Portal clínico focado em exames para motoristas CNH C, D e E com agendamento guiado em 4 passos e infraestrutura otimizada para buscas locais no Google.</p>
+              <p class="metric" data-i18n="port.case2_metric">LCP &lt; 0.8s Carregamento Instantâneo</p>
+              <div class="cs-actions"><a class="btn btn--sm" href="cases/labprime.html"><span data-i18n="port.read_case">Ler Estudo de Caso</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="tlink" href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer"><span data-i18n="port.live_site">Acessar Site Ao Vivo</span><svg aria-hidden="true"><use href="#i-up"/></svg></a></div>
+            </div>
+          </li>
+          <li class="cs rv">
+            <a class="cs-img" href="cases/intersolar.html" tabindex="-1" aria-hidden="true"><img src="assets/projects/intersolar-hero.webp" alt="" width="1200" height="750" loading="lazy" decoding="async"></a>
+            <div class="cs-copy">
+              <span class="cs-n">03</span>
+              <p class="kicker" data-i18n="port.case3_tag">Energia Solar &amp; Sustentabilidade</p>
+              <h3 class="h3"><a href="cases/intersolar.html">InterSolar Energia Renovável</a></h3>
+              <p class="lede" data-i18n="port.case3_desc">Site institucional para projetos de energia solar residencial e comercial em Parauapebas, com apresentação clara dos serviços e captação direta de clientes via WhatsApp.</p>
+              <p class="metric" data-i18n="port.case3_metric">Presença Digital &amp; Geração de Leads</p>
+              <div class="cs-actions"><a class="btn btn--sm" href="cases/intersolar.html"><span data-i18n="port.read_case">Ler Estudo de Caso</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="tlink" href="https://intersolarpa.com.br/" target="_blank" rel="noopener noreferrer"><span data-i18n="port.live_site">Acessar Site Ao Vivo</span><svg aria-hidden="true"><use href="#i-up"/></svg></a></div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="galsec" id="arte" data-theme="paper" data-mk="h.mk_art" data-mkn="nav.portfolio">
+      <div class="wrap">
+        
+        <div class="sec-head rv">
+          <p class="kicker"><span data-i18n="h.mk_extra">Extra</span> · <span data-i18n="h.mk_art">Direção de arte</span></p>
+          <h2 class="h2" data-i18n-html="p.gal_title_html">Todas as artes da <em>Duo.</em></h2>
+          <p class="lede" data-i18n="p.gal_lede">As séries que publicamos no Instagram, da mais recente para a mais antiga. Toque em qualquer arte para ampliar.</p><div class="artrail-links"><a class="btn" href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer"><span data-i18n="h.art_ig">Seguir @somosduostudio</span><svg aria-hidden="true"><use href="#i-up"/></svg></a></div>
+        </div>
+        
+        <div class="gal" id="gal-outra-historia">
+          <header class="gal-head rv">
+            <div>
+              <p class="kicker">01 · <span>5</span> <span data-i18n="p.pieces">peças</span></p>
+              <h3 class="h3" data-i18n="h.series">Outra história, por favor.</h3>
+            </div>
+            <p class="lede" data-i18n="p.sd_outra_historia">Stop-motion artesanal: personagens de madeira, pelúcia e retalho contando os problemas que a Duo resolve.</p>
+          </header>
+          <ul class="gal-grid is-p">
+            <li><button type="button" class="gal-btn" data-lb="outra-historia" data-full="assets/arte/outra-historia/01-conto-de-fadas-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/outra-historia/01-conto-de-fadas-1000.webp" srcset="assets/arte/outra-historia/01-conto-de-fadas-560.webp 560w, assets/arte/outra-historia/01-conto-de-fadas-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu negócio não vive de conto de fadas." data-alt-en="Duo Studio artwork — Your business doesn't live on fairy tales."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="outra-historia" data-full="assets/arte/outra-historia/02-espera-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/outra-historia/02-espera-1000.webp" srcset="assets/arte/outra-historia/02-espera-560.webp 560w, assets/arte/outra-historia/02-espera-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu cliente não vai esperar para sempre." data-alt-en="Duo Studio artwork — Your customer won't wait forever."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="outra-historia" data-full="assets/arte/outra-historia/03-tempo-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/outra-historia/03-tempo-1000.webp" srcset="assets/arte/outra-historia/03-tempo-560.webp 560w, assets/arte/outra-historia/03-tempo-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — O trabalho manual está sugando seu tempo." data-alt-en="Duo Studio artwork — Manual work is draining your time."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="outra-historia" data-full="assets/arte/outra-historia/04-frankenstein-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/outra-historia/04-frankenstein-1000.webp" srcset="assets/arte/outra-historia/04-frankenstein-560.webp 560w, assets/arte/outra-historia/04-frankenstein-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu digital virou um Frankenstein?" data-alt-en="Duo Studio artwork — Did your digital presence turn into a Frankenstein?"></button></li>
+            <li><button type="button" class="gal-btn" data-lb="outra-historia" data-full="assets/arte/outra-historia/05-proximo-capitulo-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/outra-historia/05-proximo-capitulo-1000.webp" srcset="assets/arte/outra-historia/05-proximo-capitulo-560.webp 560w, assets/arte/outra-historia/05-proximo-capitulo-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Chega de terror. Vamos criar uma boa história." data-alt-en="Duo Studio artwork — Enough horror. Let's write a good story."></button></li>
+          </ul>
+        </div>
+        <div class="gal" id="gal-metaforas">
+          <header class="gal-head rv">
+            <div>
+              <p class="kicker">02 · <span>5</span> <span data-i18n="p.pieces">peças</span></p>
+              <h3 class="h3" data-i18n="h.s_meta">Metáforas de estúdio</h3>
+            </div>
+            <p class="lede" data-i18n="p.sd_metaforas">Objetos reais fotografados como metáfora: marca invisível, ovos iguais, labirinto, nó de telefone.</p>
+          </header>
+          <ul class="gal-grid is-p">
+            <li><button type="button" class="gal-btn" data-lb="metaforas" data-full="assets/arte/metaforas/01-sufocando-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/metaforas/01-sufocando-1000.webp" srcset="assets/arte/metaforas/01-sufocando-560.webp 560w, assets/arte/metaforas/01-sufocando-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Tem algo sufocando sua marca." data-alt-en="Duo Studio artwork — Something is suffocating your brand."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="metaforas" data-full="assets/arte/metaforas/02-parecer-igual-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/metaforas/02-parecer-igual-1000.webp" srcset="assets/arte/metaforas/02-parecer-igual-560.webp 560w, assets/arte/metaforas/02-parecer-igual-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Parecer igual é desaparecer." data-alt-en="Duo Studio artwork — Looking the same means disappearing."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="metaforas" data-full="assets/arte/metaforas/03-detetive-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/metaforas/03-detetive-1000.webp" srcset="assets/arte/metaforas/03-detetive-560.webp 560w, assets/arte/metaforas/03-detetive-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu cliente não é detetive." data-alt-en="Duo Studio artwork — Your customer is not a detective."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="metaforas" data-full="assets/arte/metaforas/04-no-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/metaforas/04-no-1000.webp" srcset="assets/arte/metaforas/04-no-560.webp 560w, assets/arte/metaforas/04-no-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu tempo não desata nó." data-alt-en="Duo Studio artwork — Your time doesn't untie knots."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="metaforas" data-full="assets/arte/metaforas/05-preso-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/metaforas/05-preso-1000.webp" srcset="assets/arte/metaforas/05-preso-560.webp 560w, assets/arte/metaforas/05-preso-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Chega de ficar preso." data-alt-en="Duo Studio artwork — Stop feeling stuck."></button></li>
+          </ul>
+        </div>
+        <div class="gal" id="gal-pecas">
+          <header class="gal-head rv">
+            <div>
+              <p class="kicker">03 · <span>5</span> <span data-i18n="p.pieces">peças</span></p>
+              <h3 class="h3" data-i18n="h.s_pecas">Marca, peça por peça</h3>
+            </div>
+            <p class="lede" data-i18n="p.sd_pecas">Uma cidade de blocos de montar onde a marca cresce, ganha personalidade e automatiza o que é repetitivo.</p>
+          </header>
+          <ul class="gal-grid is-p">
+            <li><button type="button" class="gal-btn" data-lb="pecas" data-full="assets/arte/pecas/01-cresceu-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/pecas/01-cresceu-1000.webp" srcset="assets/arte/pecas/01-cresceu-560.webp 560w, assets/arte/pecas/01-cresceu-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu negócio cresceu. Sua marca acompanhou?" data-alt-en="Duo Studio artwork — Your business grew. Did your brand keep up?"></button></li>
+            <li><button type="button" class="gal-btn" data-lb="pecas" data-full="assets/arte/pecas/02-personalidade-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/pecas/02-personalidade-1000.webp" srcset="assets/arte/pecas/02-personalidade-560.webp 560w, assets/arte/pecas/02-personalidade-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Não é só trocar a cor. É construir personalidade." data-alt-en="Duo Studio artwork — It's not just changing the color. It's building personality."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="pecas" data-full="assets/arte/pecas/03-ponte-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/pecas/03-ponte-1000.webp" srcset="assets/arte/pecas/03-ponte-560.webp 560w, assets/arte/pecas/03-ponte-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu site é uma ponte. Não um labirinto." data-alt-en="Duo Studio artwork — Your site is a bridge. Not a maze."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="pecas" data-full="assets/arte/pecas/04-automatico-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/pecas/04-automatico-1000.webp" srcset="assets/arte/pecas/04-automatico-560.webp 560w, assets/arte/pecas/04-automatico-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — As tarefas no automático. As pessoas em primeiro lugar." data-alt-en="Duo Studio artwork — Tasks on autopilot. People first."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="pecas" data-full="assets/arte/pecas/05-primeira-peca-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/pecas/05-primeira-peca-1000.webp" srcset="assets/arte/pecas/05-primeira-peca-560.webp 560w, assets/arte/pecas/05-primeira-peca-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Grandes marcas começam com uma primeira peça." data-alt-en="Duo Studio artwork — Great brands start with a first piece."></button></li>
+          </ul>
+        </div>
+        <div class="gal" id="gal-bichos">
+          <header class="gal-head rv">
+            <div>
+              <p class="kicker">04 · <span>15</span> <span data-i18n="p.pieces">peças</span></p>
+              <h3 class="h3" data-i18n="h.s_bichos">Os bichos da Duo</h3>
+            </div>
+            <p class="lede" data-i18n="p.sd_bichos">Papagaio, cachorro e gato em colagem neon: humor para falar de estratégia, identidade e design.</p>
+          </header>
+          <ul class="gal-grid is-sq">
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/01-papagaio-fala-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/01-papagaio-fala-1000.webp" srcset="assets/arte/bichos/01-papagaio-fala-560.webp 560w, assets/arte/bichos/01-papagaio-fala-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Sua marca fala... ou só repete igual papagaio?" data-alt-en="Duo Studio artwork — Does your brand speak... or just parrot others?"></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/02-post-sem-estrategia-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/02-post-sem-estrategia-1000.webp" srcset="assets/arte/bichos/02-post-sem-estrategia-560.webp 560w, assets/arte/bichos/02-post-sem-estrategia-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Post sem estratégia é cachorro correndo atrás do próprio rabo." data-alt-en="Duo Studio artwork — A post without strategy is a dog chasing its own tail."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/03-o-que-faz-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/03-o-que-faz-1000.webp" srcset="assets/arte/bichos/03-o-que-faz-560.webp 560w, assets/arte/bichos/03-o-que-faz-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — O que a Duo Studio faz?" data-alt-en="Duo Studio artwork — What does Duo Studio do?"></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/04-como-fazemos-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/04-como-fazemos-1000.webp" srcset="assets/arte/bichos/04-como-fazemos-560.webp 560w, assets/arte/bichos/04-como-fazemos-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Como fazemos isso? Instinto criativo + método claro." data-alt-en="Duo Studio artwork — How do we do it? Creative instinct + a clear method."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/05-impossivel-de-ignorar-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/05-impossivel-de-ignorar-1000.webp" srcset="assets/arte/bichos/05-impossivel-de-ignorar-560.webp 560w, assets/arte/bichos/05-impossivel-de-ignorar-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Sua marca merece ser impossível de ignorar." data-alt-en="Duo Studio artwork — Your brand deserves to be impossible to ignore."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/06-largar-na-frente-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/06-largar-na-frente-1000.webp" srcset="assets/arte/bichos/06-largar-na-frente-560.webp 560w, assets/arte/bichos/06-largar-na-frente-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Sua marca nasceu pra largar na frente." data-alt-en="Duo Studio artwork — Your brand was born to take pole position."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/07-nao-seja-papagaio-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/07-nao-seja-papagaio-1000.webp" srcset="assets/arte/bichos/07-nao-seja-papagaio-560.webp 560w, assets/arte/bichos/07-nao-seja-papagaio-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Não seja papagaio. Copiar o concorrente não cria marca." data-alt-en="Duo Studio artwork — Don't be a parrot. Copying competitors doesn't build a brand."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/08-gato-julgou-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/08-gato-julgou-1000.webp" srcset="assets/arte/bichos/08-gato-julgou-560.webp 560w, assets/arte/bichos/08-gato-julgou-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — O gato julgou sua marca." data-alt-en="Duo Studio artwork — The cat judged your brand."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/09-marketing-sem-estrategia-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/09-marketing-sem-estrategia-1000.webp" srcset="assets/arte/bichos/09-marketing-sem-estrategia-560.webp 560w, assets/arte/bichos/09-marketing-sem-estrategia-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Marketing sem estratégia? Cachorro correndo atrás do próprio rabo." data-alt-en="Duo Studio artwork — Marketing without strategy? A dog chasing its own tail."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/10-identidade-exe-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/10-identidade-exe-1000.webp" srcset="assets/arte/bichos/10-identidade-exe-560.webp 560w, assets/arte/bichos/10-identidade-exe-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — identidade.exe parou de responder." data-alt-en="Duo Studio artwork — identidade.exe has stopped responding."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/11-choose-your-brand-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/11-choose-your-brand-1000.webp" srcset="assets/arte/bichos/11-choose-your-brand-560.webp 560w, assets/arte/bichos/11-choose-your-brand-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Choose your brand: estrategista, criativo, comunicador." data-alt-en="Duo Studio artwork — Choose your brand: strategist, creative, communicator."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/12-multiverse-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/12-multiverse-1000.webp" srcset="assets/arte/bichos/12-multiverse-560.webp 560w, assets/arte/bichos/12-multiverse-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Duo Multiverse: qual universo sua marca quer habitar?" data-alt-en="Duo Studio artwork — Duo Multiverse: which universe does your brand want to live in?"></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/13-reuniao-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/13-reuniao-1000.webp" srcset="assets/arte/bichos/13-reuniao-560.webp 560w, assets/arte/bichos/13-reuniao-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Reunião da Duo Studio: muito brainstorming, pouco silêncio." data-alt-en="Duo Studio artwork — Duo Studio meeting: lots of brainstorming, little silence."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/14-duo-daily-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/14-duo-daily-1000.webp" srcset="assets/arte/bichos/14-duo-daily-560.webp 560w, assets/arte/bichos/14-duo-daily-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Duo Daily: design sem estratégia continua não vendendo." data-alt-en="Duo Studio artwork — Duo Daily: design without strategy still does not sell."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="bichos" data-full="assets/arte/bichos/15-duo-lab-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/15-duo-lab-1000.webp" srcset="assets/arte/bichos/15-duo-lab-560.webp 560w, assets/arte/bichos/15-duo-lab-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Duo Lab: experimentos que ninguém pediu, ideias que todo mundo lembra." data-alt-en="Duo Studio artwork — Duo Lab: experiments nobody asked for, ideas everyone remembers."></button></li>
+          </ul>
+        </div>
+        <div class="gal" id="gal-estatua">
+          <header class="gal-head rv">
+            <div>
+              <p class="kicker">05 · <span>4</span> <span data-i18n="p.pieces">peças</span></p>
+              <h3 class="h3" data-i18n="h.s_estatua">Marca que se lembra</h3>
+            </div>
+            <p class="lede" data-i18n="p.sd_estatua">Carrossel em preto e violeta com escultura clássica: posicionamento, presença e o que a Duo cria.</p>
+          </header>
+          <ul class="gal-grid is-sq">
+            <li><button type="button" class="gal-btn" data-lb="estatua" data-full="assets/arte/estatua/01-chama-atencao-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/estatua/01-chama-atencao-1000.webp" srcset="assets/arte/estatua/01-chama-atencao-560.webp 560w, assets/arte/estatua/01-chama-atencao-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Sua marca chama atenção... ou só existe?" data-alt-en="Duo Studio artwork — Does your brand get attention... or just exist?"></button></li>
+            <li><button type="button" class="gal-btn" data-lb="estatua" data-full="assets/arte/estatua/02-o-que-cria-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/estatua/02-o-que-cria-1000.webp" srcset="assets/arte/estatua/02-o-que-cria-560.webp 560w, assets/arte/estatua/02-o-que-cria-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — O que a Duo Studio cria?" data-alt-en="Duo Studio artwork — What does Duo Studio create?"></button></li>
+            <li><button type="button" class="gal-btn" data-lb="estatua" data-full="assets/arte/estatua/03-como-fazemos-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/estatua/03-como-fazemos-1000.webp" srcset="assets/arte/estatua/03-como-fazemos-560.webp 560w, assets/arte/estatua/03-como-fazemos-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Como fazemos isso? Estratégia + criação + execução." data-alt-en="Duo Studio artwork — How do we do it? Strategy + creation + execution."></button></li>
+            <li><button type="button" class="gal-btn" data-lb="estatua" data-full="assets/arte/estatua/04-lembrada-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/estatua/04-lembrada-1000.webp" srcset="assets/arte/estatua/04-lembrada-560.webp 560w, assets/arte/estatua/04-lembrada-1000.webp 1000w" sizes="(max-width: 640px) 46vw, (max-width: 1024px) 30vw, 240px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Sua marca merece ser lembrada. E não só vista." data-alt-en="Duo Studio artwork — Your brand deserves to be remembered. Not just seen."></button></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="final final--page" id="contato-cta" data-theme="violet" data-mk="h.mk_next" data-mkn="nav.portfolio">
+      <div class="wrap final-grid">
+        <div class="final-copy">
+          <p class="kicker"><span data-i18n="h.series">Outra história, por favor.</span> · <span data-i18n="h.mk_next">Próximo capítulo</span></p>
+          <h2 class="h2 rv" style="margin-top:26px" data-i18n-html="p.port_cta_title_html">Sua empresa é o nosso próximo <em>estudo de sucesso?</em></h2>
+          <p class="lede rv" data-i18n="port.cta_desc">Desenvolvemos o projeto ideal para suas metas de vendas.</p>
+          <div class="hero-cta rv">
+            <button type="button" class="btn btn-magnetic open-budget-modal"><span data-i18n="h.cta_primary">Pedir proposta</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
           </div>
         </div>
+        <div class="final-art"><figure class="poster par"><img src="assets/cenas/05-proximo-capitulo-1000.webp" srcset="assets/cenas/05-proximo-capitulo-560.webp 560w, assets/cenas/05-proximo-capitulo-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Mão de madeira de manga roxa escrevendo com uma caneta-tinteiro num livro aberto e em branco." data-alt-en="A wooden hand in a purple sleeve writing with a fountain pen in an open, blank book."></figure></div>
       </div>
+    </section>
+  </main>
 
-      <!-- Case 2: LabPrime Toxicológico -->
-      <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
-        <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
-          <img src="assets/projects/labprime.webp" alt="Site LabPrime Toxicológico criado pela Duo Studio" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/40 to-transparent"></div>
-        </div>
-        <div class="p-8">
-          <span class="text-xs font-bold text-violet-300 uppercase tracking-widest block mb-2" data-i18n="port.case2_tag">Saúde & Análises Clínicas</span>
-          <h2 class="font-heading font-bold text-2xl text-white mb-3">LabPrime Toxicológico</h2>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="port.case2_desc">
-            Portal clínico focado em exames para motoristas CNH C, D e E com agendamento guiado em 4 passos e infraestrutura otimizada para buscas locais no Google.
-          </p>
-          <div class="flex items-center gap-3">
-            <a href="cases/labprime.html" class="btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md">
-              <span data-i18n="port.read_case">Ler Estudo de Caso</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <a href="https://labprime.vercel.app/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 inline-flex items-center gap-1.5 transition-all">
-              <span data-i18n="port.live_site">Acessar Site Ao Vivo</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+  </main>
 
-      <!-- Case 3: InterSolar Energia Renovável -->
-      <div class="glass-card rounded-3xl overflow-hidden border border-white/10 group">
-        <div class="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-900">
-          <img src="assets/projects/intersolar-hero.webp" alt="Site InterSolar Energia Renovável criado pela Duo Studio" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/40 to-transparent"></div>
+  <!-- ==========================================
+       RODAPÉ
+  =========================================== -->
+  <footer class="foot" data-theme="ink">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img class="foot-logo" src="assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" loading="lazy" decoding="async">
+          <p data-i18n="footer.desc">Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão para marcas exigentes.</p>
         </div>
-        <div class="p-8">
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2" data-i18n="port.case3_tag">Energia Solar & Sustentabilidade</span>
-          <h2 class="font-heading font-bold text-2xl text-white mb-3">InterSolar Energia Renovável</h2>
-          <p class="text-gray-400 text-sm leading-relaxed mb-6" data-i18n="port.case3_desc">
-            Site institucional para projetos de energia solar residencial e comercial em Parauapebas, com apresentação clara dos serviços e captação direta de clientes via WhatsApp.
-          </p>
-          <div class="flex items-center gap-3">
-            <a href="cases/intersolar.html" class="btn-gradient px-5 py-2.5 rounded-xl text-xs font-semibold text-white inline-flex items-center gap-2 shadow-md">
-              <span data-i18n="port.read_case">Ler Estudo de Caso</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>
-            <a href="https://intersolarpa.com.br/" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-gray-300 bg-white/10 hover:bg-white/20 inline-flex items-center gap-1.5 transition-all">
-              <span data-i18n="port.live_site">Acessar Site Ao Vivo</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5 text-violet-400"></i>
-            </a>
-          </div>
+        <div class="foot-col a">
+          <h4 data-i18n="h.ft_nav">Navegação</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="servicos.html" data-i18n="nav.solutions">Soluções</a></li>
+            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="foot-col b">
+          <h4 data-i18n="footer.contact_title">Contato Direto</h4>
+          <ul>
+            <li><a href="mailto:somosduostudiobr@gmail.com">somosduostudiobr@gmail.com</a></li>
+            <li><a href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99909-9386</a></li>
+            <li><a href="https://wa.me/5594992811658?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99281-1658</a></li>
+            <li><a href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li data-i18n="footer.location">Parauapebas - PA, Brasil</li>
+          </ul>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- CTA FOOTER -->
-  <section class="py-20 relative z-10">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <div class="glass-card p-10 rounded-3xl border border-white/10">
-        <h2 class="font-heading font-bold text-3xl text-white mb-4" data-i18n="port.cta_title">Sua empresa é o nosso próximo estudo de sucesso?</h2>
-        <p class="text-gray-400 text-sm mb-6" data-i18n="port.cta_desc">Desenvolvemos o projeto ideal para suas metas de vendas.</p>
-        <a href="contato.html" class="btn-gradient px-8 py-3.5 rounded-full text-xs font-bold text-white inline-flex items-center gap-2">
-          <span data-i18n="port.cta_btn">Iniciar Novo Projeto</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="pt-16 pb-12 bg-[#070709] border-t border-white/10 text-gray-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-      <p data-i18n="footer.rights">&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
-      <div class="flex items-center gap-4">
-        <a href="index.html" class="hover:text-white" data-i18n="nav.home">Início</a>
-        <a href="servicos.html" class="hover:text-white" data-i18n="nav.services">Soluções</a>
-        <a href="portfolio.html" class="text-white font-semibold" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="hover:text-white" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="hover:text-white" data-i18n="nav.contact">Contato</a>
+      <p class="mega" aria-hidden="true">Duo Studio.</p>
+      <div class="foot-bar">
+        <span data-i18n="footer.rights">© 2026 Duo Studio. Todos os direitos reservados. Engenharia de Software Autoral.</span>
+        <span data-i18n="footer.tagline">Engenharia digital com alta performance.</span>
       </div>
     </div>
   </footer>
 
+  <!-- WhatsApp flutuante -->
+  <a class="wa" href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Duo%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-i18n-aria="h.wa_label">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- Barra de conversão mobile (app.js mostra após rolar) -->
+  <div id="mobile-sticky-cta" class="hidden">
+    <div class="in">
+      <span data-i18n="mobile.online">Atendimento On-line</span>
+      <button type="button" class="btn open-budget-modal"><span data-i18n="mobile.cta_diag">Agendar Diagnóstico</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: proposta em 3 passos → WhatsApp (IDs/classes usados pelo app.js)
+  =========================================== -->
+  <div id="budget-modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="quiz-h1" data-theme="paper">
+    <div class="sheet">
+      <button type="button" id="close-budget-modal" class="sheet-x" aria-label="Fechar" data-i18n-aria="h.q_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+
+      <div class="q-top">
+        <span id="quiz-step-label" class="kicker">Passo 1 de 3: Objetivo do Projeto</span>
+        <span class="kicker" data-i18n="quiz.step_badge">Diagnóstico Sem Custos</span>
+      </div>
+      <div class="q-bar"><div id="quiz-progress-bar"></div></div>
+
+      <form id="budget-form">
+        <div id="quiz-step-1">
+          <h3 id="quiz-h1" data-i18n="quiz.step1_title">Qual o principal objetivo da sua empresa hoje?</h3>
+          <p class="sub" data-i18n="quiz.step1_sub">Selecione o modelo que melhor descreve sua necessidade atual:</p>
+          <div class="opts">
+            <div class="quiz-option-card quiz-obj-card selected" data-value="Gerar mais leads com Landing Page de Alta Conversão"><h4 data-i18n="quiz.opt1_title">Gerar Mais Leads & Vendas</h4><p data-i18n="quiz.opt1_desc">Landing Page focada em campanhas de tráfego pago</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Posicionar marca com Site Institucional sob Medida"><h4 data-i18n="quiz.opt2_title">Posicionar Marca & Autoridade</h4><p data-i18n="quiz.opt2_desc">Site Institucional corporativo de alto padrão</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Vender produtos com Loja Virtual / E-Commerce"><h4 data-i18n="quiz.opt3_title">Vender Produtos (E-Commerce)</h4><p data-i18n="quiz.opt3_desc">Loja virtual rápida e sem atrito no checkout</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Reformular site antigo ou lento (Redesign)"><h4 data-i18n="quiz.opt4_title">Modernizar Site Lento / Antigo</h4><p data-i18n="quiz.opt4_desc">Redesign completo com código ultrarrápido</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-next-1" class="btn"><span data-i18n="quiz.next_step1">Avançar para Segmento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-2" class="hidden">
+          <h3 data-i18n="quiz.step2_title">Em qual segmento sua empresa atua?</h3>
+          <p class="sub" data-i18n="quiz.step2_sub">Isso nos ajuda a preparar referências e dados específicos:</p>
+          <div class="opts two">
+            <div class="quiz-option-card quiz-seg-card selected" data-value="Serviços & Negócios Locais"><h4 data-i18n="quiz.seg1_title">Serviços & Negócios</h4><p data-i18n="quiz.seg1_desc">Consultoria, Engenharia, Advocacia</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Saúde, Clínicas & Laboratórios"><h4 data-i18n="quiz.seg2_title">Saúde & Clínicas</h4><p data-i18n="quiz.seg2_desc">Laboratórios, Médicos, Odonto</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Turismo, Gastronomia & Eventos"><h4 data-i18n="quiz.seg3_title">Turismo & Lazer</h4><p data-i18n="quiz.seg3_desc">Agências de Viagens, Hotelaria</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Comércio & E-commerce"><h4 data-i18n="quiz.seg4_title">Vendas & E-Commerce</h4><p data-i18n="quiz.seg4_desc">Produtos, Varejo, Marca Própria</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-2" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="button" id="quiz-next-2" class="btn"><span data-i18n="quiz.next_step2">Avançar para Contato</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-3" class="hidden">
+          <h3 data-i18n="quiz.step3_title">Onde devemos entregar seu diagnóstico?</h3>
+          <p class="sub" data-i18n="quiz.step3_sub">Preencha abaixo e entraremos em contato via WhatsApp com a proposta:</p>
+          <div class="field-row">
+            <div class="field"><label for="budget-name" data-i18n="quiz.label_name">Seu Nome / Empresa *</label><input id="budget-name" type="text" required placeholder="Ex: Carlos Silva" data-i18n-placeholder="quiz.ph_name"></div>
+            <div class="field"><label for="budget-phone" data-i18n="quiz.label_phone">WhatsApp para Contato *</label><input id="budget-phone" type="tel" required placeholder="(94) 99999-9999"></div>
+          </div>
+          <div class="field"><label for="budget-email" data-i18n="quiz.label_email">E-mail Corporativo</label><input id="budget-email" type="email" placeholder="carlos@empresa.com" data-i18n-placeholder="quiz.ph_email"></div>
+          <div class="field"><label for="budget-description" data-i18n="quiz.label_goals">Resumo das Metas da Empresa (Opcional)</label><textarea id="budget-description" rows="2" placeholder="Descreva brevemente suas metas de vendas..." data-i18n-placeholder="quiz.ph_goals"></textarea></div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-3" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="submit" class="btn"><span data-i18n="quiz.btn_submit">Enviar Diagnóstico no WhatsApp</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </form>
+
+      <div id="budget-form-success" class="hidden">
+        <div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+        <h3 data-i18n="quiz.success_title">Solicitação Pronta para Envio!</h3>
+        <p class="sub" data-i18n="quiz.success_sub">Escolha com qual dos nossos sócios você prefere iniciar a conversa no WhatsApp:</p>
+        <div class="wa-row">
+          <a id="budget-wa-link" class="btn" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa1">Contato 1: (94) 99909-9386</span></a>
+          <a id="budget-wa-link-2" class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa2">Contato 2: (94) 99281-1658</span></a>
+        </div>
+        <button type="button" class="linklike" onclick="document.getElementById('close-budget-modal').click()" data-i18n="quiz.success_close">Fechar janela</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visualizador de arte (site.js) -->
+  <dialog id="lb" class="lb" aria-label="Visualizador de arte">
+    <button type="button" class="lb-x" data-lb-close aria-label="Fechar" data-i18n-aria="h.lb_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <button type="button" class="lb-nav prev" data-lb-prev aria-label="Anterior" data-i18n-aria="h.lb_prev"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <button type="button" class="lb-nav next" data-lb-next aria-label="Próxima" data-i18n-aria="h.lb_next"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <figure><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><figcaption></figcaption></figure>
+  </dialog>
+
   <script src="i18n.js"></script>
+  <script src="i18n-site.js"></script>
   <script src="app.js"></script>
+  <script src="site.js?v=2"></script>
 </body>
+
 </html>

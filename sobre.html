@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark scroll-smooth">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -30,254 +30,353 @@
   <meta property="og:site_name" content="Duo Studio">
 
   <!-- Favicon -->
-  <meta name="theme-color" content="#0B0B0B">
+  <meta name="theme-color" content="#F2EEE6">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Google Fonts Preconnect & Preload -->
+  <!-- Tipografia + sistema visual (independente de Tailwind/style.css) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script defer src="https://unpkg.com/lucide@0.460.0"></script>
-
-  <!-- Tailwind CSS CDN Engine & Custom Config -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandDark: '#0B0B0B',
-            cardDark: '#121217',
-            cardBorder: 'rgba(255, 255, 255, 0.08)',
-            limeBrand: '#D4FF3D',
-            violetBrand: '#7C3AED',
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Sora', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="dist/tailwind.css">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=2">
 </head>
 
-<body class="bg-[#0B0B0B] text-gray-100 antialiased selection:bg-violet-600 selection:text-white overflow-x-hidden">
+<body data-theme="paper">
 
-  <!-- Background Glow -->
-  <div class="fixed inset-0 grid-bg-pattern pointer-events-none opacity-40 z-0"></div>
-  <div id="hero-glow-parallax" class="fixed -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-hero-glow pointer-events-none z-0"></div>
+  <a class="skip" href="#main-content" data-i18n="h.skip">Ir para o conteúdo</a>
 
-  <!-- HEADER -->
-  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
-        <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" class="h-9 sm:h-10 w-auto object-contain">
+  <!-- Ícones (sprite inline: zero requisições) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
+  </svg>
+
+  <!-- ==========================================
+       HEADER — segue o tema da seção sob ele (home.js)
+  =========================================== -->
+  <header class="site-header" id="site-header" data-theme="paper">
+    <div class="wrap hd-inner">
+      <a class="logo" href="index.html" aria-label="Duo Studio — início">
+        <img src="assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" decoding="async" fetchpriority="high">
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-        <a href="index.html" class="hover:text-white transition-colors py-1" data-i18n="nav.home">Início</a>
-        <a href="sobre.html" class="text-violet-400 font-semibold py-1" data-i18n="nav.about">Sobre</a>
-        <a href="servicos.html" class="hover:text-white transition-colors py-1" data-i18n="nav.solutions">Soluções</a>
-        <a href="portfolio.html" class="hover:text-white transition-colors py-1" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="hover:text-white transition-colors py-1" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="hover:text-white transition-colors py-1" data-i18n="nav.contact">Contato</a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html" data-i18n="nav.home">Início</a>
+        <a href="sobre.html" aria-current="page" data-i18n="nav.about">Sobre</a>
+        <a href="servicos.html" data-i18n="nav.solutions">Soluções</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="contato.html" data-i18n="nav.contact">Contato</a>
       </nav>
-      <div class="hidden md:flex items-center gap-4">
-        <!-- Language Switcher Pill -->
-        <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-[11px] font-semibold">
-          <button data-lang-val="pt" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
-            <span>🇧🇷</span> <span>PT</span>
-          </button>
-          <button data-lang-val="en" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
-            <span>🇺🇸</span> <span>EN</span>
-          </button>
-        </div>
 
-        <button class="open-budget-modal btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white shadow-lg flex items-center gap-2">
-          <span data-i18n="nav.schedule_cta">Agendar reunião estratégica</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      <div class="hd-right">
+        <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+          <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
+        </div>
+        <button type="button" class="btn btn--sm open-budget-modal">
+          <span data-i18n="h.nav_cta">Pedir proposta</span>
+          <svg aria-hidden="true"><use href="#i-arrow"/></svg>
         </button>
-      </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white" aria-label="Menu">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
-    </div>
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-4 pb-6 bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-white/10 mt-3">
-      <div class="flex flex-col gap-4 text-base font-medium">
-        <!-- Language Toggle Mobile -->
-        <div class="flex items-center justify-between py-2 border-b border-white/5 text-gray-300">
-          <span class="text-xs uppercase font-medium text-gray-400">Idioma / Language</span>
-          <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-xs font-semibold">
-            <button data-lang-val="pt" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
-              <span>🇧🇷</span> <span>PT</span>
-            </button>
-            <button data-lang-val="en" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
-              <span>🇺🇸</span> <span>EN</span>
-            </button>
-          </div>
-        </div>
-
-        <a href="index.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.home">Início</a>
-        <a href="sobre.html" class="mobile-nav-link text-violet-400 font-bold py-2 border-b border-white/5" data-i18n="nav.about">Sobre</a>
-        <a href="servicos.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.solutions">Soluções</a>
-        <a href="portfolio.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.contact">Contato</a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Abrir menu" data-i18n-aria="h.menu">
+          <span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO SOBRE -->
-  <section class="relative pt-36 pb-16 md:pt-44 md:pb-24 z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-6">
-        <span data-i18n="about.hero_badge">Quem Somos & Nossa Filosofia</span>
+  <div class="drawer" id="nav-drawer" data-theme="paper" hidden>
+    <a class="dl" href="index.html" data-i18n="nav.home">Início</a>
+    <a class="dl" href="sobre.html" data-i18n="nav.about">Sobre</a>
+    <a class="dl" href="servicos.html" data-i18n="nav.solutions">Soluções</a>
+    <a class="dl" href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a>
+    <a class="dl" href="blog.html" data-i18n="nav.blog">Blog</a>
+    <a class="dl" href="contato.html" data-i18n="nav.contact">Contato</a>
+    <div class="dr-foot">
+      <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+        <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
       </div>
-      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-tight mb-6" data-i18n-html="about.hero_title_html">
-        Recusamo-nos a criar <br class="hidden sm:inline" />
-        <span class="text-gradient-brand">sites genéricos e lentos.</span>
-      </h1>
-      <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed" data-i18n="about.hero_desc">
-        A Duo Studio nasce com o propósito claro de tratar o site corporativo como o ativo mais rentável de uma empresa no digital.
-      </p>
+      <button type="button" class="btn open-budget-modal">
+        <span data-i18n="h.nav_cta">Pedir proposta</span>
+        <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+      </button>
     </div>
-  </section>
+  </div>
 
-  <!-- PILARES DE ENGENHARIA -->
-  <section class="py-16 relative z-10 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <!-- Marcador fixo: 01/05 … e o "extra" nas seções de apoio -->
+  <div class="marker" id="marker" data-theme="paper" aria-hidden="true"><b id="marker-n">01/05</b><span id="marker-l">Promessa</span></div>
+
+  <main id="main-content">
+
+    <section class="phero has-art" data-theme="paper" data-mk="p.mk_who" data-mkn="nav.about">
+      <div class="wrap phero-grid">
+        <div class="phero-copy">
+          <p class="kicker"><span data-i18n="h.series">Outra história, por favor.</span> · <span data-i18n="nav.about">Sobre</span></p>
+          <h1 class="h1 h1--page" data-i18n-html="p.about_title_html">Recusamo-nos a criar sites genéricos e <em>lentos.</em></h1>
+          <p class="lede" data-i18n="about.hero_desc">A Duo Studio nasce com o propósito claro de tratar o site corporativo como o ativo mais rentável de uma empresa no digital.</p>
+          
+        </div>
+        <div class="phero-art"><div class="pair"><figure class="poster poster--sq par"><img src="assets/arte/bichos/03-o-que-faz-1000.webp" srcset="assets/arte/bichos/03-o-que-faz-560.webp 560w, assets/arte/bichos/03-o-que-faz-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1254" height="1254" decoding="async" draggable="false" alt="Arte da Duo Studio — O que a Duo Studio faz?" data-alt-en="Duo Studio artwork — What does Duo Studio do?"></figure><figure class="poster poster--sq pair-2"><img src="assets/arte/bichos/13-reuniao-1000.webp" srcset="assets/arte/bichos/13-reuniao-560.webp 560w, assets/arte/bichos/13-reuniao-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Reunião da Duo Studio: muito brainstorming, pouco silêncio." data-alt-en="Duo Studio artwork — Duo Studio meeting: lots of brainstorming, little silence."></figure></div></div>
+      </div>
+    </section>
+    <section class="pillars" id="pilares" data-theme="ink" data-mk="p.mk_pillars" data-mkn="nav.about">
+      <div class="wrap">
         
-        <div class="glass-card p-8 rounded-3xl border border-white/10">
-          <div class="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center mb-6">
-            <i data-lucide="code" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-heading font-bold text-xl text-white mb-3" data-i18n="pos.card2_title">Engenharia Autoral</h3>
-          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="pos.card2_desc">
-            Desenvolvemos o código linha a linha. Sem a sobrecarga de construtores de páginas lentos. Isso garante segurança extrema e velocidade sub-segundo no celular.
-          </p>
+        <div class="sec-head rv">
+          <p class="kicker"><span data-i18n="h.mk_extra">Extra</span> · <span data-i18n="p.mk_pillars">Como trabalhamos</span></p>
+          <h2 class="h2" data-i18n-html="p.about_pillars_title_html">Como a gente <em>trabalha.</em></h2>
+          
         </div>
-
-        <div class="glass-card p-8 rounded-3xl border border-white/10">
-          <div class="w-12 h-12 rounded-2xl bg-violet-700/20 text-violet-300 flex items-center justify-center mb-6">
-            <i data-lucide="target" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-heading font-bold text-xl text-white mb-3" data-i18n="pos.card1_title">Psicologia de Conversão</h3>
-          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="pos.card1_desc">
-            Layout bonito sem vendas é inútil. Estruturamos o copywriting para antecipar objeções e levar o cliente a clicar no WhatsApp já convencido do valor da sua marca.
-          </p>
-        </div>
-
-        <div class="glass-card p-8 rounded-3xl border border-white/10">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center mb-6">
-            <i data-lucide="shield-check" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-heading font-bold text-xl text-white mb-3" data-i18n="about.pillar3_title">Transparência & Contrato</h3>
-          <p class="text-gray-400 text-sm leading-relaxed" data-i18n="about.pillar3_desc">
-            Cronogramas cravados em contrato formal. Todo o código-fonte é entregue 100% ao cliente, sem mensalidades ocultas sobre a propriedade do projeto.
-          </p>
-        </div>
-
+        <ol>
+          <li class="pillar rv">
+            <span class="pillar-n">01</span>
+            <h3 data-i18n="pos.card2_title">Engenharia Sob Medida</h3>
+            <p data-i18n="pos.card2_desc">Sem construtores pesados. Construímos a estrutura com tecnologias modernas para garantir rapidez e segurança.</p>
+          </li>
+          <li class="pillar rv">
+            <span class="pillar-n">02</span>
+            <h3 data-i18n="pos.card1_title">Copywriting &amp; Foco em Conversão</h3>
+            <p data-i18n="pos.card1_desc">Mensagens estratégicas desenhadas para responder às objeções do seu cliente e motivá-lo a entrar em contato.</p>
+          </li>
+          <li class="pillar rv">
+            <span class="pillar-n">03</span>
+            <h3 data-i18n="about.pillar3_title">Transparência &amp; Contrato</h3>
+            <p data-i18n="about.pillar3_desc">Cronogramas cravados em contrato formal. Todo o código-fonte é entregue 100% ao cliente, sem mensalidades ocultas sobre a propriedade do projeto.</p>
+          </li>
+        </ol>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MANIFESTO DUO STUDIO -->
-  <section class="py-20 relative z-10 bg-gradient-to-b from-[#0B0B0B] via-[#0E0E14] to-[#070709] border-t border-white/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-4">
-          <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-violet-400"></i>
-          <span data-i18n="manifesto.badge">Compromisso Inflexível com a Qualidade</span>
+    <section class="mfsec" id="manifesto" data-theme="violet" data-mk="p.mk_manifesto" data-mkn="nav.about">
+      <div class="wrap">
+        
+        <div class="sec-head rv">
+          <p class="kicker"><span data-i18n="h.mk_extra">Extra</span> · <span data-i18n="p.mk_manifesto">Manifesto</span></p>
+          <h2 class="h2" data-i18n-html="p.manifesto_title_html">O manifesto <em>Duo Studio.</em></h2>
+          <p class="lede" data-i18n="manifesto.subtitle">Recusamo-nos a aceitar os padrões medianos do mercado de desenvolvimento web. Existimos para criar ativos digitais de alta performance que geram valor real para empresas sérias.</p>
         </div>
-        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4" data-i18n-html="manifesto.title_html">
-          O Manifesto <span class="text-gradient-brand">Duo Studio</span>
-        </h2>
-        <p class="text-gray-400 text-base leading-relaxed" data-i18n="manifesto.subtitle">
-          Recusamo-nos a aceitar os padrões medianos do mercado de desenvolvimento web. Existimos para criar ativos digitais de alta performance que geram valor real para empresas sérias.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <!-- Contra -->
-        <div class="glass-card p-8 rounded-3xl border border-red-500/20 bg-gradient-to-br from-[#181114] to-[#0D0D12] space-y-6">
-          <div class="flex items-center gap-3 border-b border-red-500/20 pb-4">
-            <div class="w-10 h-10 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center">
-              <i data-lucide="slash" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-heading font-bold text-lg text-white uppercase tracking-wider" data-i18n="manifesto.not_title">O que NÃO fazemos</h3>
+        <div class="mf-grid">
+          <div class="mf rv">
+            <h3 data-i18n="manifesto.not_title">O que NÃO fazemos</h3>
+            <ul class="mf-no"><li><span data-i18n-html="p.mf_not_1_html"><strong>Sem Templates Prontos</strong>Não usamos temas genéricos de WordPress ou Wix carregados de plugins que travam o celular.</span></li><li><span data-i18n-html="p.mf_not_2_html"><strong>Sem Aluguel de Código</strong>Não prendemos sua empresa em mensalidades eternas de uso sobre o seu próprio site.</span></li><li><span data-i18n-html="p.mf_not_3_html"><strong>Sem Prazos Burocráticos</strong>Não demoramos 60 dias para entregar um projeto que sua empresa precisa hoje.</span></li></ul>
           </div>
-          <ul class="space-y-4 text-xs sm:text-sm text-gray-300">
-            <li class="flex items-start gap-3">
-              <i data-lucide="x" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
-              <span data-i18n-html="manifesto.not_1_html"><strong>Sem Templates Prontos</strong>: Não usamos temas genéricos de WordPress ou Wix carregados de plugins que travam o celular.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="x" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
-              <span data-i18n-html="manifesto.not_2_html"><strong>Sem Aluguel de Código</strong>: Não prendemos sua empresa em mensalidades eternas de uso sobre o seu próprio site.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="x" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
-              <span data-i18n-html="manifesto.not_3_html"><strong>Sem Prazos Burocráticos</strong>: Não demoramos 60 dias para entregar um projeto que sua empresa precisa hoje.</span>
-            </li>
+          <div class="mf rv">
+            <h3 data-i18n="manifesto.yes_title">Nosso Padrão Inegociável</h3>
+            <ul class="mf-yes"><li><span data-i18n-html="p.mf_yes_1_html"><strong>Engenharia Autoral</strong>Cada linha de código é construída com foco em velocidade sub-segundo (< 0.8s LCP).</span></li><li><span data-i18n-html="p.mf_yes_2_html"><strong>Propriedade 100% Sua</strong>O código-fonte é entregue integralmente ao cliente após o lançamento.</span></li><li><span data-i18n-html="p.mf_yes_3_html"><strong>Atendimento com os Sócios</strong>Comunicação direta com os desenvolvedores responsáveis pelo projeto.</span></li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="artrail" id="arte" data-theme="paper" data-mk="h.mk_art" data-mkn="nav.about">
+      <div class="wrap artrail-head">
+        
+        <div class="sec-head rv">
+          <p class="kicker"><span data-i18n="h.series">Outra história, por favor.</span> · <span data-i18n="h.mk_art">Direção de arte</span></p>
+          <h2 class="h2" data-i18n-html="h.art_title_html">A gente também <em>desenha</em> a sua história.</h2>
+          
+        </div>
+        <div class="rv">
+          <p class="lede" data-i18n="h.art_lede">Site é só uma parte da história. No Instagram, a Duo Studio publica séries de arte autoral que falam de marca, estratégia e design sem cara de anúncio.</p>
+          <div class="artrail-links">
+            <a class="btn" href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer"><span data-i18n="h.art_ig">Seguir @somosduostudio</span><svg aria-hidden="true"><use href="#i-up"/></svg></a>
+            <a class="tlink" href="portfolio.html#arte"><span data-i18n="h.art_all">Ver todas as artes</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="rail" role="group" aria-roledescription="carousel" aria-label="Direção de arte" data-cursor="h.cur_drag">
+          <figure class="art">
+            <button type="button" class="art-btn" data-lb="arte" data-full="assets/arte/bichos/03-o-que-faz-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/03-o-que-faz-1000.webp" srcset="assets/arte/bichos/03-o-que-faz-560.webp 560w, assets/arte/bichos/03-o-que-faz-1000.webp 1000w" sizes="(max-width: 640px) 60vw, 420px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — O que a Duo Studio faz?" data-alt-en="Duo Studio artwork — What does Duo Studio do?"></button>
+            <figcaption data-i18n="h.s_bichos">Os bichos da Duo</figcaption>
+          </figure>
+          <figure class="art">
+            <button type="button" class="art-btn" data-lb="arte" data-full="assets/arte/estatua/02-o-que-cria-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/estatua/02-o-que-cria-1000.webp" srcset="assets/arte/estatua/02-o-que-cria-560.webp 560w, assets/arte/estatua/02-o-que-cria-1000.webp 1000w" sizes="(max-width: 640px) 60vw, 420px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — O que a Duo Studio cria?" data-alt-en="Duo Studio artwork — What does Duo Studio create?"></button>
+            <figcaption data-i18n="h.s_estatua">Marca que se lembra</figcaption>
+          </figure>
+          <figure class="art">
+            <button type="button" class="art-btn" data-lb="arte" data-full="assets/arte/bichos/04-como-fazemos-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/04-como-fazemos-1000.webp" srcset="assets/arte/bichos/04-como-fazemos-560.webp 560w, assets/arte/bichos/04-como-fazemos-1000.webp 1000w" sizes="(max-width: 640px) 60vw, 420px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Como fazemos isso? Instinto criativo + método claro." data-alt-en="Duo Studio artwork — How do we do it? Creative instinct + a clear method."></button>
+            <figcaption data-i18n="h.s_bichos">Os bichos da Duo</figcaption>
+          </figure>
+          <figure class="art">
+            <button type="button" class="art-btn" data-lb="arte" data-full="assets/arte/pecas/02-personalidade-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/pecas/02-personalidade-1000.webp" srcset="assets/arte/pecas/02-personalidade-560.webp 560w, assets/arte/pecas/02-personalidade-1000.webp 1000w" sizes="(max-width: 640px) 60vw, 420px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Não é só trocar a cor. É construir personalidade." data-alt-en="Duo Studio artwork — It's not just changing the color. It's building personality."></button>
+            <figcaption data-i18n="h.s_pecas">Marca, peça por peça</figcaption>
+          </figure>
+          <figure class="art">
+            <button type="button" class="art-btn" data-lb="arte" data-full="assets/arte/bichos/13-reuniao-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/13-reuniao-1000.webp" srcset="assets/arte/bichos/13-reuniao-560.webp 560w, assets/arte/bichos/13-reuniao-1000.webp 1000w" sizes="(max-width: 640px) 60vw, 420px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Reunião da Duo Studio: muito brainstorming, pouco silêncio." data-alt-en="Duo Studio artwork — Duo Studio meeting: lots of brainstorming, little silence."></button>
+            <figcaption data-i18n="h.s_bichos">Os bichos da Duo</figcaption>
+          </figure>
+          <figure class="art">
+            <button type="button" class="art-btn" data-lb="arte" data-full="assets/arte/estatua/03-como-fazemos-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/estatua/03-como-fazemos-1000.webp" srcset="assets/arte/estatua/03-como-fazemos-560.webp 560w, assets/arte/estatua/03-como-fazemos-1000.webp 1000w" sizes="(max-width: 640px) 60vw, 420px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Como fazemos isso? Estratégia + criação + execução." data-alt-en="Duo Studio artwork — How do we do it? Strategy + creation + execution."></button>
+            <figcaption data-i18n="h.s_estatua">Marca que se lembra</figcaption>
+          </figure>
+          <figure class="art">
+            <button type="button" class="art-btn" data-lb="arte" data-full="assets/arte/bichos/05-impossivel-de-ignorar-1000.webp" aria-label="Ampliar" data-i18n-aria="h.art_open"><img src="assets/arte/bichos/05-impossivel-de-ignorar-1000.webp" srcset="assets/arte/bichos/05-impossivel-de-ignorar-560.webp 560w, assets/arte/bichos/05-impossivel-de-ignorar-1000.webp 1000w" sizes="(max-width: 640px) 60vw, 420px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Sua marca merece ser impossível de ignorar." data-alt-en="Duo Studio artwork — Your brand deserves to be impossible to ignore."></button>
+            <figcaption data-i18n="h.s_bichos">Os bichos da Duo</figcaption>
+          </figure>
+        <a class="art art--more" href="portfolio.html#arte"><div><span data-i18n="h.art_all">Ver todas as artes</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></div></a>
+      </div>
+    </section>
+    <section class="final final--page" id="contato-cta" data-theme="ink" data-mk="h.mk_next" data-mkn="nav.about">
+      <div class="wrap final-grid">
+        <div class="final-copy">
+          <p class="kicker"><span data-i18n="h.series">Outra história, por favor.</span> · <span data-i18n="h.mk_next">Próximo capítulo</span></p>
+          <h2 class="h2 rv" style="margin-top:26px" data-i18n-html="h.cta_title_html">Próximo capítulo: <em>o seu negócio.</em></h2>
+          <p class="lede rv" data-i18n="h.cta_sub">Agende uma análise comercial. Avaliamos o momento da sua empresa e apresentamos o projeto ideal para as suas metas de vendas.</p>
+          <div class="hero-cta rv">
+            <button type="button" class="btn btn-magnetic open-budget-modal"><span data-i18n="h.cta_primary">Pedir proposta</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+        <div class="final-art"><figure class="poster par"><img src="assets/cenas/05-proximo-capitulo-1000.webp" srcset="assets/cenas/05-proximo-capitulo-560.webp 560w, assets/cenas/05-proximo-capitulo-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Mão de madeira de manga roxa escrevendo com uma caneta-tinteiro num livro aberto e em branco." data-alt-en="A wooden hand in a purple sleeve writing with a fountain pen in an open, blank book."></figure></div>
+      </div>
+    </section>
+  </main>
+
+  </main>
+
+  <!-- ==========================================
+       RODAPÉ
+  =========================================== -->
+  <footer class="foot" data-theme="ink">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img class="foot-logo" src="assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" loading="lazy" decoding="async">
+          <p data-i18n="footer.desc">Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão para marcas exigentes.</p>
+        </div>
+        <div class="foot-col a">
+          <h4 data-i18n="h.ft_nav">Navegação</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="servicos.html" data-i18n="nav.solutions">Soluções</a></li>
+            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
         </div>
-
-        <!-- A Favor -->
-        <div class="glass-card p-8 rounded-3xl border border-emerald-500/20 bg-gradient-to-br from-[#111A16] to-[#0D0D12] space-y-6">
-          <div class="flex items-center gap-3 border-b border-emerald-500/20 pb-4">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
-              <i data-lucide="check-circle-2" class="w-5 h-5"></i>
-            </div>
-            <h3 class="font-heading font-bold text-lg text-white uppercase tracking-wider" data-i18n="manifesto.yes_title">Nosso Padrão Inegociável</h3>
-          </div>
-          <ul class="space-y-4 text-xs sm:text-sm text-gray-300">
-            <li class="flex items-start gap-3">
-              <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
-              <span data-i18n-html="manifesto.yes_1_html"><strong>Engenharia Autoral</strong>: Cada linha de código é construída com foco em velocidade sub-segundo (&lt; 0.8s LCP).</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
-              <span data-i18n-html="manifesto.yes_2_html"><strong>Propriedade 100% Sua</strong>: O código-fonte é entregue integralmente ao cliente após o lançamento.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <i data-lucide="check" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
-              <span data-i18n-html="manifesto.yes_3_html"><strong>Atendimento com os Sócios</strong>: Comunicação direta com os desenvolvedores responsáveis pelo projeto.</span>
-            </li>
+        <div class="foot-col b">
+          <h4 data-i18n="footer.contact_title">Contato Direto</h4>
+          <ul>
+            <li><a href="mailto:somosduostudiobr@gmail.com">somosduostudiobr@gmail.com</a></li>
+            <li><a href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99909-9386</a></li>
+            <li><a href="https://wa.me/5594992811658?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99281-1658</a></li>
+            <li><a href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li data-i18n="footer.location">Parauapebas - PA, Brasil</li>
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="pt-16 pb-12 bg-[#070709] border-t border-white/10 text-gray-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-      <p data-i18n="footer.rights">&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
-      <div class="flex items-center gap-4">
-        <a href="index.html" class="hover:text-white" data-i18n="nav.home">Início</a>
-        <a href="sobre.html" class="text-white font-semibold" data-i18n="nav.about">Sobre</a>
-        <a href="servicos.html" class="hover:text-white" data-i18n="nav.services">Soluções</a>
-        <a href="portfolio.html" class="hover:text-white" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="hover:text-white" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="hover:text-white" data-i18n="nav.contact">Contato</a>
+      <p class="mega" aria-hidden="true">Duo Studio.</p>
+      <div class="foot-bar">
+        <span data-i18n="footer.rights">© 2026 Duo Studio. Todos os direitos reservados. Engenharia de Software Autoral.</span>
+        <span data-i18n="footer.tagline">Engenharia digital com alta performance.</span>
       </div>
     </div>
   </footer>
 
+  <!-- WhatsApp flutuante -->
+  <a class="wa" href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Duo%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-i18n-aria="h.wa_label">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- Barra de conversão mobile (app.js mostra após rolar) -->
+  <div id="mobile-sticky-cta" class="hidden">
+    <div class="in">
+      <span data-i18n="mobile.online">Atendimento On-line</span>
+      <button type="button" class="btn open-budget-modal"><span data-i18n="mobile.cta_diag">Agendar Diagnóstico</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: proposta em 3 passos → WhatsApp (IDs/classes usados pelo app.js)
+  =========================================== -->
+  <div id="budget-modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="quiz-h1" data-theme="paper">
+    <div class="sheet">
+      <button type="button" id="close-budget-modal" class="sheet-x" aria-label="Fechar" data-i18n-aria="h.q_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+
+      <div class="q-top">
+        <span id="quiz-step-label" class="kicker">Passo 1 de 3: Objetivo do Projeto</span>
+        <span class="kicker" data-i18n="quiz.step_badge">Diagnóstico Sem Custos</span>
+      </div>
+      <div class="q-bar"><div id="quiz-progress-bar"></div></div>
+
+      <form id="budget-form">
+        <div id="quiz-step-1">
+          <h3 id="quiz-h1" data-i18n="quiz.step1_title">Qual o principal objetivo da sua empresa hoje?</h3>
+          <p class="sub" data-i18n="quiz.step1_sub">Selecione o modelo que melhor descreve sua necessidade atual:</p>
+          <div class="opts">
+            <div class="quiz-option-card quiz-obj-card selected" data-value="Gerar mais leads com Landing Page de Alta Conversão"><h4 data-i18n="quiz.opt1_title">Gerar Mais Leads & Vendas</h4><p data-i18n="quiz.opt1_desc">Landing Page focada em campanhas de tráfego pago</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Posicionar marca com Site Institucional sob Medida"><h4 data-i18n="quiz.opt2_title">Posicionar Marca & Autoridade</h4><p data-i18n="quiz.opt2_desc">Site Institucional corporativo de alto padrão</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Vender produtos com Loja Virtual / E-Commerce"><h4 data-i18n="quiz.opt3_title">Vender Produtos (E-Commerce)</h4><p data-i18n="quiz.opt3_desc">Loja virtual rápida e sem atrito no checkout</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Reformular site antigo ou lento (Redesign)"><h4 data-i18n="quiz.opt4_title">Modernizar Site Lento / Antigo</h4><p data-i18n="quiz.opt4_desc">Redesign completo com código ultrarrápido</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-next-1" class="btn"><span data-i18n="quiz.next_step1">Avançar para Segmento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-2" class="hidden">
+          <h3 data-i18n="quiz.step2_title">Em qual segmento sua empresa atua?</h3>
+          <p class="sub" data-i18n="quiz.step2_sub">Isso nos ajuda a preparar referências e dados específicos:</p>
+          <div class="opts two">
+            <div class="quiz-option-card quiz-seg-card selected" data-value="Serviços & Negócios Locais"><h4 data-i18n="quiz.seg1_title">Serviços & Negócios</h4><p data-i18n="quiz.seg1_desc">Consultoria, Engenharia, Advocacia</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Saúde, Clínicas & Laboratórios"><h4 data-i18n="quiz.seg2_title">Saúde & Clínicas</h4><p data-i18n="quiz.seg2_desc">Laboratórios, Médicos, Odonto</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Turismo, Gastronomia & Eventos"><h4 data-i18n="quiz.seg3_title">Turismo & Lazer</h4><p data-i18n="quiz.seg3_desc">Agências de Viagens, Hotelaria</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Comércio & E-commerce"><h4 data-i18n="quiz.seg4_title">Vendas & E-Commerce</h4><p data-i18n="quiz.seg4_desc">Produtos, Varejo, Marca Própria</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-2" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="button" id="quiz-next-2" class="btn"><span data-i18n="quiz.next_step2">Avançar para Contato</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-3" class="hidden">
+          <h3 data-i18n="quiz.step3_title">Onde devemos entregar seu diagnóstico?</h3>
+          <p class="sub" data-i18n="quiz.step3_sub">Preencha abaixo e entraremos em contato via WhatsApp com a proposta:</p>
+          <div class="field-row">
+            <div class="field"><label for="budget-name" data-i18n="quiz.label_name">Seu Nome / Empresa *</label><input id="budget-name" type="text" required placeholder="Ex: Carlos Silva" data-i18n-placeholder="quiz.ph_name"></div>
+            <div class="field"><label for="budget-phone" data-i18n="quiz.label_phone">WhatsApp para Contato *</label><input id="budget-phone" type="tel" required placeholder="(94) 99999-9999"></div>
+          </div>
+          <div class="field"><label for="budget-email" data-i18n="quiz.label_email">E-mail Corporativo</label><input id="budget-email" type="email" placeholder="carlos@empresa.com" data-i18n-placeholder="quiz.ph_email"></div>
+          <div class="field"><label for="budget-description" data-i18n="quiz.label_goals">Resumo das Metas da Empresa (Opcional)</label><textarea id="budget-description" rows="2" placeholder="Descreva brevemente suas metas de vendas..." data-i18n-placeholder="quiz.ph_goals"></textarea></div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-3" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="submit" class="btn"><span data-i18n="quiz.btn_submit">Enviar Diagnóstico no WhatsApp</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </form>
+
+      <div id="budget-form-success" class="hidden">
+        <div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+        <h3 data-i18n="quiz.success_title">Solicitação Pronta para Envio!</h3>
+        <p class="sub" data-i18n="quiz.success_sub">Escolha com qual dos nossos sócios você prefere iniciar a conversa no WhatsApp:</p>
+        <div class="wa-row">
+          <a id="budget-wa-link" class="btn" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa1">Contato 1: (94) 99909-9386</span></a>
+          <a id="budget-wa-link-2" class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa2">Contato 2: (94) 99281-1658</span></a>
+        </div>
+        <button type="button" class="linklike" onclick="document.getElementById('close-budget-modal').click()" data-i18n="quiz.success_close">Fechar janela</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visualizador de arte (site.js) -->
+  <dialog id="lb" class="lb" aria-label="Visualizador de arte">
+    <button type="button" class="lb-x" data-lb-close aria-label="Fechar" data-i18n-aria="h.lb_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <button type="button" class="lb-nav prev" data-lb-prev aria-label="Anterior" data-i18n-aria="h.lb_prev"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <button type="button" class="lb-nav next" data-lb-next aria-label="Próxima" data-i18n-aria="h.lb_next"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <figure><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><figcaption></figcaption></figure>
+  </dialog>
+
   <script src="i18n.js"></script>
+  <script src="i18n-site.js"></script>
   <script src="app.js"></script>
+  <script src="site.js?v=2"></script>
 </body>
+
 </html>

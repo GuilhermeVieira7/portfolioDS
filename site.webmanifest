@@ -4,8 +4,8 @@
   "description": "Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0B0B0B",
-  "theme_color": "#0B0B0B",
+  "background_color": "#F2EEE6",
+  "theme_color": "#5B2DEB",
   "lang": "pt-BR",
   "icons": [
     {

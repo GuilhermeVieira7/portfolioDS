@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark scroll-smooth">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -33,48 +33,13 @@
   <meta property="og:site_name" content="Duo Studio">
 
   <!-- Favicon -->
-  <meta name="theme-color" content="#0B0B0B">
+  <meta name="theme-color" content="#F2EEE6">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Google Fonts Preconnect & Preload -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons & Confetti -->
-  <script defer src="https://unpkg.com/lucide@0.460.0"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <!-- Tailwind CSS CDN Engine & Custom Config -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandDark: '#0B0B0B',
-            cardDark: '#121217',
-            cardBorder: 'rgba(255, 255, 255, 0.08)',
-            limeBrand: '#D4FF3D',
-            violetBrand: '#7C3AED',
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Sora', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="dist/tailwind.css">
-  <link rel="stylesheet" href="style.css?v=9">
+  <script async src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <!-- Structured Data JSON-LD -->
   <script type="application/ld+json">
@@ -139,408 +104,346 @@
     }
   }
   </script>
+
+  <!-- Tipografia + sistema visual (independente de Tailwind/style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css?v=2">
 </head>
 
-<body class="bg-[#0B0B0B] text-gray-100 antialiased selection:bg-violet-600 selection:text-white overflow-x-hidden">
+<body data-theme="paper">
 
-  <!-- Background Glow -->
-  <div class="fixed inset-0 grid-bg-pattern pointer-events-none opacity-40 z-0"></div>
-  <div id="hero-glow-parallax" class="fixed -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-hero-glow pointer-events-none z-0"></div>
+  <a class="skip" href="#main-content" data-i18n="h.skip">Ir para o conteúdo</a>
 
-  <!-- HEADER -->
-  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3 group focus:outline-none">
-        <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" class="h-9 sm:h-10 w-auto object-contain">
+  <!-- Ícones (sprite inline: zero requisições) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
+  </svg>
+
+  <!-- ==========================================
+       HEADER — segue o tema da seção sob ele (home.js)
+  =========================================== -->
+  <header class="site-header" id="site-header" data-theme="paper">
+    <div class="wrap hd-inner">
+      <a class="logo" href="index.html" aria-label="Duo Studio — início">
+        <img src="assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" decoding="async" fetchpriority="high">
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-        <a href="index.html" class="hover:text-white transition-colors py-1" data-i18n="nav.home">Início</a>
-        <a href="sobre.html" class="hover:text-white transition-colors py-1" data-i18n="nav.about">Sobre</a>
-        <a href="servicos.html" class="text-violet-400 font-semibold py-1" data-i18n="nav.solutions">Soluções</a>
-        <a href="portfolio.html" class="hover:text-white transition-colors py-1" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="hover:text-white transition-colors py-1" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="hover:text-white transition-colors py-1" data-i18n="nav.contact">Contato</a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html" data-i18n="nav.home">Início</a>
+        <a href="sobre.html" data-i18n="nav.about">Sobre</a>
+        <a href="servicos.html" aria-current="page" data-i18n="nav.solutions">Soluções</a>
+        <a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="blog.html" data-i18n="nav.blog">Blog</a>
+        <a href="contato.html" data-i18n="nav.contact">Contato</a>
       </nav>
-      <div class="hidden md:flex items-center gap-4">
-        <!-- Language Switcher Pill -->
-        <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-[11px] font-semibold">
-          <button data-lang-val="pt" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
-            <span>🇧🇷</span> <span>PT</span>
-          </button>
-          <button data-lang-val="en" class="duo-lang-btn px-2.5 py-1 rounded-full transition-all flex items-center gap-1 text-gray-400 hover:text-white">
-            <span>🇺🇸</span> <span>EN</span>
-          </button>
-        </div>
 
-        <button class="open-budget-modal btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white shadow-lg flex items-center gap-2">
-          <span data-i18n="nav.schedule_cta">Agendar reunião estratégica</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      <div class="hd-right">
+        <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+          <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
+        </div>
+        <button type="button" class="btn btn--sm open-budget-modal">
+          <span data-i18n="h.nav_cta">Pedir proposta</span>
+          <svg aria-hidden="true"><use href="#i-arrow"/></svg>
         </button>
-      </div>
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white" aria-label="Menu">
-        <i data-lucide="menu" class="w-6 h-6"></i>
-      </button>
-    </div>
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden px-4 pt-4 pb-6 bg-[#0B0B0B]/95 backdrop-blur-xl border-b border-white/10 mt-3">
-      <div class="flex flex-col gap-4 text-base font-medium">
-        <!-- Language Toggle Mobile -->
-        <div class="flex items-center justify-between py-2 border-b border-white/5 text-gray-300">
-          <span class="text-xs uppercase font-medium text-gray-400">Idioma / Language</span>
-          <div class="duo-lang-toggle flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-xs font-semibold">
-            <button data-lang-val="pt" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
-              <span>🇧🇷</span> <span>PT</span>
-            </button>
-            <button data-lang-val="en" class="duo-lang-btn px-3 py-1 rounded-full transition-all flex items-center gap-1.5 text-gray-400 hover:text-white">
-              <span>🇺🇸</span> <span>EN</span>
-            </button>
-          </div>
-        </div>
-
-        <a href="index.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.home">Início</a>
-        <a href="sobre.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.about">Sobre</a>
-        <a href="servicos.html" class="mobile-nav-link text-violet-400 font-bold py-2 border-b border-white/5" data-i18n="nav.solutions">Soluções</a>
-        <a href="portfolio.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="blog.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.blog">Blog</a>
-        <a href="contato.html" class="mobile-nav-link text-gray-300 py-2 border-b border-white/5" data-i18n="nav.contact">Contato</a>
-        <button class="open-budget-modal btn-gradient w-full py-3 rounded-xl text-sm font-semibold text-white mt-2 flex items-center justify-center gap-2">
-          <span data-i18n="nav.schedule_cta">Agendar reunião estratégica</span>
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Abrir menu" data-i18n-aria="h.menu">
+          <span></span><span></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION SERVIÇOS -->
-  <section class="relative pt-36 pb-16 md:pt-44 md:pb-24 z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full badge-tech text-xs font-semibold uppercase tracking-wider mb-6">
-        <span data-i18n="serv.hero_badge">Ecossistema Digital de Resultados</span>
+  <div class="drawer" id="nav-drawer" data-theme="paper" hidden>
+    <a class="dl" href="index.html" data-i18n="nav.home">Início</a>
+    <a class="dl" href="sobre.html" data-i18n="nav.about">Sobre</a>
+    <a class="dl" href="servicos.html" data-i18n="nav.solutions">Soluções</a>
+    <a class="dl" href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a>
+    <a class="dl" href="blog.html" data-i18n="nav.blog">Blog</a>
+    <a class="dl" href="contato.html" data-i18n="nav.contact">Contato</a>
+    <div class="dr-foot">
+      <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+        <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
       </div>
-      <h1 class="font-heading font-extrabold text-4xl sm:text-6xl text-white tracking-tight leading-tight mb-6" data-i18n-html="serv.hero_title_html">
-        Engenharia web, redes & automações <br class="hidden sm:inline" />
-        <span class="text-gradient-brand">para acelerar o seu faturamento.</span>
-      </h1>
-      <p class="text-base sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed" data-i18n="serv.hero_desc">
-        Não vendemos apenas código ou artes soltas. Criamos o ecossistema completo para posicionar sua empresa e converter visitantes em vendas reais.
-      </p>
+      <button type="button" class="btn open-budget-modal">
+        <span data-i18n="h.nav_cta">Pedir proposta</span>
+        <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+      </button>
     </div>
-  </section>
+  </div>
 
-  <!-- GRID DE SERVIÇOS DETALHADO -->
-  <section class="py-16 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+  <!-- Marcador fixo: 01/05 … e o "extra" nas seções de apoio -->
+  <div class="marker" id="marker" data-theme="paper" aria-hidden="true"><b id="marker-n">01/05</b><span id="marker-l">Promessa</span></div>
 
-      <!-- Serviço 1: Landing Pages -->
-      <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7">
-          <div class="w-12 h-12 rounded-2xl bg-violet-600/20 text-violet-400 flex items-center justify-center mb-6">
-            <i data-lucide="trending-up" class="w-6 h-6"></i>
-          </div>
-          <span class="text-xs font-bold text-violet-400 uppercase tracking-widest block mb-2" data-i18n="serv1.tag">Foco em Tráfego Pago & Ads</span>
-          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-4" data-i18n="serv1.title">Landing Pages de Alta Conversão</h2>
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6" data-i18n="serv1.desc">
-            Projetadas especificamente para receber visitantes vindos de anúncios (Google Ads, Meta Ads). Estruturadas com copywriting persuasivo, quebra de objeções, gatilhos de prova social e CTAs estratégicos.
-          </p>
-          <ul class="space-y-3 text-xs sm:text-sm text-gray-400 mb-8">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv1.feat1">Carregamento em menos de 0.8s no celular</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv1.feat2">Agendamento e captura direta via WhatsApp</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv1.feat3">Integração com Pixel Meta, Google Analytics & Tag Manager</span></li>
-          </ul>
-          <button class="open-budget-modal btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg">
-            <span data-i18n="serv1.btn">Solicitar Proposta para Landing Page</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
+  <main id="main-content">
+
+    <section class="phero" data-theme="paper" data-mk="p.mk_index" data-mkn="nav.solutions">
+      <div class="wrap phero-grid">
+        <div class="phero-copy">
+          <p class="kicker"><span data-i18n="h.series">Outra história, por favor.</span> · <span data-i18n="nav.solutions">Soluções</span></p>
+          <h1 class="h1 h1--page" data-i18n-html="p.serv_title_html">Engenharia web, redes & automações para acelerar o seu <em>faturamento.</em></h1>
+          <p class="lede" data-i18n="serv.hero_desc">Não vendemos apenas código ou artes soltas. Criamos o ecossistema completo para posicionar sua empresa e converter visitantes em vendas reais.</p>
+          <nav class="svc-index" aria-label="Cinco soluções, uma mesma história."><p class="kicker" data-i18n="p.serv_index">Cinco soluções, uma mesma história.</p><ol><li><a href="#s1"><span>01</span><span data-i18n="serv1.title">Landing Pages de Alta Conversão</span></a></li><li><a href="#s2"><span>02</span><span data-i18n="serv2.title">Sites Institucionais Corporativos</span></a></li><li><a href="#s3"><span>03</span><span data-i18n="serv3.title">Posts para Instagram &amp; Social Design</span></a></li><li><a href="#s4"><span>04</span><span data-i18n="serv4.title">Automações de Vendas &amp; WhatsApp</span></a></li><li><a href="#s5"><span>05</span><span data-i18n="serv5.title">Redesign Estratégico &amp; SEO Técnico</span></a></li></ol></nav>
         </div>
         
-        <!-- SIDE CARD RE-DESIGNED -->
-        <div class="lg:col-span-5 glass-panel p-6 rounded-2xl border border-white/10 relative overflow-hidden bg-gradient-to-br from-[#14141F] to-[#0D0D12] space-y-4">
-          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
-            <div class="w-10 h-10 rounded-xl bg-violet-500/15 border border-violet-500/30 text-violet-400 flex items-center justify-center">
-              <i data-lucide="target" class="w-5 h-5"></i>
+      </div>
+    </section>
+    <section class="chapter" id="s1" data-theme="violet" data-chapter="01" data-mk="p.mk_s1" data-mkn="nav.solutions">
+      <div class="ch-num" aria-hidden="true">01</div>
+      <div class="wrap">
+        <div class="ch-grid">
+          <div class="ch-copy">
+            <p class="kicker rv"><span data-i18n="serv1.tag">Foco em Tráfego Pago &amp; Ads</span> · 01/05</p>
+            <h2 class="h2 rv" data-i18n="serv1.title">Landing Pages de Alta Conversão</h2>
+            <p class="lede rv" data-i18n="serv1.desc">Projetadas especificamente para receber visitantes vindos de anúncios (Google Ads, Meta Ads). Estruturadas com copywriting persuasivo, quebra de objeções, gatilhos de prova social e CTAs estratégicos.</p>
+            <ul class="frag rv"><li data-i18n="serv1.feat1">Carregamento em menos de 0.8s no celular</li><li data-i18n="serv1.feat2">Agendamento e captura direta via WhatsApp</li><li data-i18n="serv1.feat3">Integração com Pixel Meta, Google Analytics &amp; Tag Manager</li></ul>
+            <div class="spec rv">
+              <div class="spec-h"><b data-i18n="serv1.side_title">Engenharia de Conversão</b><span data-i18n="serv1.side_subtitle">Arquitetura focada em ROI</span></div>
+              <dl><div class="row"><dt data-i18n="serv1.side_speed">Velocidade LCP</dt><dd data-i18n="serv1.side_speed_val">&lt; 0.8s (Instantâneo)</dd></div><div class="row"><dt data-i18n="serv1.side_response">Taxa de Resposta</dt><dd data-i18n="serv1.side_response_val">+180% Conversão</dd></div><div class="row"><dt data-i18n="serv1.side_ownership">Propriedade</dt><dd data-i18n="serv1.side_ownership_val">100% Seu (Código Limpo)</dd></div></dl>
             </div>
-            <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="serv1.side_title">Engenharia de Conversão</h4>
-              <p class="text-[11px] text-gray-400" data-i18n="serv1.side_subtitle">Arquitetura focada em ROI</p>
-            </div>
+            <div class="ch-actions rv"><button type="button" class="btn open-budget-modal"><span data-i18n="serv1.btn">Solicitar Proposta para Landing Page</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
-          <div class="space-y-3 text-xs">
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i> <span data-i18n="serv1.side_speed">Velocidade LCP</span></span>
-              <span class="text-emerald-400 font-bold" data-i18n="serv1.side_speed_val">&lt; 0.8s (Instantâneo)</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="mouse-pointer-click" class="w-4 h-4 text-violet-400"></i> <span data-i18n="serv1.side_response">Taxa de Resposta</span></span>
-              <span class="text-white font-semibold" data-i18n="serv1.side_response_val">+180% Conversão</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-violet-300"></i> <span data-i18n="serv1.side_ownership">Propriedade</span></span>
-              <span class="text-violet-300 font-semibold" data-i18n="serv1.side_ownership_val">100% Seu (Código Limpo)</span>
-            </div>
-          </div>
+          <div class="ch-art"><figure class="poster par"><img src="assets/cenas/02-espera-1000.webp" srcset="assets/cenas/02-espera-560.webp 560w, assets/cenas/02-espera-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Coelho de pelúcia de colete e gravata-borboleta sentado sobre um relógio de bolso gigante, com um recibo comprido no chão, sobre fundo roxo." data-alt-en="A plush rabbit in a vest and bow tie sitting on a giant pocket watch, a long receipt trailing on the floor, on a purple background."></figure></div>
         </div>
       </div>
-
-      <!-- Serviço 2: Sites Institucionais -->
-      <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7">
-          <div class="w-12 h-12 rounded-2xl bg-violet-700/20 text-violet-300 flex items-center justify-center mb-6">
-            <i data-lucide="award" class="w-6 h-6"></i>
+    </section>
+    <section class="chapter flip" id="s2" data-theme="paper" data-chapter="02" data-mk="p.mk_s2" data-mkn="nav.solutions">
+      <div class="ch-num" aria-hidden="true">02</div>
+      <div class="wrap">
+        <div class="ch-grid">
+          <div class="ch-copy">
+            <p class="kicker rv"><span data-i18n="serv2.tag">Marca &amp; Posicionamento Corporativo</span> · 02/05</p>
+            <h2 class="h2 rv" data-i18n="serv2.title">Sites Institucionais Corporativos</h2>
+            <p class="lede rv" data-i18n="serv2.desc">Plataformas institucionais sob medida para empresas, clínicas, escritórios e indústrias que buscam transmitir solidez técnica, sofisticação e autoridade inquestionável no ambiente digital.</p>
+            <ul class="frag rv"><li data-i18n="serv2.feat1">Arquitetura multi-páginas e seções institucionais</li><li data-i18n="serv2.feat2">Dados estruturados (Schema.org) para destaque no Google</li><li data-i18n="serv2.feat3">Design 100% autoral alinhado às diretrizes de marca</li></ul>
+            <div class="spec rv">
+              <div class="spec-h"><b data-i18n="serv2.side_title">Autoridade Corporativa</b><span data-i18n="serv2.side_subtitle">Presença de mercado dominante</span></div>
+              <dl><div class="row"><dt data-i18n="serv2.side_score">Score Google</dt><dd>95 – 100/100</dd></div><div class="row"><dt data-i18n="serv2.side_seo">Indexação SEO</dt><dd data-i18n="serv2.side_seo_val">Semântica Completa</dd></div><div class="row"><dt data-i18n="serv2.side_multi">Multi-Dispositivo</dt><dd data-i18n="serv2.side_multi_val">Mobile-First Rigoroso</dd></div></dl>
+            </div>
+            <div class="ch-actions rv"><button type="button" class="btn open-budget-modal"><span data-i18n="serv2.btn">Solicitar Proposta para Site Institucional</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
-          <span class="text-xs font-bold text-violet-300 uppercase tracking-widest block mb-2" data-i18n="serv2.tag">Marca & Posicionamento Corporativo</span>
-          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-4" data-i18n="serv2.title">Sites Institucionais Corporativos</h2>
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6" data-i18n="serv2.desc">
-            Plataformas institucionais sob medida para empresas, clínicas, escritórios e indústrias que buscam transmitir solidez técnica, sofisticação e autoridade inquestionável no ambiente digital.
-          </p>
-          <ul class="space-y-3 text-xs sm:text-sm text-gray-400 mb-8">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv2.feat1">Arquitetura multi-páginas e seções institucionais</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv2.feat2">Dados estruturados (Schema.org) para destaque no Google</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv2.feat3">Design 100% autoral alinhado às diretrizes de marca</span></li>
-          </ul>
-          <button class="open-budget-modal btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg">
-            <span data-i18n="serv2.btn">Solicitar Proposta para Site Institucional</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-
-        <!-- SIDE CARD RE-DESIGNED -->
-        <div class="lg:col-span-5 glass-panel p-6 rounded-2xl border border-white/10 relative overflow-hidden bg-gradient-to-br from-[#14141F] to-[#0D0D12] space-y-4">
-          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
-            <div class="w-10 h-10 rounded-xl bg-violet-400/15 border border-violet-400/30 text-violet-300 flex items-center justify-center">
-              <i data-lucide="building-2" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="serv2.side_title">Autoridade Corporativa</h4>
-              <p class="text-[11px] text-gray-400" data-i18n="serv2.side_subtitle">Presença de mercado dominante</p>
-            </div>
-          </div>
-          <div class="space-y-3 text-xs">
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv2.side_score">Score Google</span></span>
-              <span class="text-emerald-400 font-bold">95 - 100/100</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="search-check" class="w-4 h-4 text-violet-300"></i> <span data-i18n="serv2.side_seo">Indexação SEO</span></span>
-              <span class="text-white font-semibold" data-i18n="serv2.side_seo_val">Semântica Completa</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="globe" class="w-4 h-4 text-violet-400"></i> <span data-i18n="serv2.side_multi">Multi-Dispositivo</span></span>
-              <span class="text-violet-300 font-semibold" data-i18n="serv2.side_multi_val">Mobile-First Rigoroso</span>
-            </div>
-          </div>
+          <div class="ch-art"><figure class="poster  par"><img src="assets/arte/pecas/01-cresceu-1000.webp" srcset="assets/arte/pecas/01-cresceu-560.webp 560w, assets/arte/pecas/01-cresceu-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu negócio cresceu. Sua marca acompanhou?" data-alt-en="Duo Studio artwork — Your business grew. Did your brand keep up?"></figure></div>
         </div>
       </div>
-
-      <!-- Serviço 3: Posts para Instagram & Social Design (NOVO) -->
-      <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7">
-          <div class="w-12 h-12 rounded-2xl bg-pink-600/20 text-pink-400 flex items-center justify-center mb-6">
-            <i data-lucide="instagram" class="w-6 h-6"></i>
+    </section>
+    <section class="chapter" id="s3" data-theme="ink" data-chapter="03" data-mk="p.mk_s3" data-mkn="nav.solutions">
+      <div class="ch-num" aria-hidden="true">03</div>
+      <div class="wrap">
+        <div class="ch-grid">
+          <div class="ch-copy">
+            <p class="kicker rv"><span data-i18n="serv3.tag">Design de Conteúdo &amp; Presença Social</span> · 03/05</p>
+            <h2 class="h2 rv" data-i18n="serv3.title">Posts para Instagram &amp; Social Design</h2>
+            <p class="lede rv" data-i18n="serv3.desc">Projetamos posts carrossel estratégicos, banners institucionais e identidades visuais marcantes para o Instagram da sua empresa. Transformamos suas redes sociais em uma extensão luxuosa e confiável da sua marca.</p>
+            <ul class="frag rv"><li data-i18n="serv3.feat1">Design autoral sem cara de IA ou artes genéricas de banco</li><li data-i18n="serv3.feat2">Carrosséis educativos focados em retenção e salvamentos</li><li data-i18n="serv3.feat3">Padrão estético alinhado ao posicionamento do seu site</li></ul>
+            <div class="spec rv">
+              <div class="spec-h"><b data-i18n="serv3.side_title">Identidade Visual Social</b><span data-i18n="serv3.side_subtitle">Estética Premium &amp; Retenção</span></div>
+              <dl><div class="row"><dt data-i18n="serv3.side_formats">Formatos</dt><dd data-i18n="serv3.side_formats_val">Feed, Carrossel &amp; Stories</dd></div><div class="row"><dt data-i18n="serv3.side_consistency">Consistência</dt><dd data-i18n="serv3.side_consistency_val">Guia de Cores &amp; Tipografia</dd></div><div class="row"><dt data-i18n="serv3.side_engagement">Engajamento</dt><dd data-i18n="serv3.side_engagement_val">Copywriting Orientado a Ação</dd></div></dl>
+            </div>
+            <div class="ch-actions rv"><button type="button" class="btn open-budget-modal"><span data-i18n="serv3.btn">Solicitar Pacote para Instagram</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
-          <span class="text-xs font-bold text-pink-400 uppercase tracking-widest block mb-2" data-i18n="serv3.tag">Design de Conteúdo & Presença Social</span>
-          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-4" data-i18n="serv3.title">Posts para Instagram & Social Design</h2>
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6" data-i18n="serv3.desc">
-            Projetamos posts carrossel estratégicos, banners institucionais e identidades visuais marcantes para o Instagram da sua empresa. Transformamos suas redes sociais em uma extensão luxuosa e confiável da sua marca.
-          </p>
-          <ul class="space-y-3 text-xs sm:text-sm text-gray-400 mb-8">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-400"></i> <span data-i18n="serv3.feat1">Design autoral sem cara de IA ou artes genéricas de banco</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-400"></i> <span data-i18n="serv3.feat2">Carrosséis educativos focados em retenção e salvamentos</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-pink-400"></i> <span data-i18n="serv3.feat3">Padrão estético alinhado ao posicionamento do seu site</span></li>
-          </ul>
-          <button class="open-budget-modal btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg">
-            <span data-i18n="serv3.btn">Solicitar Pacote para Instagram</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-
-        <!-- SIDE CARD RE-DESIGNED -->
-        <div class="lg:col-span-5 glass-panel p-6 rounded-2xl border border-white/10 relative overflow-hidden bg-gradient-to-br from-[#1F141C] to-[#0D0D12] space-y-4">
-          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
-            <div class="w-10 h-10 rounded-xl bg-pink-500/15 border border-pink-500/30 text-pink-400 flex items-center justify-center">
-              <i data-lucide="sparkles" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="serv3.side_title">Identidade Visual Social</h4>
-              <p class="text-[11px] text-gray-400" data-i18n="serv3.side_subtitle">Estética Premium & Retenção</p>
-            </div>
-          </div>
-          <div class="space-y-3 text-xs">
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="layout-grid" class="w-4 h-4 text-pink-400"></i> <span data-i18n="serv3.side_formats">Formatos</span></span>
-              <span class="text-pink-300 font-bold" data-i18n="serv3.side_formats_val">Feed, Carrossel & Stories</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="palette" class="w-4 h-4 text-violet-400"></i> <span data-i18n="serv3.side_consistency">Consistência</span></span>
-              <span class="text-white font-semibold" data-i18n="serv3.side_consistency_val">Guia de Cores & Tipografia</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="heart" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv3.side_engagement">Engajamento</span></span>
-              <span class="text-emerald-400 font-semibold" data-i18n="serv3.side_engagement_val">Copywriting Orientado a Ação</span>
-            </div>
-          </div>
+          <div class="ch-art"><figure class="poster poster--sq par"><img src="assets/arte/bichos/11-choose-your-brand-1000.webp" srcset="assets/arte/bichos/11-choose-your-brand-560.webp 560w, assets/arte/bichos/11-choose-your-brand-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Choose your brand: estrategista, criativo, comunicador." data-alt-en="Duo Studio artwork — Choose your brand: strategist, creative, communicator."></figure></div>
         </div>
       </div>
-
-      <!-- Serviço 4: Automações de Vendas & WhatsApp (NOVO) -->
-      <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center mb-6">
-            <i data-lucide="bot" class="w-6 h-6"></i>
+    </section>
+    <section class="chapter flip" id="s4" data-theme="paper" data-chapter="04" data-mk="p.mk_s4" data-mkn="nav.solutions">
+      <div class="ch-num" aria-hidden="true">04</div>
+      <div class="wrap">
+        <div class="ch-grid">
+          <div class="ch-copy">
+            <p class="kicker rv"><span data-i18n="serv4.tag">Produtividade Comercial &amp; IA Aplicada</span> · 04/05</p>
+            <h2 class="h2 rv" data-i18n="serv4.title">Automações de Vendas &amp; WhatsApp</h2>
+            <p class="lede rv" data-i18n="serv4.desc">Construímos fluxos automatizados de atendimento e vendas. Conectamos seu site diretamente ao WhatsApp da equipe comercial, disparando mensagens instantâneas de boas-vindas, qualificando o cliente 24/7 e registrando tudo no CRM.</p>
+            <ul class="frag rv"><li data-i18n="serv4.feat1">Resposta imediata ao lead sem dependência de operador humano</li><li data-i18n="serv4.feat2">Qualificação prévia de orçamento via quiz ou bot guiado</li><li data-i18n="serv4.feat3">Integração direta com CRMs (HubSpot, RD Station, Notion)</li></ul>
+            <div class="spec rv">
+              <div class="spec-h"><b data-i18n="serv4.side_title">Workflows de Atendimento</b><span data-i18n="serv4.side_subtitle">Operação 24 Horas sem Falhas</span></div>
+              <dl><div class="row"><dt data-i18n="serv4.side_wa">Resposta no WhatsApp</dt><dd data-i18n="serv4.side_wa_val">&lt; 5 Segundos</dd></div><div class="row"><dt data-i18n="serv4.side_filter">Triagem</dt><dd data-i18n="serv4.side_filter_val">Filtro de Clientes Reais</dd></div><div class="row"><dt data-i18n="serv4.side_sync">Sincronização</dt><dd data-i18n="serv4.side_sync_val">CRM Integrado em Tempo Real</dd></div></dl>
+            </div>
+            <div class="ch-actions rv"><button type="button" class="btn open-budget-modal"><span data-i18n="serv4.btn">Solicitar Automação Comercial</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
-          <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-2" data-i18n="serv4.tag">Produtividade Comercial & IA Aplicada</span>
-          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-4" data-i18n="serv4.title">Automações de Vendas & WhatsApp</h2>
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6" data-i18n="serv4.desc">
-            Construímos fluxos automatizados de atendimento e vendas. Conectamos seu site diretamente ao WhatsApp da equipe comercial, disparando mensagens instantâneas de boas-vindas, qualificando o cliente 24/7 e registrando tudo no CRM.
-          </p>
-          <ul class="space-y-3 text-xs sm:text-sm text-gray-400 mb-8">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv4.feat1">Resposta imediata ao lead sem dependência de operador humano</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv4.feat2">Qualificação prévia de orçamento via quiz ou bot guiado</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv4.feat3">Integração direta com CRMs (HubSpot, RD Station, Notion)</span></li>
-          </ul>
-          <button class="open-budget-modal btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg">
-            <span data-i18n="serv4.btn">Solicitar Automação Comercial</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-
-        <!-- SIDE CARD RE-DESIGNED -->
-        <div class="lg:col-span-5 glass-panel p-6 rounded-2xl border border-white/10 relative overflow-hidden bg-gradient-to-br from-[#121A16] to-[#0D0D12] space-y-4">
-          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
-              <i data-lucide="workflow" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="serv4.side_title">Workflows de Atendimento</h4>
-              <p class="text-[11px] text-gray-400" data-i18n="serv4.side_subtitle">Operação 24 Horas sem Falhas</p>
-            </div>
-          </div>
-          <div class="space-y-3 text-xs">
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv4.side_wa">Resposta no WhatsApp</span></span>
-              <span class="text-emerald-400 font-bold" data-i18n="serv4.side_wa_val">&lt; 5 Segundos</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="cpu" class="w-4 h-4 text-violet-400"></i> <span data-i18n="serv4.side_filter">Triagem</span></span>
-              <span class="text-white font-semibold" data-i18n="serv4.side_filter_val">Filtro de Clientes Reais</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="refresh-cw" class="w-4 h-4 text-violet-300"></i> <span data-i18n="serv4.side_sync">Sincronização</span></span>
-              <span class="text-violet-200 font-semibold" data-i18n="serv4.side_sync_val">CRM Integrado em Tempo Real</span>
-            </div>
-          </div>
+          <div class="ch-art"><figure class="poster par"><img src="assets/cenas/03-tempo-1000.webp" srcset="assets/cenas/03-tempo-560.webp 560w, assets/cenas/03-tempo-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Vampiro de casaco roxo bebendo areia de uma ampulheta com um canudo, ao lado de uma pilha de faturas e de um carimbo." data-alt-en="A vampire in a purple jacket sipping sand from an hourglass through a straw, next to a pile of invoices and a stamp."></figure></div>
         </div>
       </div>
-
-      <!-- Serviço 5: Redesign Estratégico & SEO Técnico -->
-      <div class="glass-card p-8 md:p-12 rounded-3xl border border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7">
-          <div class="w-12 h-12 rounded-2xl bg-amber-600/20 text-amber-400 flex items-center justify-center mb-6">
-            <i data-lucide="zap" class="w-6 h-6"></i>
+    </section>
+    <section class="chapter" id="s5" data-theme="violet" data-chapter="05" data-mk="p.mk_s5" data-mkn="nav.solutions">
+      <div class="ch-num" aria-hidden="true">05</div>
+      <div class="wrap">
+        <div class="ch-grid">
+          <div class="ch-copy">
+            <p class="kicker rv"><span data-i18n="serv5.tag">Reformulação &amp; Desempenho</span> · 05/05</p>
+            <h2 class="h2 rv" data-i18n="serv5.title">Redesign Estratégico &amp; SEO Técnico</h2>
+            <p class="lede rv" data-i18n="serv5.desc">Reconstruímos sites antigos, lentos ou ultrapassados. Reescrevemos a estrutura visual e o código-fonte para eliminar perdas de clientes por travamentos e elevar o posicionamento nas buscas do Google.</p>
+            <ul class="frag rv"><li data-i18n="serv5.feat1">Migração de código legado para HTML5/Clean Code</li><li data-i18n="serv5.feat2">Otimização avançada de imagens WebP e compressão</li><li data-i18n="serv5.feat3">Auditoria e ajuste de metadados e sitemap</li></ul>
+            <div class="spec rv">
+              <div class="spec-h"><b data-i18n="serv5.side_title">Arquitetura Renovada</b><span data-i18n="serv5.side_subtitle">Zero Desperdício de Código</span></div>
+              <dl><div class="row"><dt data-i18n="serv5.side_weight">Redução de Peso</dt><dd data-i18n="serv5.side_weight_val">-75% no Carregamento</dd></div><div class="row"><dt data-i18n="serv5.side_mobile">Resposta Mobile</dt><dd data-i18n="serv5.side_mobile_val">100% Fluida</dd></div><div class="row"><dt data-i18n="serv5.side_seo">SEO Técnico</dt><dd data-i18n="serv5.side_seo_val">Conformidade Total</dd></div></dl>
+            </div>
+            <div class="ch-actions rv"><button type="button" class="btn open-budget-modal"><span data-i18n="serv5.btn">Solicitar Análise de Redesign</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
           </div>
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block mb-2" data-i18n="serv5.tag">Reformulação & Desempenho</span>
-          <h2 class="font-heading font-bold text-2xl sm:text-3xl text-white mb-4" data-i18n="serv5.title">Redesign Estratégico & SEO Técnico</h2>
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-6" data-i18n="serv5.desc">
-            Reconstruímos sites antigos, lentos ou ultrapassados. Reescrevemos a estrutura visual e o código-fonte para eliminar perdas de clientes por travamentos e elevar o posicionamento nas buscas do Google.
-          </p>
-          <ul class="space-y-3 text-xs sm:text-sm text-gray-400 mb-8">
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv5.feat1">Migração de código legado para HTML5/Clean Code</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv5.feat2">Otimização avançada de imagens WebP e compressão</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv5.feat3">Auditoria e ajuste de metadados e sitemap</span></li>
-          </ul>
-          <button class="open-budget-modal btn-gradient px-6 py-3 rounded-full text-xs font-semibold text-white inline-flex items-center gap-2 shadow-lg">
-            <span data-i18n="serv5.btn">Solicitar Análise de Redesign</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </button>
-        </div>
-
-        <!-- SIDE CARD RE-DESIGNED -->
-        <div class="lg:col-span-5 glass-panel p-6 rounded-2xl border border-white/10 relative overflow-hidden bg-gradient-to-br from-[#1A1812] to-[#0D0D12] space-y-4">
-          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center">
-              <i data-lucide="layers" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <h4 class="text-xs font-bold text-white uppercase tracking-wider" data-i18n="serv5.side_title">Arquitetura Renovada</h4>
-              <p class="text-[11px] text-gray-400" data-i18n="serv5.side_subtitle">Zero Desperdício de Código</p>
-            </div>
-          </div>
-          <div class="space-y-3 text-xs">
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="trending-down" class="w-4 h-4 text-amber-400"></i> <span data-i18n="serv5.side_weight">Redução de Peso</span></span>
-              <span class="text-amber-300 font-bold" data-i18n="serv5.side_weight_val">-75% no Carregamento</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i> <span data-i18n="serv5.side_mobile">Resposta Mobile</span></span>
-              <span class="text-white font-semibold" data-i18n="serv5.side_mobile_val">100% Fluida</span>
-            </div>
-            <div class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5">
-              <span class="text-gray-400 flex items-center gap-2"><i data-lucide="bar-chart-3" class="w-4 h-4 text-violet-400"></i> <span data-i18n="serv5.side_seo">SEO Técnico</span></span>
-              <span class="text-violet-300 font-semibold" data-i18n="serv5.side_seo_val">Conformidade Total</span>
-            </div>
-          </div>
+          <div class="ch-art"><figure class="poster  par"><img src="assets/arte/pecas/03-ponte-1000.webp" srcset="assets/arte/pecas/03-ponte-560.webp 560w, assets/arte/pecas/03-ponte-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu site é uma ponte. Não um labirinto." data-alt-en="Duo Studio artwork — Your site is a bridge. Not a maze."></figure></div>
         </div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="py-20 relative z-10">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="glass-card p-10 sm:p-14 rounded-3xl border border-white/15 bg-cta-glow">
-        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mb-4" data-i18n-html="serv.cta_title_html">
-          Qual a solução ideal para o momento da <span class="text-gradient-brand">sua empresa?</span>
-        </h2>
-        <p class="text-gray-300 text-sm sm:text-base max-w-xl mx-auto mb-8" data-i18n="serv.cta_desc">
-          Fale diretamente com os sócios da Duo Studio e receba uma análise sem compromisso.
-        </p>
-        <button class="open-budget-modal btn-gradient px-8 py-4 rounded-full text-sm font-bold text-white shadow-xl inline-flex items-center gap-3">
-          <span data-i18n="modal.budget_title">Agendar Reunião Estratégica</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="pt-16 pb-12 relative z-10 bg-[#070709] border-t border-white/10 text-gray-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-white/5">
-        <div class="md:col-span-5">
-          <a href="index.html" class="flex items-center gap-3 mb-4">
-            <img src="assets/logo-horizontal.webp" alt="Duo Studio Logo" class="h-10 w-auto object-contain">
-          </a>
-          <p class="text-gray-400 text-sm max-w-sm mb-6" data-i18n="footer.desc">
-            Desenvolvimento de plataformas web sob medida, landing pages estratégicas, social design e automações de vendas.
-          </p>
+    </section>
+    <section class="final final--page" id="contato-cta" data-theme="ink" data-mk="h.mk_next" data-mkn="nav.solutions">
+      <div class="wrap final-grid">
+        <div class="final-copy">
+          <p class="kicker"><span data-i18n="h.series">Outra história, por favor.</span> · <span data-i18n="h.mk_next">Próximo capítulo</span></p>
+          <h2 class="h2 rv" style="margin-top:26px" data-i18n-html="p.serv_cta_title_html">Qual a solução ideal para o <em>momento da sua empresa?</em></h2>
+          <p class="lede rv" data-i18n="serv.cta_desc">Fale diretamente com os sócios da Duo Studio e receba uma análise sem compromisso.</p>
+          <div class="hero-cta rv">
+            <button type="button" class="btn btn-magnetic open-budget-modal"><span data-i18n="h.cta_primary">Pedir proposta</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
         </div>
-        <div class="md:col-span-3">
-          <h4 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.quick_links">Navegação</h4>
-          <ul class="space-y-2.5 text-xs">
-            <li><a href="index.html" class="hover:text-white transition-colors" data-i18n="nav.home">Início</a></li>
-            <li><a href="sobre.html" class="hover:text-white transition-colors" data-i18n="nav.about">Sobre</a></li>
-            <li><a href="servicos.html" class="text-white font-semibold" data-i18n="nav.services">Soluções</a></li>
-            <li><a href="portfolio.html" class="hover:text-white transition-colors" data-i18n="nav.portfolio">Portfólio</a></li>
-            <li><a href="blog.html" class="hover:text-white transition-colors" data-i18n="nav.blog">Blog</a></li>
-            <li><a href="contato.html" class="hover:text-white transition-colors" data-i18n="nav.contact">Contato</a></li>
+        <div class="final-art"><figure class="poster poster--sq par"><img src="assets/arte/bichos/05-impossivel-de-ignorar-1000.webp" srcset="assets/arte/bichos/05-impossivel-de-ignorar-560.webp 560w, assets/arte/bichos/05-impossivel-de-ignorar-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1254" height="1254" loading="lazy" decoding="async" draggable="false" alt="Arte da Duo Studio — Sua marca merece ser impossível de ignorar." data-alt-en="Duo Studio artwork — Your brand deserves to be impossible to ignore."></figure></div>
+      </div>
+    </section>
+  </main>
+
+  </main>
+
+  <!-- ==========================================
+       RODAPÉ
+  =========================================== -->
+  <footer class="foot" data-theme="ink">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img class="foot-logo" src="assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" loading="lazy" decoding="async">
+          <p data-i18n="footer.desc">Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão para marcas exigentes.</p>
+        </div>
+        <div class="foot-col a">
+          <h4 data-i18n="h.ft_nav">Navegação</h4>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="sobre.html" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="servicos.html" data-i18n="nav.solutions">Soluções</a></li>
+            <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contato.html" data-i18n="nav.contact">Contato</a></li>
           </ul>
         </div>
-        <div class="md:col-span-4">
-          <h4 class="font-heading font-semibold text-white text-sm uppercase tracking-wider mb-4" data-i18n="footer.contact_title">Contato Direto</h4>
-          <div class="space-y-3 text-xs">
-            <a href="mailto:somosduostudiobr@gmail.com" class="flex items-center gap-3 hover:text-white"><i data-lucide="mail" class="w-4 h-4 text-violet-400"></i> somosduostudiobr@gmail.com</a>
-            <a href="https://wa.me/5594999099386" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-white"><i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> +55 (94) 99909-9386</a>
-            <a href="https://wa.me/5594992811658" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-white"><i data-lucide="phone" class="w-4 h-4 text-violet-400"></i> +55 (94) 99281-1658</a>
-          </div>
+        <div class="foot-col b">
+          <h4 data-i18n="footer.contact_title">Contato Direto</h4>
+          <ul>
+            <li><a href="mailto:somosduostudiobr@gmail.com">somosduostudiobr@gmail.com</a></li>
+            <li><a href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99909-9386</a></li>
+            <li><a href="https://wa.me/5594992811658?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99281-1658</a></li>
+            <li><a href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li data-i18n="footer.location">Parauapebas - PA, Brasil</li>
+          </ul>
         </div>
       </div>
-      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-        <p data-i18n="footer.rights">&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
+      <p class="mega" aria-hidden="true">Duo Studio.</p>
+      <div class="foot-bar">
+        <span data-i18n="footer.rights">© 2026 Duo Studio. Todos os direitos reservados. Engenharia de Software Autoral.</span>
+        <span data-i18n="footer.tagline">Engenharia digital com alta performance.</span>
       </div>
     </div>
   </footer>
 
+  <!-- WhatsApp flutuante -->
+  <a class="wa" href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Duo%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-i18n-aria="h.wa_label">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- Barra de conversão mobile (app.js mostra após rolar) -->
+  <div id="mobile-sticky-cta" class="hidden">
+    <div class="in">
+      <span data-i18n="mobile.online">Atendimento On-line</span>
+      <button type="button" class="btn open-budget-modal"><span data-i18n="mobile.cta_diag">Agendar Diagnóstico</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: proposta em 3 passos → WhatsApp (IDs/classes usados pelo app.js)
+  =========================================== -->
+  <div id="budget-modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="quiz-h1" data-theme="paper">
+    <div class="sheet">
+      <button type="button" id="close-budget-modal" class="sheet-x" aria-label="Fechar" data-i18n-aria="h.q_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+
+      <div class="q-top">
+        <span id="quiz-step-label" class="kicker">Passo 1 de 3: Objetivo do Projeto</span>
+        <span class="kicker" data-i18n="quiz.step_badge">Diagnóstico Sem Custos</span>
+      </div>
+      <div class="q-bar"><div id="quiz-progress-bar"></div></div>
+
+      <form id="budget-form">
+        <div id="quiz-step-1">
+          <h3 id="quiz-h1" data-i18n="quiz.step1_title">Qual o principal objetivo da sua empresa hoje?</h3>
+          <p class="sub" data-i18n="quiz.step1_sub">Selecione o modelo que melhor descreve sua necessidade atual:</p>
+          <div class="opts">
+            <div class="quiz-option-card quiz-obj-card selected" data-value="Gerar mais leads com Landing Page de Alta Conversão"><h4 data-i18n="quiz.opt1_title">Gerar Mais Leads & Vendas</h4><p data-i18n="quiz.opt1_desc">Landing Page focada em campanhas de tráfego pago</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Posicionar marca com Site Institucional sob Medida"><h4 data-i18n="quiz.opt2_title">Posicionar Marca & Autoridade</h4><p data-i18n="quiz.opt2_desc">Site Institucional corporativo de alto padrão</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Vender produtos com Loja Virtual / E-Commerce"><h4 data-i18n="quiz.opt3_title">Vender Produtos (E-Commerce)</h4><p data-i18n="quiz.opt3_desc">Loja virtual rápida e sem atrito no checkout</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Reformular site antigo ou lento (Redesign)"><h4 data-i18n="quiz.opt4_title">Modernizar Site Lento / Antigo</h4><p data-i18n="quiz.opt4_desc">Redesign completo com código ultrarrápido</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-next-1" class="btn"><span data-i18n="quiz.next_step1">Avançar para Segmento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-2" class="hidden">
+          <h3 data-i18n="quiz.step2_title">Em qual segmento sua empresa atua?</h3>
+          <p class="sub" data-i18n="quiz.step2_sub">Isso nos ajuda a preparar referências e dados específicos:</p>
+          <div class="opts two">
+            <div class="quiz-option-card quiz-seg-card selected" data-value="Serviços & Negócios Locais"><h4 data-i18n="quiz.seg1_title">Serviços & Negócios</h4><p data-i18n="quiz.seg1_desc">Consultoria, Engenharia, Advocacia</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Saúde, Clínicas & Laboratórios"><h4 data-i18n="quiz.seg2_title">Saúde & Clínicas</h4><p data-i18n="quiz.seg2_desc">Laboratórios, Médicos, Odonto</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Turismo, Gastronomia & Eventos"><h4 data-i18n="quiz.seg3_title">Turismo & Lazer</h4><p data-i18n="quiz.seg3_desc">Agências de Viagens, Hotelaria</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Comércio & E-commerce"><h4 data-i18n="quiz.seg4_title">Vendas & E-Commerce</h4><p data-i18n="quiz.seg4_desc">Produtos, Varejo, Marca Própria</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-2" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="button" id="quiz-next-2" class="btn"><span data-i18n="quiz.next_step2">Avançar para Contato</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-3" class="hidden">
+          <h3 data-i18n="quiz.step3_title">Onde devemos entregar seu diagnóstico?</h3>
+          <p class="sub" data-i18n="quiz.step3_sub">Preencha abaixo e entraremos em contato via WhatsApp com a proposta:</p>
+          <div class="field-row">
+            <div class="field"><label for="budget-name" data-i18n="quiz.label_name">Seu Nome / Empresa *</label><input id="budget-name" type="text" required placeholder="Ex: Carlos Silva" data-i18n-placeholder="quiz.ph_name"></div>
+            <div class="field"><label for="budget-phone" data-i18n="quiz.label_phone">WhatsApp para Contato *</label><input id="budget-phone" type="tel" required placeholder="(94) 99999-9999"></div>
+          </div>
+          <div class="field"><label for="budget-email" data-i18n="quiz.label_email">E-mail Corporativo</label><input id="budget-email" type="email" placeholder="carlos@empresa.com" data-i18n-placeholder="quiz.ph_email"></div>
+          <div class="field"><label for="budget-description" data-i18n="quiz.label_goals">Resumo das Metas da Empresa (Opcional)</label><textarea id="budget-description" rows="2" placeholder="Descreva brevemente suas metas de vendas..." data-i18n-placeholder="quiz.ph_goals"></textarea></div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-3" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="submit" class="btn"><span data-i18n="quiz.btn_submit">Enviar Diagnóstico no WhatsApp</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </form>
+
+      <div id="budget-form-success" class="hidden">
+        <div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+        <h3 data-i18n="quiz.success_title">Solicitação Pronta para Envio!</h3>
+        <p class="sub" data-i18n="quiz.success_sub">Escolha com qual dos nossos sócios você prefere iniciar a conversa no WhatsApp:</p>
+        <div class="wa-row">
+          <a id="budget-wa-link" class="btn" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa1">Contato 1: (94) 99909-9386</span></a>
+          <a id="budget-wa-link-2" class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa2">Contato 2: (94) 99281-1658</span></a>
+        </div>
+        <button type="button" class="linklike" onclick="document.getElementById('close-budget-modal').click()" data-i18n="quiz.success_close">Fechar janela</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visualizador de arte (site.js) -->
+  <dialog id="lb" class="lb" aria-label="Visualizador de arte">
+    <button type="button" class="lb-x" data-lb-close aria-label="Fechar" data-i18n-aria="h.lb_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <button type="button" class="lb-nav prev" data-lb-prev aria-label="Anterior" data-i18n-aria="h.lb_prev"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <button type="button" class="lb-nav next" data-lb-next aria-label="Próxima" data-i18n-aria="h.lb_next"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <figure><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><figcaption></figcaption></figure>
+  </dialog>
+
   <script src="i18n.js"></script>
+  <script src="i18n-site.js"></script>
   <script src="app.js"></script>
+  <script src="site.js?v=2"></script>
 </body>
+
 </html>

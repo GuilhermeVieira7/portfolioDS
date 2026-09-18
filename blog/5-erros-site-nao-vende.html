@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark scroll-smooth">
+<html lang="pt-BR">
 
 <head>
   <meta charset="UTF-8">
@@ -30,146 +30,282 @@
   <meta property="og:site_name" content="Duo Studio">
 
   <!-- Favicon -->
-  <meta name="theme-color" content="#0B0B0B">
+  <meta name="theme-color" content="#F2EEE6">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180x180.png">
   <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Google Fonts Preconnect & Preload -->
+  <!-- Tipografia + sistema visual (independente de Tailwind/style.css) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Sora:wght@300..800&display=swap" rel="stylesheet">
-
-  <!-- Lucide Icons -->
-  <script defer src="https://unpkg.com/lucide@0.460.0"></script>
-
-  <!-- Tailwind CSS CDN Engine & Custom Config -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brandDark: '#0B0B0B',
-            cardDark: '#121217',
-            cardBorder: 'rgba(255, 255, 255, 0.08)',
-            limeBrand: '#D4FF3D',
-            violetBrand: '#7C3AED',
-          },
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['Sora', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="../dist/tailwind.css">
-  <link rel="stylesheet" href="../style.css?v=9">
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css?v=2">
 </head>
 
-<body class="bg-[#0B0B0B] text-gray-100 antialiased selection:bg-violet-600 selection:text-white overflow-x-hidden">
+<body data-theme="paper">
 
-  <!-- HEADER -->
-  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <a href="../index.html" class="flex items-center gap-3 group focus:outline-none">
-        <img src="../assets/logo-horizontal.webp" alt="Duo Studio Logo" class="h-9 sm:h-10 w-auto object-contain">
+  <a class="skip" href="#main-content" data-i18n="h.skip">Ir para o conteúdo</a>
+
+  <!-- Ícones (sprite inline: zero requisições) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 10 17.5 19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></symbol>
+  </svg>
+
+  <!-- ==========================================
+       HEADER — segue o tema da seção sob ele (home.js)
+  =========================================== -->
+  <header class="site-header" id="site-header" data-theme="paper">
+    <div class="wrap hd-inner">
+      <a class="logo" href="../index.html" aria-label="Duo Studio — início">
+        <img src="../assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" decoding="async" fetchpriority="high">
       </a>
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-gray-300">
-        <a href="../index.html" class="hover:text-white transition-colors py-1" data-i18n="nav.home">Início</a>
-        <a href="../sobre.html" class="hover:text-white transition-colors py-1" data-i18n="nav.about">Sobre</a>
-        <a href="../servicos.html" class="hover:text-white transition-colors py-1" data-i18n="nav.services">Soluções</a>
-        <a href="../portfolio.html" class="hover:text-white transition-colors py-1" data-i18n="nav.portfolio">Portfólio</a>
-        <a href="../blog.html" class="text-violet-400 font-semibold py-1" data-i18n="nav.blog">Blog</a>
-        <a href="../contato.html" class="hover:text-white transition-colors py-1" data-i18n="nav.contact">Contato</a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="../index.html" data-i18n="nav.home">Início</a>
+        <a href="../sobre.html" data-i18n="nav.about">Sobre</a>
+        <a href="../servicos.html" data-i18n="nav.solutions">Soluções</a>
+        <a href="../portfolio.html" data-i18n="nav.portfolio">Portfólio</a>
+        <a href="../blog.html" aria-current="page" data-i18n="nav.blog">Blog</a>
+        <a href="../contato.html" data-i18n="nav.contact">Contato</a>
       </nav>
-      <div class="flex items-center gap-4">
-        <!-- Language Switcher -->
-        <div class="flex items-center bg-white/5 border border-white/10 rounded-full p-1 text-xs">
-          <button class="lang-btn-pt px-2.5 py-1 rounded-full font-semibold transition-all" data-i18n="nav.lang_pt">PT</button>
-          <button class="lang-btn-en px-2.5 py-1 rounded-full font-semibold transition-all" data-i18n="nav.lang_en">EN</button>
+
+      <div class="hd-right">
+        <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+          <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+          <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
         </div>
-        <a href="../contato.html" class="hidden sm:inline-flex btn-gradient px-5 py-2.5 rounded-full text-xs font-semibold text-white items-center gap-2">
-          <span data-i18n="blog.request_analysis">Solicitar Análise</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
+        <button type="button" class="btn btn--sm open-budget-modal">
+          <span data-i18n="h.nav_cta">Pedir proposta</span>
+          <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Abrir menu" data-i18n-aria="h.menu">
+          <span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- ARTICLE BODY -->
-  <article class="pt-36 pb-20 relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-    <a href="../blog.html" class="inline-flex items-center gap-2 text-xs font-semibold text-violet-400 hover:text-violet-300 mb-6">
-      <i data-lucide="arrow-left" class="w-4 h-4"></i>
-      <span data-i18n="blog.back_blog">Voltar para o Blog</span>
-    </a>
-
-    <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block mb-2" data-i18n="blog1.tag">Otimização de Vendas</span>
-    <h1 class="font-heading font-extrabold text-3xl sm:text-5xl text-white mb-6 leading-tight" data-i18n="blog1.title">
-      5 erros que fazem seu site perder clientes para o concorrente
-    </h1>
-
-    <div class="flex items-center gap-4 text-xs text-gray-400 pb-8 mb-8 border-b border-white/10">
-      <span data-i18n-html="blog1.author">Por <strong>Duo Studio</strong></span>
-      <span>•</span>
-      <span data-i18n="blog1.date">13 de Agosto, 2026</span>
-    </div>
-
-    <div class="space-y-6 text-gray-300 text-base leading-relaxed font-normal">
-      <p data-i18n="blog1.intro">
-        Se sua empresa recebe tráfego mas poucas pessoas entram em contato no WhatsApp, o problema provavelmente está em um desses 5 erros fatais:
-      </p>
-
-      <h2 class="font-heading font-bold text-xl text-white pt-2" data-i18n="blog1.h2_1">1. Demorar mais de 2 segundos para carregar no celular</h2>
-      <p class="text-xs sm:text-sm text-gray-400" data-i18n="blog1.p_1">
-        Mais de 53% dos usuários abandonam um site se ele demorar mais de 3 segundos para abrir. Imagens pesadas e scripts desnecessários matam suas vendas antes mesmo do cliente ler a primeira frase.
-      </p>
-
-      <h2 class="font-heading font-bold text-xl text-white pt-2" data-i18n="blog1.h2_2">2. Botão de WhatsApp difícil de encontrar</h2>
-      <p class="text-xs sm:text-sm text-gray-400" data-i18n="blog1.p_2">
-        O cliente não quer preencher formulários longos. O botão do WhatsApp deve estar visível e acessível em um toque em todas as seções do site.
-      </p>
-
-      <h2 class="font-heading font-bold text-xl text-white pt-2" data-i18n="blog1.h2_3">3. Falta de Prova Social e Cases Reais</h2>
-      <p class="text-xs sm:text-sm text-gray-400" data-i18n="blog1.p_3">
-        Sem depoimentos de clientes reais ou fotos autênticas dos trabalhos realizados, sua empresa parece genérica e insegura.
-      </p>
-
-      <h2 class="font-heading font-bold text-xl text-white pt-2" data-i18n="blog1.h2_4">4. Não ter otimização para SEO Local</h2>
-      <p class="text-xs sm:text-sm text-gray-400" data-i18n="blog1.p_4">
-        Se o Google não consegue identificar a cidade e o segmento da sua empresa através de metadados e Schema.org, você perde os clientes mais aquecidos que pesquisam na sua região.
-      </p>
-
-      <h2 class="font-heading font-bold text-xl text-white pt-2" data-i18n="blog1.h2_5">5. Não ter propriedade sobre o código</h2>
-      <p class="text-xs sm:text-sm text-gray-400" data-i18n="blog1.p_5">
-        Ficar preso a plataformas pagas que cobram mensalidades caras e travam a personalização do layout impede que seu negócio evolua.
-      </p>
-
-      <div class="mt-10 p-8 rounded-3xl bg-cta-glow border border-white/15 text-center">
-        <h3 class="font-heading font-bold text-xl text-white mb-2" data-i18n="blog1.cta_h3">Seu site atual sofre com algum desses erros?</h3>
-        <p class="text-xs text-gray-300 mb-6" data-i18n="blog1.cta_p">Oferecemos um redesign completo com garantia de velocidade e conversão.</p>
-        <a href="../contato.html" class="btn-gradient px-6 py-3 rounded-full text-xs font-bold text-white inline-flex items-center gap-2">
-          <span data-i18n="blog1.cta_btn">Solicitar Redesign Estratégico</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
+  <div class="drawer" id="nav-drawer" data-theme="paper" hidden>
+    <a class="dl" href="../index.html" data-i18n="nav.home">Início</a>
+    <a class="dl" href="../sobre.html" data-i18n="nav.about">Sobre</a>
+    <a class="dl" href="../servicos.html" data-i18n="nav.solutions">Soluções</a>
+    <a class="dl" href="../portfolio.html" data-i18n="nav.portfolio">Portfólio</a>
+    <a class="dl" href="../blog.html" data-i18n="nav.blog">Blog</a>
+    <a class="dl" href="../contato.html" data-i18n="nav.contact">Contato</a>
+    <div class="dr-foot">
+      <div class="duo-lang-toggle" role="group" aria-label="Idioma / Language">
+        <button type="button" class="duo-lang-btn" data-lang-val="pt">PT</button>
+        <button type="button" class="duo-lang-btn" data-lang-val="en">EN</button>
       </div>
+      <button type="button" class="btn open-budget-modal">
+        <span data-i18n="h.nav_cta">Pedir proposta</span>
+        <svg aria-hidden="true"><use href="#i-arrow"/></svg>
+      </button>
     </div>
-  </article>
+  </div>
 
-  <!-- FOOTER -->
-  <footer class="pt-12 pb-12 bg-[#070709] border-t border-white/10 text-gray-400 text-sm">
-    <div class="max-w-7xl mx-auto px-4 text-center text-xs text-gray-500">
-      <p data-i18n="footer.rights">&copy; 2026 Duo Studio. Todos os direitos reservados.</p>
+  <!-- Marcador fixo: 01/05 … e o "extra" nas seções de apoio -->
+  <div class="marker" id="marker" data-theme="paper" aria-hidden="true"><b id="marker-n">01/05</b><span id="marker-l">Promessa</span></div>
+
+  <main id="main-content">
+
+    <section class="post-hero" data-theme="paper" data-mk="p.mk_article" data-mkn="nav.blog">
+      <div class="wrap phero-grid">
+        <div class="phero-copy">
+          <a class="tlink back" href="../blog.html"><svg aria-hidden="true" style="transform:scaleX(-1)"><use href="#i-arrow"/></svg><span data-i18n="blog.back_blog">Voltar para o Blog</span></a>
+          <p class="kicker" style="margin-top:34px" data-i18n="blog1.tag">Otimização de Vendas</p>
+          <h1 class="h1 h1--post" data-i18n="blog1.title">5 erros que fazem seu site perder clientes para o concorrente</h1>
+          <p class="post-meta"><span data-i18n-html="blog1.author">Por <strong>Duo Studio</strong></span><i aria-hidden="true">•</i><span data-i18n="blog1.date">13 de Agosto, 2026</span></p>
+        </div>
+        <div class="phero-art"><figure class="poster  par"><img src="../assets/arte/metaforas/03-detetive-1000.webp" srcset="../assets/arte/metaforas/03-detetive-560.webp 560w, ../assets/arte/metaforas/03-detetive-1000.webp 1000w" sizes="(max-width: 640px) 70vw, 460px" width="1122" height="1402" decoding="async" draggable="false" alt="Arte da Duo Studio — Seu cliente não é detetive." data-alt-en="Duo Studio artwork — Your customer is not a detective."></figure></div>
+      </div>
+    </section>
+
+    <article class="post" data-theme="paper" data-mk="p.mk_article" data-mkn="nav.blog">
+      <div class="wrap"><div class="prose">
+        <p data-i18n="blog1.intro">Se sua empresa recebe tráfego mas poucas pessoas entram em contato no WhatsApp, o problema provavelmente está em um desses 5 erros fatais:</p>
+        <h2 data-i18n="blog1.h2_1">1. Demorar mais de 2 segundos para carregar no celular</h2>
+        <p data-i18n="blog1.p_1">Mais de 53% dos usuários abandonam um site se ele demorar mais de 3 segundos para abrir. Imagens pesadas e scripts desnecessários matam suas vendas antes mesmo do cliente ler a primeira frase.</p>
+        <h2 data-i18n="blog1.h2_2">2. Botão de WhatsApp difícil de encontrar</h2>
+        <p data-i18n="blog1.p_2">O cliente não quer preencher formulários longos. O botão do WhatsApp deve estar visível e acessível em um toque em todas as seções do site.</p>
+        <h2 data-i18n="blog1.h2_3">3. Falta de Prova Social e Cases Reais</h2>
+        <p data-i18n="blog1.p_3">Sem depoimentos de clientes reais ou fotos autênticas dos trabalhos realizados, sua empresa parece genérica e insegura.</p>
+        <h2 data-i18n="blog1.h2_4">4. Não ter otimização para SEO Local</h2>
+        <p data-i18n="blog1.p_4">Se o Google não consegue identificar a cidade e o segmento da sua empresa através de metadados e Schema.org, você perde os clientes mais aquecidos que pesquisam na sua região.</p>
+        <h2 data-i18n="blog1.h2_5">5. Não ter propriedade sobre o código</h2>
+        <p data-i18n="blog1.p_5">Ficar preso a plataformas pagas que cobram mensalidades caras e travam a personalização do layout impede que seu negócio evolua.</p>
+      </div></div>
+    </article>
+
+    <section class="post-cta" data-theme="violet" data-mk="h.mk_next" data-mkn="nav.blog">
+      <div class="wrap">
+        <h2 class="h2" data-i18n="blog1.cta_h3">Seu site atual sofre com algum desses erros?</h2>
+        <p class="lede" data-i18n="blog1.cta_p">Oferecemos um redesign completo com garantia de velocidade e conversão.</p>
+        <div class="hero-cta"><button type="button" class="btn btn-magnetic open-budget-modal"><span data-i18n="blog1.cta_btn">Solicitar Redesign Estratégico</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button></div>
+      </div>
+    </section>
+
+    <section class="related" data-theme="paper" data-mk="p.mk_related" data-mkn="nav.blog">
+      <div class="wrap">
+        
+        <div class="sec-head rv">
+          <p class="kicker"><span data-i18n="h.mk_extra">Extra</span> · <span data-i18n="p.mk_related">Continue lendo</span></p>
+          <h2 class="h2" data-i18n-html="p.related_title_html">Continue <em>lendo.</em></h2>
+          
+        </div>
+        <ul class="rel-list">
+          <li class="rv"><a href="../blog/quanto-custa-criar-site-parauapebas.html"><span class="kicker" data-i18n="blog.art1_tag">Orçamento &amp; Preço</span><h3 class="h3" data-i18n="blog.art1_title">Quanto custa criar um site profissional em Parauapebas em 2026?</h3><span class="tlink"><span data-i18n="blog.read_article">Ler artigo completo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+          <li class="rv"><a href="../blog/landing-page-vs-site-institucional.html"><span class="kicker" data-i18n="blog.art2_tag">Estratégia de Vendas</span><h3 class="h3" data-i18n="blog.art2_title">Landing Page vs. Site Institucional: Qual sua empresa precisa?</h3><span class="tlink"><span data-i18n="blog.read_article">Ler artigo completo</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  </main>
+
+  <!-- ==========================================
+       RODAPÉ
+  =========================================== -->
+  <footer class="foot" data-theme="ink">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img class="foot-logo" src="../assets/logo-horizontal.webp" alt="Duo Studio" width="160" height="40" loading="lazy" decoding="async">
+          <p data-i18n="footer.desc">Agência especializada em desenvolvimento web de alta performance, design estratégico de interface e otimização de conversão para marcas exigentes.</p>
+        </div>
+        <div class="foot-col a">
+          <h4 data-i18n="h.ft_nav">Navegação</h4>
+          <ul>
+            <li><a href="../index.html" data-i18n="nav.home">Início</a></li>
+            <li><a href="../sobre.html" data-i18n="nav.about">Sobre</a></li>
+            <li><a href="../servicos.html" data-i18n="nav.solutions">Soluções</a></li>
+            <li><a href="../portfolio.html" data-i18n="nav.portfolio">Portfólio</a></li>
+            <li><a href="../blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="../contato.html" data-i18n="nav.contact">Contato</a></li>
+          </ul>
+        </div>
+        <div class="foot-col b">
+          <h4 data-i18n="footer.contact_title">Contato Direto</h4>
+          <ul>
+            <li><a href="mailto:somosduostudiobr@gmail.com">somosduostudiobr@gmail.com</a></li>
+            <li><a href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99909-9386</a></li>
+            <li><a href="https://wa.me/5594992811658?text=Ol%C3%A1!%20Vim%20pelo%20rodap%C3%A9%20do%20site%20da%20Duo%20Studio%20e%20gostaria%20de%20falar%20com%20um%20s%C3%B3cio." target="_blank" rel="noopener noreferrer">+55 (94) 99281-1658</a></li>
+            <li><a href="https://instagram.com/somosduostudio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li data-i18n="footer.location">Parauapebas - PA, Brasil</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mega" aria-hidden="true">Duo Studio.</p>
+      <div class="foot-bar">
+        <span data-i18n="footer.rights">© 2026 Duo Studio. Todos os direitos reservados. Engenharia de Software Autoral.</span>
+        <span data-i18n="footer.tagline">Engenharia digital com alta performance.</span>
+      </div>
     </div>
   </footer>
 
+  <!-- WhatsApp flutuante -->
+  <a class="wa" href="https://wa.me/5594999099386?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20solu%C3%A7%C3%B5es%20da%20Duo%20Studio." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp" data-i18n-aria="h.wa_label">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
+
+  <!-- Barra de conversão mobile (app.js mostra após rolar) -->
+  <div id="mobile-sticky-cta" class="hidden">
+    <div class="in">
+      <span data-i18n="mobile.online">Atendimento On-line</span>
+      <button type="button" class="btn open-budget-modal"><span data-i18n="mobile.cta_diag">Agendar Diagnóstico</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL: proposta em 3 passos → WhatsApp (IDs/classes usados pelo app.js)
+  =========================================== -->
+  <div id="budget-modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="quiz-h1" data-theme="paper">
+    <div class="sheet">
+      <button type="button" id="close-budget-modal" class="sheet-x" aria-label="Fechar" data-i18n-aria="h.q_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+
+      <div class="q-top">
+        <span id="quiz-step-label" class="kicker">Passo 1 de 3: Objetivo do Projeto</span>
+        <span class="kicker" data-i18n="quiz.step_badge">Diagnóstico Sem Custos</span>
+      </div>
+      <div class="q-bar"><div id="quiz-progress-bar"></div></div>
+
+      <form id="budget-form">
+        <div id="quiz-step-1">
+          <h3 id="quiz-h1" data-i18n="quiz.step1_title">Qual o principal objetivo da sua empresa hoje?</h3>
+          <p class="sub" data-i18n="quiz.step1_sub">Selecione o modelo que melhor descreve sua necessidade atual:</p>
+          <div class="opts">
+            <div class="quiz-option-card quiz-obj-card selected" data-value="Gerar mais leads com Landing Page de Alta Conversão"><h4 data-i18n="quiz.opt1_title">Gerar Mais Leads & Vendas</h4><p data-i18n="quiz.opt1_desc">Landing Page focada em campanhas de tráfego pago</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Posicionar marca com Site Institucional sob Medida"><h4 data-i18n="quiz.opt2_title">Posicionar Marca & Autoridade</h4><p data-i18n="quiz.opt2_desc">Site Institucional corporativo de alto padrão</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Vender produtos com Loja Virtual / E-Commerce"><h4 data-i18n="quiz.opt3_title">Vender Produtos (E-Commerce)</h4><p data-i18n="quiz.opt3_desc">Loja virtual rápida e sem atrito no checkout</p></div>
+            <div class="quiz-option-card quiz-obj-card" data-value="Reformular site antigo ou lento (Redesign)"><h4 data-i18n="quiz.opt4_title">Modernizar Site Lento / Antigo</h4><p data-i18n="quiz.opt4_desc">Redesign completo com código ultrarrápido</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-next-1" class="btn"><span data-i18n="quiz.next_step1">Avançar para Segmento</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-2" class="hidden">
+          <h3 data-i18n="quiz.step2_title">Em qual segmento sua empresa atua?</h3>
+          <p class="sub" data-i18n="quiz.step2_sub">Isso nos ajuda a preparar referências e dados específicos:</p>
+          <div class="opts two">
+            <div class="quiz-option-card quiz-seg-card selected" data-value="Serviços & Negócios Locais"><h4 data-i18n="quiz.seg1_title">Serviços & Negócios</h4><p data-i18n="quiz.seg1_desc">Consultoria, Engenharia, Advocacia</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Saúde, Clínicas & Laboratórios"><h4 data-i18n="quiz.seg2_title">Saúde & Clínicas</h4><p data-i18n="quiz.seg2_desc">Laboratórios, Médicos, Odonto</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Turismo, Gastronomia & Eventos"><h4 data-i18n="quiz.seg3_title">Turismo & Lazer</h4><p data-i18n="quiz.seg3_desc">Agências de Viagens, Hotelaria</p></div>
+            <div class="quiz-option-card quiz-seg-card" data-value="Comércio & E-commerce"><h4 data-i18n="quiz.seg4_title">Vendas & E-Commerce</h4><p data-i18n="quiz.seg4_desc">Produtos, Varejo, Marca Própria</p></div>
+          </div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-2" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="button" id="quiz-next-2" class="btn"><span data-i18n="quiz.next_step2">Avançar para Contato</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+
+        <div id="quiz-step-3" class="hidden">
+          <h3 data-i18n="quiz.step3_title">Onde devemos entregar seu diagnóstico?</h3>
+          <p class="sub" data-i18n="quiz.step3_sub">Preencha abaixo e entraremos em contato via WhatsApp com a proposta:</p>
+          <div class="field-row">
+            <div class="field"><label for="budget-name" data-i18n="quiz.label_name">Seu Nome / Empresa *</label><input id="budget-name" type="text" required placeholder="Ex: Carlos Silva" data-i18n-placeholder="quiz.ph_name"></div>
+            <div class="field"><label for="budget-phone" data-i18n="quiz.label_phone">WhatsApp para Contato *</label><input id="budget-phone" type="tel" required placeholder="(94) 99999-9999"></div>
+          </div>
+          <div class="field"><label for="budget-email" data-i18n="quiz.label_email">E-mail Corporativo</label><input id="budget-email" type="email" placeholder="carlos@empresa.com" data-i18n-placeholder="quiz.ph_email"></div>
+          <div class="field"><label for="budget-description" data-i18n="quiz.label_goals">Resumo das Metas da Empresa (Opcional)</label><textarea id="budget-description" rows="2" placeholder="Descreva brevemente suas metas de vendas..." data-i18n-placeholder="quiz.ph_goals"></textarea></div>
+          <div class="q-actions">
+            <button type="button" id="quiz-prev-3" class="btn btn--ghost" data-i18n="quiz.btn_back">Voltar</button>
+            <button type="submit" class="btn"><span data-i18n="quiz.btn_submit">Enviar Diagnóstico no WhatsApp</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </form>
+
+      <div id="budget-form-success" class="hidden">
+        <div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>
+        <h3 data-i18n="quiz.success_title">Solicitação Pronta para Envio!</h3>
+        <p class="sub" data-i18n="quiz.success_sub">Escolha com qual dos nossos sócios você prefere iniciar a conversa no WhatsApp:</p>
+        <div class="wa-row">
+          <a id="budget-wa-link" class="btn" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa1">Contato 1: (94) 99909-9386</span></a>
+          <a id="budget-wa-link-2" class="btn btn--ghost" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="quiz.success_wa2">Contato 2: (94) 99281-1658</span></a>
+        </div>
+        <button type="button" class="linklike" onclick="document.getElementById('close-budget-modal').click()" data-i18n="quiz.success_close">Fechar janela</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Visualizador de arte (site.js) -->
+  <dialog id="lb" class="lb" aria-label="Visualizador de arte">
+    <button type="button" class="lb-x" data-lb-close aria-label="Fechar" data-i18n-aria="h.lb_close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+    <button type="button" class="lb-nav prev" data-lb-prev aria-label="Anterior" data-i18n-aria="h.lb_prev"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <button type="button" class="lb-nav next" data-lb-next aria-label="Próxima" data-i18n-aria="h.lb_next"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+    <figure><img alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><figcaption></figcaption></figure>
+  </dialog>
+
   <script src="../i18n.js"></script>
+  <script src="../i18n-site.js"></script>
   <script src="../app.js"></script>
+  <script src="../site.js?v=2"></script>
 </body>
+
 </html>

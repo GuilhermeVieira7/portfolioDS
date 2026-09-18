@@ -28,3 +28,6 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# Material bruto de arte e referencias de design (nao publicar: 80MB+ e inclui trabalho de terceiros)
+fotos/

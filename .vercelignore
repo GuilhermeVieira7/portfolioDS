@@ -1,0 +1,3 @@
+# Nao enviar material bruto ao deploy
+fotos/
+node_modules/
